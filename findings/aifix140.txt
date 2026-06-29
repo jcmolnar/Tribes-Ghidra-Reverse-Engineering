@@ -1,0 +1,64 @@
+############ 1.40 AI crash analog FUN_004298c0 @0x4298c0 ############
+name=FUN_004298c0
+
+---- full disassembly ----
+  0x004298c0  PUSH ESI                                
+  0x004298c1  PUSH EDI                                
+  0x004298c2  MOV EDI,dword ptr [ESP + 0xc]           
+  0x004298c6  MOV ESI,ECX                             
+  0x004298c8  PUSH 0x0                                
+  0x004298ca  LEA EAX,[ESI + 0x1ac]                   
+  0x004298d0  PUSH EAX                                
+  0x004298d1  PUSH EDI                                
+  0x004298d2  CALL 0x00411bb0                            ; CALL matcher
+  0x004298d7  ADD ESP,0xc                             
+  0x004298da  TEST AL,AL                              
+  0x004298dc  JZ 0x004298e5                              ; branch
+  0x004298de  POP EDI                                 
+  0x004298df  MOV AL,0x1                              
+  0x004298e1  POP ESI                                 
+  0x004298e2  RET 0x4                                 
+  0x004298e5  TEST byte ptr [ESI + 0x54],0x2             <<<< FLAGS (+0x54) test
+  0x004298e9  JZ 0x00429908                              ; branch
+  0x004298eb  MOV ECX,dword ptr [ESI + 0x1cc]            <<<< OBJ ptr load (+0x1cc)
+  0x004298f1  MOV EAX,dword ptr [ECX + 0x250]            <<<< BOX deref (+0x250) — CRASH SITE candidate
+  0x004298f7  PUSH 0x0                                
+  0x004298f9  PUSH EAX                                
+  0x004298fa  PUSH EDI                                
+  0x004298fb  CALL 0x00411bb0                            ; CALL matcher
+  0x00429900  ADD ESP,0xc                             
+  0x00429903  POP EDI                                 
+  0x00429904  POP ESI                                 
+  0x00429905  RET 0x4                                 
+  0x00429908  POP EDI                                 
+  0x00429909  XOR AL,AL                               
+  0x0042990b  POP ESI                                 
+  0x0042990c  RET 0x4                                 
+
+---- decompile ----
+
+undefined4 __thiscall FUN_004298c0(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  
+  cVar1 = FUN_00411bb0(param_2,param_1 + 0x1ac,0);
+  if (cVar1 != '\0') {
+    return 1;
+  }
+  if ((*(byte *)(param_1 + 0x54) & 2) != 0) {
+    uVar2 = FUN_00411bb0(param_2,*(undefined4 *)(*(int *)(param_1 + 0x1cc) + 0x250),0);
+    return uVar2;
+  }
+  return 0;
+}
+
+
+
+---- RTTI: vtables referencing 0x4298c0 ----
+
+---- callers of FUN_004298c0 (the scope-query entry) ----
+   ref from 0x42fca6  type=UNCONDITIONAL_CALL  in FUN_0042f980 @0x42f980
+
+   matcher FUN_00411bb0 name=FUN_00411bb0

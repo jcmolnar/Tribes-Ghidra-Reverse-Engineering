@@ -1,0 +1,2872 @@
+TRIBES 1.40.655 (Tribes.exe, MSVC2005) — RTTI class catalog + SimEvent wire formats
+Legend: readInt=FUN_0040fd10(bits)  writeInt=FUN_0040fd50(val,bits)
+  BitStream/StreamIO vtbl: +0x18 write(nbytes,&src)  +0x1c read(nbytes,&dst)  +0x28 readString(&dst)  +0x2c writeString(&src,max)
+  SimEvent vtable: slot6(+0x18)=pack  slot7(+0x1c)=unpack ; verifyNotServer guard = FUN_00517200
+Total RTTI classes: 834 ; SimEvent-family: 44
+
+################ SIMEVENT WIRE FORMATS (44) ################
+
+======== DataBlockEvent  vtbl=0x64a358  pack=0x434040  unpack=0x434fa0 ========
+---- unpack ----
+
+void __thiscall FUN_00434fa0(int param_1,int *param_2,undefined4 param_3)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int *piVar4;
+  int iVar5;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    (**(code **)(*param_2 + 0x6c))(0x2d1);
+    uVar2 = FUN_0040fd10(6);
+    *(undefined4 *)(param_1 + 0x20) = uVar2;
+    iVar5 = -1;
+    if ((ushort)(DAT_006d0ff8 << 8 | DAT_006d0ff8 >> 8) < 0x101) {
+      uVar2 = FUN_0040fd10(8);
+      *(undefined4 *)(param_1 + 0x24) = uVar2;
+      iVar3 = FUN_0040fd10(8);
+      iVar5 = 0xff;
+    }
+    else {
+      uVar2 = FUN_0040fd10(0x20);
+      *(undefined4 *)(param_1 + 0x24) = uVar2;
+      iVar3 = FUN_0040fd10(0x20);
+    }
+    *(int *)(param_1 + 0x28) = iVar3;
+    if (iVar3 != iVar5) {
+      piVar4 = (int *)FUN_00434890(*(undefined4 *)(param_1 + 0x20));
+      *(int **)(param_1 + 0x2c) = piVar4;
+      (**(code **)(*piVar4 + 4))(param_3);
+      *(undefined4 *)(param_1 + 0x14) = 0x2d1;
+      return;
+    }
+    *(undefined4 *)(param_1 + 0x28) = 0xffffffff;
+    *(undefined4 *)(param_1 + 0x14) = 0x2d1;
+  }
+  return;
+}
+
+
+
+======== DeltaScoreEvent  vtbl=0x65d5d0  pack=0x4b44d0  unpack=0x4b4530 ========
+---- unpack ----
+
+void __thiscall FUN_004b4530(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  int iVar2;
+  undefined4 uVar3;
+  bool bVar4;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    iVar2 = param_4[4];
+    if (param_4[7] < iVar2) {
+      *(undefined1 *)(param_4 + 6) = 1;
+      bVar4 = false;
+    }
+    else {
+      bVar4 = (*(byte *)((iVar2 >> 3) + param_4[3]) & (byte)(1 << ((byte)iVar2 & 7))) != 0;
+      param_4[4] = param_4[4] + 1;
+    }
+    *(bool *)(param_1 + 0x28) = bVar4;
+    if (bVar4 == false) {
+      iVar2 = FUN_0040fd10(7);
+      iVar2 = iVar2 + 0x800;
+    }
+    else {
+      iVar2 = FUN_0040fd10(4);
+      iVar2 = iVar2 + -1;
+    }
+    *(int *)(param_1 + 0x20) = iVar2;
+    uVar3 = FUN_0040fd10(0x20);
+    *(undefined4 *)(param_1 + 0x24) = uVar3;
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x29);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== LocSoundEvent  vtbl=0x65fba0  pack=0x4db290  unpack=0x4db320 ========
+---- unpack ----
+
+void FUN_004db320(int *param_1,int param_2)
+
+{
+  byte bVar1;
+  int iVar2;
+  float fVar3;
+  char cVar4;
+  int iVar5;
+  int iVar6;
+  undefined4 uVar7;
+  float10 fVar8;
+  int iStack_14;
+  float local_10;
+  float fStack_c;
+  float fStack_8;
+  
+  cVar4 = FUN_00517200(param_1);
+  if (cVar4 != '\0') {
+    iVar5 = (**(code **)(*param_1 + 0x6c))(0x15);
+    iVar6 = FUN_0040fd10(8);
+    iVar6 = FUN_004343a0(iVar6 + -1,1);
+    if (*(int *)(iVar6 + 0x40) == 0) {
+      uVar7 = FUN_004343a0(*(undefined4 *)(iVar6 + 0x3c),0);
+      *(undefined4 *)(iVar6 + 0x40) = uVar7;
+    }
+    iVar2 = *(int *)(param_2 + 0x10);
+    if (*(int *)(param_2 + 0x1c) < iVar2) {
+      fStack_8 = 0.0;
+      *(undefined1 *)(param_2 + 0x18) = 1;
+      local_10 = 0.0;
+      fStack_c = 0.0;
+    }
+    else {
+      bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_2 + 0xc));
+      *(int *)(param_2 + 0x10) = *(int *)(param_2 + 0x10) + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) == 0) {
+        fStack_8 = 0.0;
+        local_10 = 0.0;
+        fStack_c = 0.0;
+      }
+      else {
+        FUN_004100e0(&local_10,8);
+        fVar8 = (float10)FUN_0040fdb0(9);
+        fVar3 = *(float *)(*(int *)(iVar6 + 0x40) + 0x5c) * (float)fVar8;
+        local_10 = fVar3 * local_10;
+        fStack_c = fVar3 * fStack_c;
+        fStack_8 = fVar3 * fStack_8;
+      }
+    }
+    if (iVar5 != 0) {
+      FUN_00563310(*(undefined4 *)(iVar6 + 0x34),*(undefined4 *)(iVar6 + 0x38),
+                   *(int *)(iVar6 + 0x40) + 0x34,&local_10);
+    }
+    *(undefined4 *)(iStack_14 + 0x14) = 0xfffffffe;
+  }
+  return;
+}
+
+
+
+======== MissionResetEvent  vtbl=0x65d578  pack=0x587cd0  unpack=0x4b4490 ========
+---- unpack ----
+
+void __thiscall FUN_004b4490(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== Net::RemoteCreateEvent  vtbl=0x66571c  pack=0x517c60  unpack=0x517d00 ========
+---- unpack ----
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00517d00(int *param_1,int param_2,int param_3)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  int *piVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  
+  cVar1 = FUN_00517200(param_1);
+  if (cVar1 != '\0') {
+    iVar6 = *(int *)(param_3 + 0x10);
+    uVar2 = FUN_0040fd10(10);
+    piVar3 = (int *)FUN_004131e0(uVar2);
+    (**(code **)(*piVar3 + 0x68))(*(undefined4 *)(param_2 + 0x9ec),param_3);
+    iVar6 = *(int *)(param_3 + 0x10) - iVar6;
+    iVar4 = (**(code **)(*piVar3 + 0xc))();
+    iVar5 = *(int *)(iVar4 + 0x94);
+    if (iVar5 == 0) {
+      iVar5 = *(int *)(iVar4 + 0x90);
+    }
+    (&DAT_0074e948)[iVar5] = (&DAT_0074e948)[iVar5] + iVar6;
+    _DAT_0074f9cc = _DAT_0074f9cc - iVar6;
+    (**(code **)(*param_1 + 0x5c))(piVar3);
+  }
+  return;
+}
+
+
+
+======== PingPLEvent  vtbl=0x65d5a4  pack=0x4b5900  unpack=0x4b6a10 ========
+---- unpack ----
+
+void __thiscall FUN_004b6a10(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  float10 fVar6;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    iVar2 = FUN_0040fd10(7);
+    while (iVar2 != 0) {
+      iVar2 = iVar2 + -1;
+      uVar3 = FUN_0040fd10(7);
+      iVar4 = FUN_0040fd10(8);
+      fVar6 = (float10)FUN_0040fdb0(6);
+      if ((((DAT_006d4fdc != 0) && (uVar3 < 0x80)) &&
+          (iVar5 = DAT_006d4fdc + uVar3 * 0x1e8, *(int *)(iVar5 + 0x25104) != -0x21524111)) &&
+         (*(char *)(iVar5 + 0x250f4) == '\0')) {
+        *(int *)(iVar5 + 0x252d0) = iVar4 * 4;
+        *(float *)(iVar5 + 0x252d4) = (float)fVar6;
+      }
+    }
+    *(undefined4 *)(param_1 + 0x14) = 0xfffffffe;
+  }
+  return;
+}
+
+
+
+======== PlayerAddEvent  vtbl=0x65d6d8  pack=0x4b5b70  unpack=0x4b6bb0 ========
+---- unpack ----
+
+void __thiscall FUN_004b6bb0(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  char cVar3;
+  uint uVar4;
+  undefined4 uVar5;
+  bool bVar6;
+  
+  cVar3 = FUN_00517200();
+  if (cVar3 == '\0') {
+    return;
+  }
+  (**(code **)(*param_4 + 0x1c))(4,param_1 + 0x2c);
+  iVar2 = param_4[4];
+  if (param_4[7] < iVar2) {
+    *(undefined1 *)(param_4 + 6) = 1;
+    bVar6 = false;
+  }
+  else {
+    bVar6 = (*(byte *)((iVar2 >> 3) + param_4[3]) & (byte)(1 << ((byte)iVar2 & 7))) != 0;
+    param_4[4] = param_4[4] + 1;
+  }
+  *(bool *)(param_1 + 0x20) = bVar6;
+  (**(code **)(*param_4 + 0x28))(&stack0xfffffef8);
+  if (DAT_007229a0 != '\0') {
+    FUN_004b4260(&stack0xfffffef4);
+  }
+  uVar4 = FUN_00416da0(&stack0xfffffef4,1);
+  *(uint *)(param_1 + 0x30) = uVar4 ^ 0xdeadbeef;
+  uVar5 = FUN_00416950(0);
+  *(undefined4 *)(param_1 + 0xc4) = uVar5;
+  uVar5 = FUN_00416950(0);
+  *(undefined4 *)(param_1 + 200) = uVar5;
+  uVar5 = FUN_0040fd10(1);
+  *(undefined4 *)(param_1 + 0xcc) = uVar5;
+  (**(code **)(*param_4 + 0x1c))(4,param_1 + 0x90);
+  iVar2 = param_4[4];
+  if (param_4[7] < iVar2) {
+    *(undefined1 *)(param_4 + 6) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + param_4[3]);
+    param_4[4] = param_4[4] + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      uVar5 = FUN_0040fd10(3);
+      *(undefined4 *)(param_1 + 0x38) = uVar5;
+      goto LAB_004b6cb2;
+    }
+  }
+  *(undefined4 *)(param_1 + 0x38) = 0xffffffff;
+LAB_004b6cb2:
+  *(undefined4 *)(param_1 + 0xb8) = 0xdeadbeef;
+  *(undefined4 *)(param_1 + 0xbc) = 0xdeadbeef;
+  *(undefined4 *)(param_1 + 0x4c) = 0;
+  *(undefined4 *)(param_1 + 0x50) = 0;
+  *(undefined4 *)(param_1 + 0x54) = 0;
+  *(undefined1 *)(param_1 + 0x8c) = 0;
+  *(undefined1 *)(param_1 + 0xd4) = 0;
+  *(undefined4 *)(param_1 + 0x1d4) = 0;
+  *(undefined4 *)(param_1 + 0xc0) = 0xdeadbeef;
+  *(undefined4 *)(param_1 + 0x7c) = 0;
+  *(undefined4 *)(param_1 + 0x94) = 0xdeadbeef;
+  *(undefined4 *)(param_1 + 0x98) = 0xdeadbeef;
+  *(undefined4 *)(param_1 + 0x1fc) = 0;
+  *(undefined4 *)(param_1 + 0x9c) = 0xdeadbeef;
+  *(undefined4 *)(param_1 + 0x1e8) = 0;
+  *(undefined4 *)(param_1 + 100) = 0xffffffff;
+  *(undefined1 *)(param_1 + 0x8d) = 1;
+  *(undefined4 *)(param_1 + 0xa0) = 0;
+  *(undefined4 *)(param_1 + 0xa4) = 0;
+  *(undefined4 *)(param_1 + 0xa8) = 0;
+  *(undefined4 *)(param_1 + 0xac) = 0;
+  *(undefined4 *)(param_1 + 0xb0) = 0;
+  *(undefined1 *)(param_1 + 0xb4) = 0;
+  *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  return;
+}
+
+
+
+======== PlayerCommandEvent  vtbl=0x65d6ac  pack=0x4b4890  unpack=0x4b4970 ========
+---- unpack ----
+
+void __thiscall FUN_004b4970(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  char cVar2;
+  int iVar3;
+  undefined4 uVar4;
+  bool bVar5;
+  
+  cVar2 = FUN_00517200(param_2);
+  if (cVar2 == '\0') {
+    return;
+  }
+  iVar3 = FUN_0040fd10(10);
+  *(int *)(param_1 + 0x24) = iVar3 + 0x800;
+  uVar4 = FUN_0040fd10(2);
+  *(undefined4 *)(param_1 + 0x38) = uVar4;
+  iVar3 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar3) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+    bVar5 = false;
+  }
+  else {
+    bVar5 = (*(byte *)((iVar3 >> 3) + *(int *)(param_4 + 0xc)) & (byte)(1 << ((byte)iVar3 & 7))) !=
+            0;
+    *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+  }
+  *(bool *)(param_1 + 0x3c) = bVar5;
+  if (bVar5 == false) {
+    iVar3 = *(int *)(param_4 + 0x10);
+    if (*(int *)(param_4 + 0x1c) < iVar3) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar3 >> 3) + *(int *)(param_4 + 0xc));
+      *(int *)(param_4 + 0x10) = iVar3 + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar3 & 7))) != 0) {
+        iVar3 = FUN_0040fd10(10);
+        *(int *)(param_1 + 0x20) = iVar3 + 0x800;
+        uVar4 = FUN_0040fd10(6);
+        *(undefined4 *)(param_1 + 0x28) = uVar4;
+        *(undefined4 *)(param_1 + 0x2c) = 0xffffffff;
+        iVar3 = *(int *)(param_4 + 0x10);
+        if (*(int *)(param_4 + 0x1c) < iVar3) {
+          *(undefined1 *)(param_4 + 0x18) = 1;
+        }
+        else {
+          bVar1 = *(byte *)((iVar3 >> 3) + *(int *)(param_4 + 0xc));
+          *(int *)(param_4 + 0x10) = iVar3 + 1;
+          if ((bVar1 & (byte)(1 << ((byte)iVar3 & 7))) != 0) {
+            uVar4 = FUN_0040fd10(8);
+            *(undefined4 *)(param_1 + 0x2c) = uVar4;
+          }
+        }
+        uVar4 = FUN_0040fd10(10);
+        *(undefined4 *)(param_1 + 0x30) = uVar4;
+        uVar4 = FUN_0040fd10(10);
+        *(undefined4 *)(param_1 + 0x34) = uVar4;
+        goto LAB_004b4a03;
+      }
+    }
+    *(undefined4 *)(param_1 + 0x28) = 0xffffffff;
+    *(undefined4 *)(param_1 + 0x20) = 0xffffffff;
+  }
+LAB_004b4a03:
+  iVar3 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar3) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+    bVar5 = false;
+  }
+  else {
+    bVar5 = (*(byte *)((iVar3 >> 3) + *(int *)(param_4 + 0xc)) & (byte)(1 << ((byte)iVar3 & 7))) !=
+            0;
+    *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+  }
+  *(bool *)(param_1 + 0x3d) = bVar5;
+  *(undefined4 *)(param_1 + 0x40) = 0;
+  if (bVar5 != false) {
+    iVar3 = *(int *)(param_4 + 0x10);
+    if (*(int *)(param_4 + 0x1c) < iVar3) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+      *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+      return;
+    }
+    bVar1 = *(byte *)((iVar3 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar3 & 7))) != 0) {
+      uVar4 = FUN_00416950(1);
+      *(undefined4 *)(param_1 + 0x40) = uVar4;
+    }
+  }
+  *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  return;
+}
+
+
+
+======== PlayerRemoveEvent  vtbl=0x65d788  pack=0x4b4e10  unpack=0x4b4e30 ========
+---- unpack ----
+
+void __thiscall FUN_004b4e30(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    iVar2 = FUN_0040fd10(7);
+    *(int *)(param_1 + 0x20) = iVar2 + 0x800;
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== PlayerSayEvent  vtbl=0x65d628  pack=0x4b4670  unpack=0x4b46b0 ========
+---- unpack ----
+
+void __thiscall FUN_004b46b0(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    uVar2 = FUN_0040fd10(0xc);
+    *(undefined4 *)(param_1 + 0x20) = uVar2;
+    uVar2 = FUN_0040fd10(5);
+    *(undefined4 *)(param_1 + 0x24) = uVar2;
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x28);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== PlayerSelectCmdrEvent  vtbl=0x65d654  pack=0x4b4710  unpack=0x4b4760 ========
+---- unpack ----
+
+void __thiscall FUN_004b4760(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  char cVar2;
+  int iVar3;
+  
+  cVar2 = FUN_00517200(param_2);
+  if (cVar2 != '\0') {
+    iVar3 = FUN_0040fd10(7);
+    *(int *)(param_1 + 0x20) = iVar3 + 0x800;
+    iVar3 = *(int *)(param_4 + 0x10);
+    if (*(int *)(param_4 + 0x1c) < iVar3) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar3 >> 3) + *(int *)(param_4 + 0xc));
+      *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar3 & 7))) != 0) {
+        iVar3 = FUN_0040fd10(7);
+        *(int *)(param_1 + 0x24) = iVar3 + 0x800;
+        *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+        return;
+      }
+    }
+    *(undefined4 *)(param_1 + 0x24) = 0;
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== PlayerSkinEvent  vtbl=0x65d5fc  pack=0x4b45e0  unpack=0x4b4620 ========
+---- unpack ----
+
+void __thiscall FUN_004b4620(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    iVar2 = FUN_0040fd10(7);
+    *(int *)(param_1 + 0x20) = iVar2 + 0x800;
+    uVar3 = FUN_00416950(0);
+    *(undefined4 *)(param_1 + 0x24) = uVar3;
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== PlayerTeamChangeEvent  vtbl=0x65d7b4  pack=0x4b4e70  unpack=0x4b4ea0 ========
+---- unpack ----
+
+void __thiscall FUN_004b4ea0(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    iVar2 = FUN_0040fd10(7);
+    *(int *)(param_1 + 0x20) = iVar2 + 0x800;
+    iVar2 = FUN_0040fd10(4);
+    *(int *)(param_1 + 0x24) = iVar2 + -1;
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== Sfx::SoundEvent  vtbl=0x66d834  pack=0x5620a0  unpack=0x562160 ========
+---- unpack ----
+
+void __thiscall FUN_00562160(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 *puVar3;
+  char cVar4;
+  undefined4 uVar5;
+  undefined4 *puVar6;
+  float10 fVar7;
+  
+  cVar4 = FUN_00517200(param_2);
+  if (cVar4 != '\0') {
+    FUN_0051c2a0(param_2,param_3,param_4);
+    uVar5 = FUN_0040fd10(2);
+    *(undefined4 *)(param_1 + 0x20) = uVar5;
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x24);
+    puVar3 = (undefined4 *)(param_1 + 0x23);
+    do {
+      puVar6 = puVar3;
+      puVar3 = (undefined4 *)((int)puVar6 + 1);
+    } while (*(char *)((int)puVar6 + 1) != '\0');
+    *(undefined4 *)((int)puVar6 + 1) = DAT_0066d818;
+    *(undefined1 *)((int)puVar6 + 5) = DAT_0066d81c;
+    uVar5 = FUN_0040fd10(0x20);
+    *(undefined4 *)(param_1 + 0x124) = uVar5;
+    iVar2 = param_4[4];
+    if (param_4[7] < iVar2) {
+      *(undefined1 *)(param_4 + 6) = 1;
+      return;
+    }
+    bVar1 = *(byte *)((iVar2 >> 3) + param_4[3]);
+    param_4[4] = param_4[4] + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      fVar7 = (float10)FUN_0040fe70(0x18);
+      *(float *)(param_1 + 0x128) = (float)fVar7;
+      fVar7 = (float10)FUN_0040fe70(0x18);
+      *(float *)(param_1 + 300) = (float)fVar7;
+      fVar7 = (float10)FUN_0040fe70(0x18);
+      *(float *)(param_1 + 0x130) = (float)fVar7;
+    }
+  }
+  return;
+}
+
+
+
+======== Sim3DMouseEvent  vtbl=0x66baa4  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimActionEvent  vtbl=0x66591c  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimCameraMountEvent  vtbl=0x665c58  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimCameraNetEvent  vtbl=0x665cb0  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimCameraRemountEvent  vtbl=0x66bad0  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimCameraUnmountEvent  vtbl=0x665c84  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimConsoleEvent  vtbl=0x666174  pack=0x520cf0  unpack=0x520d40 ========
+---- unpack ----
+
+void __thiscall FUN_00520d40(int param_1,undefined4 param_2,int *param_3,int *param_4)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  char *pcVar3;
+  char *pcVar4;
+  char *pcVar5;
+  int iVar6;
+  uint uVar7;
+  undefined4 *puVar8;
+  undefined4 *puVar9;
+  char *pcVar10;
+  int unaff_retaddr;
+  int iVar11;
+  int *piStack_48c;
+  char *pcStack_488;
+  undefined4 auStack_484 [31];
+  char cStack_405;
+  char acStack_404 [1028];
+  
+  uVar2 = FUN_0040fd10(5);
+  *(undefined4 *)(param_1 + 0x20) = uVar2;
+  *(undefined4 *)(param_1 + 0xac) = s_remote_006660e8._0_4_;
+  pcVar10 = (char *)(param_1 + 0xac);
+  *(undefined2 *)(param_1 + 0xb0) = s_remote_006660e8._4_2_;
+  *(char *)(param_1 + 0xb2) = s_remote_006660e8[6];
+  (**(code **)(*param_4 + 0x28))(param_1 + 0xb2);
+  pcVar3 = pcVar10;
+  do {
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + 1;
+  } while (cVar1 != '\0');
+  pcVar4 = pcVar3 + param_1 + (0xad - (param_1 + 0xad));
+  *(char **)(param_1 + 0x2c) = pcVar10;
+  *(char **)(param_1 + 0x30) = pcVar4;
+  _sprintf(pcVar4,"%d",*(undefined4 *)(param_1 + 0x1c));
+  pcVar5 = pcVar4 + 1;
+  do {
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4 + 1;
+  } while (cVar1 != '\0');
+  *(int *)(param_1 + 0x20) = *(int *)(param_1 + 0x20) + -1;
+  pcVar4 = pcVar4 + (int)(pcVar3 + ((2 - (param_1 + 0xad)) - (int)pcVar5));
+  iVar11 = 0;
+  if (0 < *(int *)(param_1 + 0x20)) {
+    piStack_48c = (int *)(param_1 + 0x34);
+    do {
+      pcVar5 = pcVar10 + (int)pcVar4;
+      *piStack_48c = (int)pcVar5;
+      (**(code **)(*param_3 + 0x28))(pcVar5);
+      pcVar3 = pcVar5 + 1;
+      do {
+        cVar1 = *pcVar5;
+        pcVar5 = pcVar5 + 1;
+      } while (cVar1 != '\0');
+      pcVar4 = pcVar5 + (int)(pcVar4 + (1 - (int)pcVar3));
+      if (0x1ff < (int)pcVar4) break;
+      piStack_48c = piStack_48c + 1;
+      iVar11 = iVar11 + 1;
+    } while (iVar11 < *(int *)(param_1 + 0x20));
+  }
+  iVar11 = iVar11 + 2;
+  *(int *)(param_1 + 0x20) = iVar11;
+  pcStack_488 = "onRemoteFilterServer";
+  if (DAT_00747028 != &DAT_006d5020) {
+    pcStack_488 = "onRemoteFilterClient";
+  }
+  _memset(auStack_484,0,0x80);
+  if (0 < iVar11) {
+    puVar8 = (undefined4 *)(param_1 + 0x2c);
+    puVar9 = auStack_484;
+    for (iVar6 = iVar11; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *puVar9 = *puVar8;
+      puVar8 = puVar8 + 1;
+      puVar9 = puVar9 + 1;
+    }
+  }
+  uVar2 = FUN_00403130(iVar11,&pcStack_488,0);
+  cVar1 = FUN_00404c70(uVar2);
+  *(bool *)(param_1 + 0x25) = cVar1 == '\0';
+  _sprintf(acStack_404,"%s(",*(undefined4 *)(param_1 + 0x2c));
+  iVar11 = 1;
+  if (1 < *(int *)(param_1 + 0x20)) {
+    iVar6 = *(int *)(param_1 + 0x20);
+    puVar8 = (undefined4 *)(param_1 + 0x30);
+    do {
+      pcVar10 = (char *)*puVar8;
+      pcVar3 = pcVar10;
+      do {
+        cVar1 = *pcVar3;
+        pcVar3 = pcVar3 + 1;
+      } while (cVar1 != '\0');
+      pcVar5 = &cStack_405;
+      do {
+        pcVar4 = pcVar5 + 1;
+        pcVar5 = pcVar5 + 1;
+      } while (*pcVar4 != '\0');
+      pcVar4 = pcVar10;
+      for (uVar7 = (uint)((int)pcVar3 - (int)pcVar10) >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+        *(undefined4 *)pcVar5 = *(undefined4 *)pcVar4;
+        pcVar4 = pcVar4 + 4;
+        pcVar5 = pcVar5 + 4;
+      }
+      for (uVar7 = (int)pcVar3 - (int)pcVar10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+        *pcVar5 = *pcVar4;
+        pcVar4 = pcVar4 + 1;
+        pcVar5 = pcVar5 + 1;
+      }
+      if (iVar11 != *(int *)(param_1 + 0x20) + -1) {
+        pcVar10 = &cStack_405;
+        do {
+          pcVar3 = pcVar10;
+          pcVar10 = pcVar3 + 1;
+        } while (pcVar3[1] != '\0');
+        *(undefined2 *)(pcVar3 + 1) = DAT_006660b4;
+        pcVar3[3] = DAT_006660b6;
+      }
+      puVar8 = puVar8 + 1;
+      iVar11 = iVar11 + 1;
+    } while (iVar11 < iVar6);
+  }
+  pcVar10 = &cStack_405;
+  do {
+    pcVar3 = pcVar10 + 1;
+    pcVar10 = pcVar10 + 1;
+  } while (*pcVar3 != '\0');
+  *(undefined2 *)pcVar10 = DAT_00632d20;
+  FUN_00403a40(DAT_006e284c,2,"RCMD: %d => %s",*(undefined4 *)(unaff_retaddr + 0x44),acStack_404);
+  *(undefined4 *)(param_1 + 0x14) = 0;
+  *(undefined4 *)(param_1 + 0x28) = 0;
+  *(undefined1 *)(param_1 + 0x24) = 0;
+  return;
+}
+
+
+
+======== SimEditEvent  vtbl=0x656e7c  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimEvent  vtbl=0x64a310  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimFrameEndNotifyEvent  vtbl=0x660c90  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimGainFocusEvent  vtbl=0x6664a8  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimGroupObjectIdEvent  vtbl=0x64c08c  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimGui::Event  vtbl=0x66962c  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimInputEvent  vtbl=0x64df44  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimLoseFocusEvent  vtbl=0x6664d4  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimMessageEvent  vtbl=0x64a674  pack=0x525e30  unpack=0x525c70 ========
+---- unpack ----
+
+void __thiscall FUN_00525c70(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  int iVar3;
+  char cVar4;
+  undefined4 uVar5;
+  
+  cVar4 = FUN_00517200(param_2);
+  if (cVar4 != '\0') {
+    FUN_0051c2a0(param_2,param_3,param_4);
+    iVar2 = *(int *)(param_4 + 0x10);
+    iVar3 = *(int *)(param_4 + 0x1c);
+    if (iVar3 < iVar2) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+      *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+        uVar5 = FUN_0040fd10(1);
+        *(undefined4 *)(param_1 + 0x20) = uVar5;
+        return;
+      }
+    }
+    iVar2 = *(int *)(param_4 + 0x10);
+    if (iVar3 < iVar2) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+      *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+        uVar5 = FUN_0040fd10(4);
+        *(undefined4 *)(param_1 + 0x20) = uVar5;
+        return;
+      }
+    }
+    iVar2 = *(int *)(param_4 + 0x10);
+    if (iVar3 < iVar2) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+      *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+        uVar5 = FUN_0040fd10(8);
+        *(undefined4 *)(param_1 + 0x20) = uVar5;
+        return;
+      }
+    }
+    iVar2 = *(int *)(param_4 + 0x10);
+    if (iVar3 < iVar2) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+      *(int *)(param_4 + 0x10) = *(int *)(param_4 + 0x10) + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+        uVar5 = FUN_0040fd10(0x10);
+        *(undefined4 *)(param_1 + 0x20) = uVar5;
+        return;
+      }
+    }
+    iVar2 = *(int *)(param_4 + 0x10);
+    if (iVar3 < iVar2) {
+      *(undefined1 *)(param_4 + 0x18) = 1;
+      return;
+    }
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      uVar5 = FUN_0040fd10(0x20);
+      *(undefined4 *)(param_1 + 0x20) = uVar5;
+    }
+  }
+  return;
+}
+
+
+
+======== SimMovementCollisionEvent  vtbl=0x66747c  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimObjectTransformEvent  vtbl=0x656e34  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimPathEvent  vtbl=0x66d314  pack=0x55f840  unpack=0x55fd80 ========
+---- unpack ----
+
+void __thiscall FUN_0055fd80(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  char cVar3;
+  undefined4 *puVar4;
+  void *pvVar5;
+  int iVar6;
+  int unaff_ESI;
+  bool bVar7;
+  undefined4 uStack_c;
+  int iStack_4;
+  
+  cVar3 = FUN_00517200();
+  if (cVar3 != '\0') {
+    FUN_0051c2a0(param_2,param_3,param_4);
+    (**(code **)(*param_4 + 0x1c))(4,(undefined4 *)(param_1 + 0x24));
+    iVar2 = param_4[4];
+    if (param_4[7] < iVar2) {
+      *(undefined1 *)(param_4 + 6) = 1;
+    }
+    else {
+      bVar1 = *(byte *)((iVar2 >> 3) + param_4[3]);
+      param_4[4] = iVar2 + 1;
+      if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+        puVar4 = operator_new(0x1c);
+        if (puVar4 == (undefined4 *)0x0) {
+          puVar4 = (undefined4 *)0x0;
+        }
+        else {
+          *(undefined2 *)(puVar4 + 4) = 0;
+          puVar4[6] = 0;
+          puVar4[5] = 0;
+          puVar4[2] = 0;
+          puVar4[3] = 0;
+        }
+        *(undefined4 **)(param_1 + 0x20) = puVar4;
+        *puVar4 = *(undefined4 *)(param_1 + 0x24);
+        iVar2 = param_4[4];
+        if (param_4[7] < iVar2) {
+          *(undefined1 *)(param_4 + 6) = 1;
+          bVar7 = false;
+        }
+        else {
+          bVar7 = (*(byte *)((iVar2 >> 3) + param_4[3]) & (byte)(1 << ((byte)iVar2 & 7))) != 0;
+          param_4[4] = iVar2 + 1;
+        }
+        *(bool *)(*(int *)(param_1 + 0x20) + 4) = bVar7;
+        (**(code **)(*param_4 + 0x1c))(4,&stack0xffffffc4);
+        iStack_4 = 0;
+        if (unaff_ESI < 1) {
+          return;
+        }
+        do {
+          (**(code **)(*param_4 + 0x1c))(0x30,&stack0xffffffc0);
+          pvVar5 = operator_new(0x30);
+          if (pvVar5 == (void *)0x0) {
+            uStack_c = 0;
+          }
+          else {
+            uStack_c = FUN_0055f600(&stack0xffffffc0);
+          }
+          iVar2 = *(int *)(param_1 + 0x20);
+          iVar6 = *(int *)(iVar2 + 8) + 1;
+          if (*(int *)(iVar2 + 0xc) < iVar6) {
+            FUN_004fa340(iVar6);
+          }
+          *(int *)(iVar2 + 8) = iVar6;
+          *(undefined4 *)(*(int *)(iVar2 + 0x18) + -4 + iVar6 * 4) = uStack_c;
+          iStack_4 = iStack_4 + 1;
+        } while (iStack_4 < unaff_ESI);
+        return;
+      }
+    }
+    *(undefined4 *)(param_1 + 0x20) = 0;
+  }
+  return;
+}
+
+
+
+======== SimPingEvent  vtbl=0x66769c  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimPolledUpdateEvent  vtbl=0x6656f0  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimSoundSequenceEvent  vtbl=0x66d3c8  pack=0x560380  unpack=0x5603f0 ========
+---- unpack ----
+
+void __thiscall FUN_005603f0(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  int iVar1;
+  char cVar2;
+  bool bVar3;
+  
+  cVar2 = FUN_00517200(param_2);
+  if (cVar2 != '\0') {
+    FUN_0051c2a0(param_2,param_3,param_4);
+    (**(code **)(*param_4 + 0x1c))(4,param_1 + 0x20);
+    cVar2 = FUN_0040fd10(6);
+    *(char *)(param_1 + 0x5c) = cVar2;
+    if (cVar2 == '?') {
+      *(undefined1 *)(param_1 + 0x5c) = 0xff;
+    }
+    iVar1 = param_4[4];
+    if (param_4[7] < iVar1) {
+      *(undefined1 *)(param_4 + 6) = 1;
+      bVar3 = false;
+    }
+    else {
+      bVar3 = (*(byte *)((iVar1 >> 3) + param_4[3]) & (byte)(1 << ((byte)iVar1 & 7))) != 0;
+      param_4[4] = param_4[4] + 1;
+    }
+    *(bool *)(param_1 + 0x24) = bVar3;
+    if (bVar3 != false) {
+      (**(code **)(*param_4 + 0x1c))(0x34,param_1 + 0x28);
+    }
+  }
+  return;
+}
+
+
+
+======== SimTimeEvent  vtbl=0x667dbc  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimTimerEvent  vtbl=0x667de8  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SimTriggerEvent  vtbl=0x657cbc  pack=0x51c230  unpack=0x51c2a0 ========
+---- unpack ----
+
+void __thiscall FUN_0051c2a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  byte bVar1;
+  int iVar2;
+  undefined4 uVar3;
+  
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x20;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  iVar2 = *(int *)(param_4 + 0x10);
+  if (*(int *)(param_4 + 0x1c) < iVar2) {
+    *(undefined1 *)(param_4 + 0x18) = 1;
+  }
+  else {
+    bVar1 = *(byte *)((iVar2 >> 3) + *(int *)(param_4 + 0xc));
+    *(int *)(param_4 + 0x10) = iVar2 + 1;
+    if ((bVar1 & (byte)(1 << ((byte)iVar2 & 7))) != 0) {
+      *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) | 0x10;
+      uVar3 = FUN_0040fd10(10);
+      *(undefined4 *)(param_1 + 0x14) = uVar3;
+      return;
+    }
+  }
+  uVar3 = FUN_0040fd10(0x20);
+  *(undefined4 *)(param_1 + 0x14) = uVar3;
+  return;
+}
+
+
+
+======== SoundEvent  vtbl=0x65d75c  pack=0x4b4d50  unpack=0x4b4d90 ========
+---- unpack ----
+
+void __thiscall FUN_004b4d90(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  int iVar3;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    uVar2 = FUN_0040fd10(10);
+    *(undefined4 *)(param_1 + 0x24) = uVar2;
+    uVar2 = FUN_0040fd10(2);
+    *(undefined4 *)(param_1 + 0x28) = uVar2;
+    iVar3 = FUN_0040fd10(8);
+    *(int *)(param_1 + 0x20) = iVar3 + -1;
+    uVar2 = FUN_00517eb0(*(undefined4 *)(param_1 + 0x24));
+    *(undefined4 *)(param_1 + 0x10) = uVar2;
+    *(undefined4 *)(param_1 + 0x14) = 0xffffffff;
+    *(undefined4 *)(param_1 + 0x18) = 0;
+  }
+  return;
+}
+
+
+
+======== TargetNameEvent  vtbl=0x65f270  pack=0x4cf510  unpack=0x4cf540 ========
+---- unpack ----
+
+void __thiscall FUN_004cf540(int param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    uVar2 = FUN_0040fd10(7);
+    *(undefined4 *)(param_1 + 0x24) = uVar2;
+    uVar2 = FUN_00416950(1);
+    *(undefined4 *)(param_1 + 0x20) = uVar2;
+    *(undefined4 *)(param_1 + 0x14) = *(undefined4 *)(DAT_006d4fc4 + 0x44);
+  }
+  return;
+}
+
+
+
+======== TeamAddEvent  vtbl=0x65d704  pack=0x4b4b70  unpack=0x4b4be0 ========
+---- unpack ----
+
+void __thiscall FUN_004b4be0(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  undefined1 *puVar3;
+  int iVar4;
+  undefined4 uStack_114;
+  int iStack_110;
+  
+  cVar1 = FUN_00517200();
+  if (cVar1 != '\0') {
+    iStack_110 = param_1 + 0x24;
+    uStack_114 = 4;
+    (**(code **)(*param_4 + 0x1c))();
+    (**(code **)(*param_4 + 0x1c))(4,param_1 + 0x20);
+    (**(code **)(*param_4 + 0x28))(&iStack_110);
+    if (DAT_007229a0 != '\0') {
+      FUN_004b4260(&uStack_114);
+    }
+    uVar2 = FUN_00416da0(&uStack_114,1);
+    *(undefined4 *)(param_1 + 0x28) = uVar2;
+    uVar2 = FUN_00416950(0);
+    *(undefined4 *)(param_1 + 0x2c) = uVar2;
+    *(undefined4 *)(param_1 + 0x138) = 0;
+    *(undefined1 *)(param_1 + 0x30) = 0;
+    *(undefined4 *)(param_1 + 0x130) = 0;
+    puVar3 = (undefined1 *)(param_1 + 0x140);
+    iVar4 = 0x20;
+    do {
+      *(undefined4 *)(puVar3 + -4) = 0;
+      *puVar3 = 0;
+      puVar3 = puVar3 + 0x204;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== TeamObjectiveEvent  vtbl=0x65d680  pack=0x4b4800  unpack=0x4b4840 ========
+---- unpack ----
+
+void __thiscall FUN_004b4840(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    (**(code **)(*param_4 + 0x1c))(4,param_1 + 0x20);
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x24);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+======== VoiceEvent  vtbl=0x65d730  pack=0x4b4cc0  unpack=0x4b4d00 ========
+---- unpack ----
+
+void __thiscall FUN_004b4d00(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  int iVar2;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    iVar2 = FUN_0040fd10(7);
+    *(int *)(param_1 + 0x20) = iVar2 + 0x800;
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x24);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+################ DataBlockEvent (locate datablock unpack slot) ################
+vtbl=0x64a358
+
+
+################ FULL CLASS INVENTORY (834) ################
+0x0064803c  AI::Manager
+0x006481dc  AI::Object
+0x00649310  AI::Plugin
+0x00648174  AI::Task<AI::Object>
+0x0062e498  ASTNode
+0x00664a40  ActionBtn_MemberWin
+0x00632b98  AssignExprNode
+0x00632bb8  AssignOpExprNode
+0x0062e454  BaseShadowRenderImage
+0x0062eb5c  BinaryExprNode
+0x00641a24  BitStream
+0x00641ac0  BlockRStream
+0x00641a8c  BlockRWStream
+0x00641a58  BlockStream
+0x00664a70  Bool_MemberWin
+0x00660368  BoxRenderImage
+0x00632d40  BreakStmtNode
+0x0065dbdc  Bullet
+0x0065ddbc  Bullet::BulletData
+0x0065dbcc  Bullet::TracerRenderImage
+0x0062e538  CMDConsole
+0x00666dfc  CMDConsumer
+0x0062e4cc  CMDDataManager
+0x00649af4  Car
+0x0064ed4c  CenterPrint
+0x00649cec  ChatMenu
+0x00632d90  CommaCatExprNode
+0x00632b78  ConstantNode
+0x00632d50  ContinueStmtNode
+0x0068183c  DNameStatusNode
+0x00647b58  DNet::LOOPTransport
+0x00647af0  DNet::LOOPVC
+0x00647aa8  DNet::Session
+0x00647abc  DNet::Transport
+0x00647bfc  DNet::UDPTransport
+0x00647c98  DNet::UDPVC
+0x00647a80  DNet::VC
+0x0064a358  DataBlockEvent
+0x0064a384  DataBlockManager
+0x0064a484  Debris
+0x0064a790  Debris::DebrisData
+0x0064a6ac  DebrisCloud
+0x0064a760  DebrisCloud::Database
+0x0064a7dc  DecalManager
+0x0064a7cc  DecalManager::DecalRenderImage
+0x0065d5d0  DeltaScoreEvent
+0x00664a90  Description_MemberWin
+0x00664a30  Divider_MemberWin
+0x0064baa4  DropPointGroup
+0x0064bbe4  EditCamera
+0x0064bcd4  Explosion
+0x0064bf00  Explosion::ExplosionData
+0x0064c0b8  FearCSDelegate
+0x0064cb34  FearDynamicDataPlugin
+0x00660bfc  FearGame
+0x0064e12c  FearGui::ActionMapList
+0x0064f2c4  FearGui::CMDObserve
+0x00649dbc  FearGui::ClockHud
+0x0064fa14  FearGui::ColumnListCtrl
+0x0064fc9c  FearGui::CommandItemCtrl
+0x0064fe14  FearGui::CommandTeamCtrl
+0x0064f724  FearGui::CommandTurretCtrl
+0x00649f44  FearGui::CompassHud
+0x00650234  FearGui::ControlsListCtrl
+0x0065068c  FearGui::Crosshair
+0x0064a0a4  FearGui::CurrentWeaponHud
+0x0064dfc4  FearGui::FGArrayCtrl
+0x0064e4ec  FearGui::FGBitmapCtrl
+0x0064ebbc  FearGui::FGBuddyComboBox
+0x0064f184  FearGui::FGChatMenu
+0x0064e8bc  FearGui::FGComboBox
+0x0064f48c  FearGui::FGCommandBox
+0x0064f5c4  FearGui::FGCommandPanel
+0x0064f87c  FearGui::FGCommandView
+0x0064ff6c  FearGui::FGControl
+0x006503a4  FearGui::FGControlsComboBox
+0x006500bc  FearGui::FGControlsPopUp
+0x0065085c  FearGui::FGCurrentCommand
+0x00650a94  FearGui::FGDlgBox
+0x00650c44  FearGui::FGFilterCBListCtrl
+0x00651084  FearGui::FGFilterComboBox
+0x00650ddc  FearGui::FGFilterPopUp
+0x00651814  FearGui::FGGenderComboBox
+0x0065156c  FearGui::FGGenderPopUp
+0x00656a24  FearGui::FGHBuySell
+0x006566cc  FearGui::FGHCommandObjectivePage
+0x006568bc  FearGui::FGHInventory
+0x00656cec  FearGui::FGHSensorPing
+0x006519a4  FearGui::FGHelpCtrl
+0x00656b9c  FearGui::FGHudMatrix
+0x0065258c  FearGui::FGLagIndicator
+0x006526ec  FearGui::FGLobbyList
+0x00652be4  FearGui::FGMenuCtrl
+0x00652d64  FearGui::FGMenuItem
+0x00653314  FearGui::FGMissionComboBox
+0x0065303c  FearGui::FGMissionPopUp
+0x006535fc  FearGui::FGPaletteCtrl
+0x00653a0c  FearGui::FGPlayerComboBox
+0x0065373c  FearGui::FGPlayerPopUp
+0x00653c1c  FearGui::FGPopUpMenu
+0x00653ee4  FearGui::FGRecordingListCtrl
+0x006543fc  FearGui::FGServerFilterComboBox
+0x006542b4  FearGui::FGServerFilterPopUp
+0x00654cf4  FearGui::FGShellBorder
+0x00654f6c  FearGui::FGSimpleText
+0x0065532c  FearGui::FGSlider
+0x0064ea3c  FearGui::FGStandardComboBox
+0x006554bc  FearGui::FGStandardPopUp
+0x00655a44  FearGui::FGTab
+0x00655914  FearGui::FGTabMenu
+0x00655e4c  FearGui::FGTextFormat
+0x00655f94  FearGui::FGTextList
+0x00656534  FearGui::FGUniversalButton
+0x0064dde4  FearGui::FearGuiAbortDlg
+0x0064e634  FearGui::FearGuiBox
+0x0064eeac  FearGui::FearGuiChat
+0x0064f014  FearGui::FearGuiChatDisplay
+0x0064dc94  FearGui::FearGuiDialog
+0x00652a84  FearGui::FearGuiMenu
+0x006534c4  FearGui::FearGuiPage
+0x00653d54  FearGui::FearGuiRadio
+0x00650524  FearGui::FearGuiScrollCtrl
+0x00655794  FearGui::FearGuiSwitch
+0x006513d4  FearGui::FilterCtrl
+0x0065126c  FearGui::FilterListCtrl
+0x00650f14  FearGui::FilterVarCtrl
+0x006516a4  FearGui::GenderListCtrl
+0x0065a4b4  FearGui::HealthHud
+0x00651b04  FearGui::HudCtrl
+0x00651db4  FearGui::HudListCtrl
+0x006522dc  FearGui::InventoryListCtrl
+0x0065243c  FearGui::JetPackHud
+0x00654e1c  FearGui::MMShellBorder
+0x0065287c  FearGui::MasterServerList
+0x00652edc  FearGui::MenuDisplayCtrl
+0x0065a83c  FearGui::Minimap
+0x006531a4  FearGui::MissionListCtrl
+0x0065389c  FearGui::PlayerListCtrl
+0x0065a60c  FearGui::ReticleCompassHud
+0x0065408c  FearGui::ScoreListCtrl
+0x0065458c  FearGui::ServerInfoCtrl
+0x006548a4  FearGui::ServerListCtrl
+0x00651c54  FearGui::ShadedHudCtrl
+0x00654b7c  FearGui::ShapeView
+0x006550d4  FearGui::SkinView
+0x00655614  FearGui::StandardListCtrl
+0x00656224  FearGui::TSCommander
+0x00655bac  FearGui::TestEdit
+0x00655d04  FearGuiFormattedText
+0x00651fdc  FearGuiInventory
+0x00652124  FearGuiPurchase
+0x00660afc  FearMain
+0x00660be0  FearPlugin
+0x0065d2f0  FearRenderImage
+0x00641af4  FileRStream
+0x00641b28  FileRWStream
+0x00641bc8  FileWStream
+0x00659ef4  Flier
+0x0064a43c  Flier::FlierData
+0x0062ec04  FloatBinaryExprNode
+0x0062eb9c  FloatNode
+0x00632b58  FloatUnaryExprNode
+0x0065a15c  FlyingCamera
+0x0062e4a0  FuncCallExprNode
+0x00632cb0  FunctionAttachStmtNode
+0x0066c2ec  FunctionCompare2<ClassStat>
+0x00654858  FunctionCompare2<FearCSDelegate::ServerInfo*>
+0x00651260  FunctionCompare2<FearGui::FilterListCtrl::FilterListInfo*>
+0x00652874  FunctionCompare2<FearGui::MasterServerList::MasterRep*>
+0x00653edc  FunctionCompare2<FearGui::PlaybackRep*>
+0x00653c00  FunctionCompare2<FearGui::PlayerListCtrl::ClientRep*>
+0x006555f0  FunctionCompare2<FearGui::StandardListCtrl::EntryRep*>
+0x006526e4  FunctionCompare2<PlayerManager::ClientRep*>
+0x00654080  FunctionCompare2<PlayerManager::TeamRep*>
+0x00641e84  FunctionCompare2<ResSpecifier>
+0x0066b6a0  FunctionCompare2<SimGui::TextList::Entry>
+0x00632c90  FunctionDeclStmtNode
+0x00632ca0  FunctionDetachStmtNode
+0x00647654  GFXDevice
+0x00641e8c  GFXDeviceManager
+0x006420d8  GFXFont
+0x006420bc  GFXObsoleteFont
+0x00660b1c  GFXPlugin
+0x0064774c  GFXRenderTexture
+0x0064213c  GFXSurface
+0x0068461c  GGCEvent
+0x00684608  GGCEventAttributeImpl
+0x00684674  GGCEventImpl
+0x00684660  GGCEventSubscriptionImpl
+0x0066200c  GGConnectInterface::GameInterface
+0x00662124  GGConnectInterface::PlatformInterface
+0x00662144  GGConnectInterface::RuntimeInterface
+0x006720fc  GWCanvas
+0x00672344  GWMain
+0x0067236c  GWToolWin
+0x00668174  GWTreeList
+0x0066841c  GWTreeView
+0x00671ebc  GWWindow
+0x0065a284  GameBase
+0x0065a454  GameBase::GameBaseData
+0x0065e014  Grenade
+0x0065e228  Grenade::GrenadeData
+0x00670abc  GridBlock
+0x00670bb0  GridFile
+0x0066f808  GrowableMemStream
+0x00662168  IAGame
+0x006622c0  IARuntime
+0x0064a3e4  IRCChannelDummy
+0x006649e8  IStringValPair_MemberWin
+0x00664a80  IString_MemberWin
+0x00662988  ITRBuildOptions
+0x00662818  ITRCollision::ITRPolyBSPClip
+0x00662830  ITRGeometry
+0x006629a4  ITRLightOptions
+0x006629c0  ITRLightOptions2
+0x006628f8  ITRLighting
+0x00662a48  ITRLightingOptions
+0x0066291c  ITRMissionLighting
+0x00662968  ITRShape
+0x00662a2c  ITRShapeEdit
+0x00632af8  IfStmtNode
+0x006649c8  InspectMemberWin
+0x00664d34  InspectWindow
+0x0062ec24  IntBinaryExprNode
+0x0062eb7c  IntNode
+0x00632b38  IntUnaryExprNode
+0x0065aa3c  InteriorShape
+0x0065aa30  InteriorShape::RenderImage
+0x0065abbc  InteriorShapeDatabasePVS
+0x0065a9f4  InteriorShapeDatabaseSimple
+0x006846e0  InternalPublishing::Torque::Allocator
+0x0068432c  InternalPublishing::Torque::Delegate<void,Publishing::NatDiscoveryResultCode,InternalPublishing::Torque::Array<Publishing::NatAddress,InternalPublishing::Torque::ArrayHalfReservePolicy>_const&,char_const*,void*,bool>::DelegateFunction<void_(__cdecl*)(Publishing::NatDiscoveryResultCode,InternalPublishing::Torque::Array<Publishing::NatAddress,InternalPublishing::Torque::ArrayHalfReservePolicy>_const&,char_const*,void*,bool)>
+0x006842b8  InternalPublishing::Torque::Delegate<void,Publishing::NatDiscoveryResultCode,InternalPublishing::Torque::Array<Publishing::NatAddress,InternalPublishing::Torque::ArrayHalfReservePolicy>_const&,char_const*,void*,bool>::DelegateRef
+0x0068433c  InternalPublishing::Torque::Delegate<void,Publishing::NatRemoteConnectionResultCode,Publishing::NatAddress_const&,void*,bool,InternalPublishing::Torque::EmptyType>::DelegateFunction<void_(__cdecl*)(Publishing::NatRemoteConnectionResultCode,Publishing::NatAddress_const&,void*,bool)>
+0x006842c4  InternalPublishing::Torque::Delegate<void,Publishing::NatRemoteConnectionResultCode,Publishing::NatAddress_const&,void*,bool,InternalPublishing::Torque::EmptyType>::DelegateRef
+0x006846f4  InternalPublishing::Torque::PageAllocator<4096,4>
+0x00685124  InternalPublishing::Torque::StandardAllocator
+0x0065addc  Item
+0x0065b03c  Item::ItemData
+0x00641c24  LZHRStream
+0x00641c58  LZHWStream
+0x0065e264  LaserProjectile
+0x0065e240  LaserProjectile::BeamRenderImage
+0x0065e45c  LaserProjectile::LaserData
+0x0065e4dc  Lightning
+0x0065e6c0  Lightning::LightningData
+0x0065e478  Lightning::LightningRenderImage
+0x0065fba0  LocSoundEvent
+0x00632b08  LoopStmtNode
+0x0065c364  MEButton
+0x0065c1f4  MECheck
+0x0065b614  MEInspectTagList
+0x0065b9dc  MEObjectList
+0x0065b87c  MEPopup
+0x0065b43c  MEPopupBkgnd
+0x0065bf4c  MEPopupButton
+0x0065bb3c  MERadio
+0x0065c0ac  METextEdit
+0x0065be04  METextList
+0x0065b09c  Marker
+0x0065b230  Marker::MarkerData
+0x00641c8c  MemRWStream
+0x00666bc0  MetricsPlugin
+0x0065b244  Mine
+0x0065b428  Mine::MineData
+0x006561ac  MissionCenterPos
+0x00656194  MissionCenterPos::RenderImage
+0x0065d578  MissionResetEvent
+0x0065c5bc  Moveable
+0x0065c800  Moveable::MoveableData
+0x006652b4  Net::CSDelegate
+0x00665674  Net::EventManager
+0x0066575c  Net::GhostManager
+0x006657e4  Net::PacketStream
+0x0066571c  Net::RemoteCreateEvent
+0x00660ac4  NetPlugin
+0x0064769c  OGLDevice
+0x00632c80  ObjectDeclNode
+0x0065c814  ObserverCamera
+0x0066db10  OggVorbis::ResourceTypeOggFile
+0x00647758  OpenGL::FBO
+0x00647724  OpenGL::RenderTextureFBOManager
+0x006476fc  OpenGL::RenderTextureGenericManager
+0x00647774  OpenGL::Surface
+0x006c5b7c  PTR_vftable_006c5b7c
+0x006d53a8  PTR_vftable_006d53a8
+0x006d53ac  PTR_vftable_006d53ac
+0x006d53b0  PTR_vftable_006d53b0
+0x006e13e0  PTR_vftable_006e13e0
+0x0065ca5c  PartDebris
+0x0065cbec  PartDebrisCloud
+0x00641cc8  Persistent::AbstractTaggedClass
+0x0065dbb0  Persistent::TaggedClass<Bullet>
+0x00649cb4  Persistent::TaggedClass<Car>
+0x0064ed38  Persistent::TaggedClass<CenterPrint>
+0x00649d70  Persistent::TaggedClass<ChatMenu>
+0x0064a348  Persistent::TaggedClass<DataBlockEvent>
+0x0064a654  Persistent::TaggedClass<Debris>
+0x0064a664  Persistent::TaggedClass<DebrisCloud>
+0x0065d4c8  Persistent::TaggedClass<DeltaScoreEvent>
+0x0064bb18  Persistent::TaggedClass<DropPointGroup>
+0x0064bb74  Persistent::TaggedClass<EditCamera>
+0x0064be74  Persistent::TaggedClass<Explosion>
+0x0064c07c  Persistent::TaggedClass<FearCSDelegate>
+0x0064df34  Persistent::TaggedClass<FearGui::ActionMapList>
+0x0064f458  Persistent::TaggedClass<FearGui::CMDObserve>
+0x00649d80  Persistent::TaggedClass<FearGui::ClockHud>
+0x0064f9dc  Persistent::TaggedClass<FearGui::ColumnListCtrl>
+0x0064fc88  Persistent::TaggedClass<FearGui::CommandItemCtrl>
+0x0064fde0  Persistent::TaggedClass<FearGui::CommandTeamCtrl>
+0x0064f6fc  Persistent::TaggedClass<FearGui::CommandTurretCtrl>
+0x00649ee8  Persistent::TaggedClass<FearGui::CompassHud>
+0x006500ac  Persistent::TaggedClass<FearGui::ControlsListCtrl>
+0x00650664  Persistent::TaggedClass<FearGui::Crosshair>
+0x0064a090  Persistent::TaggedClass<FearGui::CurrentWeaponHud>
+0x0064e4d8  Persistent::TaggedClass<FearGui::FGBitmapCtrl>
+0x0064e75c  Persistent::TaggedClass<FearGui::FGBuddyComboBox>
+0x0064f154  Persistent::TaggedClass<FearGui::FGChatMenu>
+0x0064f6ec  Persistent::TaggedClass<FearGui::FGCommandBox>
+0x0064f5b4  Persistent::TaggedClass<FearGui::FGCommandPanel>
+0x0064f868  Persistent::TaggedClass<FearGui::FGCommandView>
+0x0064ff58  Persistent::TaggedClass<FearGui::FGControl>
+0x0065009c  Persistent::TaggedClass<FearGui::FGControlsComboBox>
+0x00650848  Persistent::TaggedClass<FearGui::FGCurrentCommand>
+0x00650a80  Persistent::TaggedClass<FearGui::FGDlgBox>
+0x00650c30  Persistent::TaggedClass<FearGui::FGFilterCBListCtrl>
+0x00650dbc  Persistent::TaggedClass<FearGui::FGFilterComboBox>
+0x0065154c  Persistent::TaggedClass<FearGui::FGGenderComboBox>
+0x0065682c  Persistent::TaggedClass<FearGui::FGHBuySell>
+0x006567fc  Persistent::TaggedClass<FearGui::FGHCommandObjectivePage>
+0x0065681c  Persistent::TaggedClass<FearGui::FGHInventory>
+0x00656cdc  Persistent::TaggedClass<FearGui::FGHSensorPing>
+0x00651ad8  Persistent::TaggedClass<FearGui::FGHelpCtrl>
+0x00656b8c  Persistent::TaggedClass<FearGui::FGHudMatrix>
+0x00652578  Persistent::TaggedClass<FearGui::FGLagIndicator>
+0x006526d4  Persistent::TaggedClass<FearGui::FGLobbyList>
+0x00652bc0  Persistent::TaggedClass<FearGui::FGMenuCtrl>
+0x00652bd0  Persistent::TaggedClass<FearGui::FGMenuItem>
+0x00653028  Persistent::TaggedClass<FearGui::FGMissionComboBox>
+0x006535ec  Persistent::TaggedClass<FearGui::FGPaletteCtrl>
+0x00653728  Persistent::TaggedClass<FearGui::FGPlayerComboBox>
+0x00653c08  Persistent::TaggedClass<FearGui::FGPopUpMenu>
+0x00653ecc  Persistent::TaggedClass<FearGui::FGRecordingListCtrl>
+0x006542a0  Persistent::TaggedClass<FearGui::FGServerFilterComboBox>
+0x00654cd0  Persistent::TaggedClass<FearGui::FGShellBorder>
+0x00654f58  Persistent::TaggedClass<FearGui::FGSimpleText>
+0x00655318  Persistent::TaggedClass<FearGui::FGSlider>
+0x0065549c  Persistent::TaggedClass<FearGui::FGStandardComboBox>
+0x00655904  Persistent::TaggedClass<FearGui::FGTab>
+0x006558f4  Persistent::TaggedClass<FearGui::FGTabMenu>
+0x00655e38  Persistent::TaggedClass<FearGui::FGTextFormat>
+0x00655f80  Persistent::TaggedClass<FearGui::FGTextList>
+0x00656520  Persistent::TaggedClass<FearGui::FGUniversalButton>
+0x0064ddd0  Persistent::TaggedClass<FearGui::FearGuiAbortDlg>
+0x0064e624  Persistent::TaggedClass<FearGui::FearGuiBox>
+0x0064ee74  Persistent::TaggedClass<FearGui::FearGuiChat>
+0x0064effc  Persistent::TaggedClass<FearGui::FearGuiChatDisplay>
+0x0065099c  Persistent::TaggedClass<FearGui::FearGuiDialog>
+0x00652bac  Persistent::TaggedClass<FearGui::FearGuiMenu>
+0x006534b0  Persistent::TaggedClass<FearGui::FearGuiPage>
+0x00653d44  Persistent::TaggedClass<FearGui::FearGuiRadio>
+0x00654280  Persistent::TaggedClass<FearGui::FearGuiScrollCtrl>
+0x00655780  Persistent::TaggedClass<FearGui::FearGuiSwitch>
+0x00651244  Persistent::TaggedClass<FearGui::FilterCtrl>
+0x00651234  Persistent::TaggedClass<FearGui::FilterListCtrl>
+0x00650dcc  Persistent::TaggedClass<FearGui::FilterVarCtrl>
+0x0065155c  Persistent::TaggedClass<FearGui::GenderListCtrl>
+0x0065a4a0  Persistent::TaggedClass<FearGui::HealthHud>
+0x00651c30  Persistent::TaggedClass<FearGui::HudCtrl>
+0x00651da0  Persistent::TaggedClass<FearGui::HudListCtrl>
+0x006522c8  Persistent::TaggedClass<FearGui::InventoryListCtrl>
+0x00652420  Persistent::TaggedClass<FearGui::JetPackHud>
+0x00654ce0  Persistent::TaggedClass<FearGui::MMShellBorder>
+0x00652854  Persistent::TaggedClass<FearGui::MasterServerList>
+0x00652ebc  Persistent::TaggedClass<FearGui::MenuDisplayCtrl>
+0x0065a74c  Persistent::TaggedClass<FearGui::Minimap>
+0x006534a0  Persistent::TaggedClass<FearGui::MissionListCtrl>
+0x00653bdc  Persistent::TaggedClass<FearGui::PlayerListCtrl>
+0x0065a5e0  Persistent::TaggedClass<FearGui::ReticleCompassHud>
+0x0065404c  Persistent::TaggedClass<FearGui::ScoreListCtrl>
+0x00654578  Persistent::TaggedClass<FearGui::ServerInfoCtrl>
+0x006546fc  Persistent::TaggedClass<FearGui::ServerListCtrl>
+0x00651c40  Persistent::TaggedClass<FearGui::ShadedHudCtrl>
+0x00654b28  Persistent::TaggedClass<FearGui::ShapeView>
+0x006550b0  Persistent::TaggedClass<FearGui::SkinView>
+0x006554ac  Persistent::TaggedClass<FearGui::StandardListCtrl>
+0x00656148  Persistent::TaggedClass<FearGui::TSCommander>
+0x00655b98  Persistent::TaggedClass<FearGui::TestEdit>
+0x00655cf0  Persistent::TaggedClass<FearGuiFormattedText>
+0x00651f80  Persistent::TaggedClass<FearGuiInventory>
+0x00651f90  Persistent::TaggedClass<FearGuiPurchase>
+0x00659ee4  Persistent::TaggedClass<Flier>
+0x0065a148  Persistent::TaggedClass<FlyingCamera>
+0x00642094  Persistent::TaggedClass<GFXFont>
+0x006420ac  Persistent::TaggedClass<GFXObsoleteFont>
+0x0065e1ec  Persistent::TaggedClass<Grenade>
+0x00670aac  Persistent::TaggedClass<GridBlock>
+0x00670ba0  Persistent::TaggedClass<GridFile>
+0x006629ec  Persistent::TaggedClass<ITRBuildOptions>
+0x00662820  Persistent::TaggedClass<ITRGeometry>
+0x00662a0c  Persistent::TaggedClass<ITRLightOptions2>
+0x006629fc  Persistent::TaggedClass<ITRLightOptions>
+0x006628d8  Persistent::TaggedClass<ITRLighting>
+0x00662a1c  Persistent::TaggedClass<ITRLightingOptions>
+0x006628e8  Persistent::TaggedClass<ITRMissionLighting>
+0x00662958  Persistent::TaggedClass<ITRShape>
+0x006629dc  Persistent::TaggedClass<ITRShapeEdit>
+0x0065aa20  Persistent::TaggedClass<InteriorShape>
+0x0065b004  Persistent::TaggedClass<Item>
+0x0065e254  Persistent::TaggedClass<LaserProjectile>
+0x0065e4c8  Persistent::TaggedClass<Lightning>
+0x0065fb90  Persistent::TaggedClass<LocSoundEvent>
+0x0065b590  Persistent::TaggedClass<MEButton>
+0x0065b5c0  Persistent::TaggedClass<MECheck>
+0x0065b5f0  Persistent::TaggedClass<MEInspectTagList>
+0x0065b600  Persistent::TaggedClass<MEObjectList>
+0x0065b5a0  Persistent::TaggedClass<MEPopup>
+0x0065b5b0  Persistent::TaggedClass<MEPopupButton>
+0x0065b5d0  Persistent::TaggedClass<MERadio>
+0x0065b5e0  Persistent::TaggedClass<METextEdit>
+0x0065b580  Persistent::TaggedClass<METextList>
+0x0065b080  Persistent::TaggedClass<Marker>
+0x0065b418  Persistent::TaggedClass<Mine>
+0x00656158  Persistent::TaggedClass<MissionCenterPos>
+0x0065d4a8  Persistent::TaggedClass<MissionResetEvent>
+0x0065c7f0  Persistent::TaggedClass<Moveable>
+0x006652a4  Persistent::TaggedClass<Net::CSDelegate>
+0x00665748  Persistent::TaggedClass<Net::RemoteCreateEvent>
+0x0065c9b8  Persistent::TaggedClass<ObserverCamera>
+0x0065d4b8  Persistent::TaggedClass<PingPLEvent>
+0x0065ccb8  Persistent::TaggedClass<Planet>
+0x0065d058  Persistent::TaggedClass<Player>
+0x0065d528  Persistent::TaggedClass<PlayerAddEvent>
+0x0065d518  Persistent::TaggedClass<PlayerCommandEvent>
+0x0065d558  Persistent::TaggedClass<PlayerRemoveEvent>
+0x0065d4e8  Persistent::TaggedClass<PlayerSayEvent>
+0x0065d4f8  Persistent::TaggedClass<PlayerSelectCmdrEvent>
+0x0065d4d8  Persistent::TaggedClass<PlayerSkinEvent>
+0x0065d568  Persistent::TaggedClass<PlayerTeamChangeEvent>
+0x0065e728  Persistent::TaggedClass<RepairEffect>
+0x0065eb14  Persistent::TaggedClass<RocketDumb>
+0x0065ed44  Persistent::TaggedClass<SeekingMissile>
+0x0065f240  Persistent::TaggedClass<Sensor>
+0x0066d824  Persistent::TaggedClass<Sfx::SoundEvent>
+0x0065f348  Persistent::TaggedClass<ShapeBase>
+0x00665948  Persistent::TaggedClass<SimActionEvent>
+0x00665958  Persistent::TaggedClass<SimActionMap>
+0x00665c48  Persistent::TaggedClass<SimCamera>
+0x00665c38  Persistent::TaggedClass<SimCameraNetEvent>
+0x00666154  Persistent::TaggedClass<SimConsoleEvent>
+0x00666164  Persistent::TaggedClass<SimConsoleScheduler>
+0x00665a2c  Persistent::TaggedClass<SimGroup>
+0x0066a308  Persistent::TaggedClass<SimGui::ActiveCtrl>
+0x0066a458  Persistent::TaggedClass<SimGui::AnimateBMA>
+0x0066a3b8  Persistent::TaggedClass<SimGui::ArrayCtrl>
+0x0066a3a8  Persistent::TaggedClass<SimGui::BitmapBox>
+0x0066a318  Persistent::TaggedClass<SimGui::BitmapCtrl>
+0x0066a2e8  Persistent::TaggedClass<SimGui::Canvas>
+0x0066a3e8  Persistent::TaggedClass<SimGui::ComboBox>
+0x0064a878  Persistent::TaggedClass<SimGui::ConnectDelegate>
+0x0066a2f8  Persistent::TaggedClass<SimGui::Control>
+0x0064aa9c  Persistent::TaggedClass<SimGui::CreateServerDelegate>
+0x0066a478  Persistent::TaggedClass<SimGui::EditControl>
+0x0066a468  Persistent::TaggedClass<SimGui::HelpCtrl>
+0x0064ae00  Persistent::TaggedClass<SimGui::JoinGameDelegate>
+0x0064af34  Persistent::TaggedClass<SimGui::MainMenuDelegate>
+0x0066a418  Persistent::TaggedClass<SimGui::MatrixCtrl>
+0x0064b0dc  Persistent::TaggedClass<SimGui::MissionSelectDelegate>
+0x0064b1d4  Persistent::TaggedClass<SimGui::MultiSetupDelegate>
+0x0064b388  Persistent::TaggedClass<SimGui::OptionsDelegate>
+0x0066a328  Persistent::TaggedClass<SimGui::PaletteCtrl>
+0x0064b7e4  Persistent::TaggedClass<SimGui::PlayerSetupDelegate>
+0x0066a448  Persistent::TaggedClass<SimGui::ProgressCtrl>
+0x0064b9b8  Persistent::TaggedClass<SimGui::RecordingsDelegate>
+0x0066a3f8  Persistent::TaggedClass<SimGui::ScrollContentCtrl>
+0x0066a408  Persistent::TaggedClass<SimGui::ScrollCtrl>
+0x0066a348  Persistent::TaggedClass<SimGui::SimpleText>
+0x0066a3d8  Persistent::TaggedClass<SimGui::Slider>
+0x0066a338  Persistent::TaggedClass<SimGui::TSControl>
+0x0066a358  Persistent::TaggedClass<SimGui::TestButton>
+0x0066a378  Persistent::TaggedClass<SimGui::TestCheck>
+0x0066a368  Persistent::TaggedClass<SimGui::TestRadial>
+0x0066a388  Persistent::TaggedClass<SimGui::TextEdit>
+0x0066a438  Persistent::TaggedClass<SimGui::TextFormat>
+0x0066a3c8  Persistent::TaggedClass<SimGui::TextList>
+0x0066a428  Persistent::TaggedClass<SimGui::TextWrap>
+0x0066a398  Persistent::TaggedClass<SimGui::TimerCtrl>
+0x0064b61c  Persistent::TaggedClass<SimGui::playDelegate>
+0x0064b8d0  Persistent::TaggedClass<SimGui::quitDelegate>
+0x00667154  Persistent::TaggedClass<SimInputEvent>
+0x0066d250  Persistent::TaggedClass<SimLight>
+0x00666410  Persistent::TaggedClass<SimMessageEvent>
+0x0065f67c  Persistent::TaggedClass<SimMoveObject>
+0x00666498  Persistent::TaggedClass<SimPalette>
+0x0066d260  Persistent::TaggedClass<SimPath>
+0x0066d304  Persistent::TaggedClass<SimPathEvent>
+0x0066768c  Persistent::TaggedClass<SimPingEvent>
+0x00665a1c  Persistent::TaggedClass<SimSet>
+0x0066d3b8  Persistent::TaggedClass<SimSoundSequenceEvent>
+0x00667904  Persistent::TaggedClass<SimTerrain>
+0x00668a90  Persistent::TaggedClass<SimVolume>
+0x0065f77c  Persistent::TaggedClass<Sky>
+0x0065fabc  Persistent::TaggedClass<Snowfall>
+0x0065d498  Persistent::TaggedClass<SoundEvent>
+0x0065fbf4  Persistent::TaggedClass<StarField>
+0x006600c4  Persistent::TaggedClass<StaticShape>
+0x00671ca4  Persistent::TaggedClass<TS::CelAnimMesh>
+0x00671d88  Persistent::TaggedClass<TS::MaterialList>
+0x00671e40  Persistent::TaggedClass<TS::Shape>
+0x0065ef7c  Persistent::TaggedClass<TargetLaser>
+0x0065f260  Persistent::TaggedClass<TargetNameEvent>
+0x0065d538  Persistent::TaggedClass<TeamAddEvent>
+0x00660190  Persistent::TaggedClass<TeamGroup>
+0x0065d508  Persistent::TaggedClass<TeamObjectiveEvent>
+0x00660358  Persistent::TaggedClass<Trigger>
+0x00660530  Persistent::TaggedClass<Turret>
+0x00660974  Persistent::TaggedClass<Vehicle>
+0x0065d548  Persistent::TaggedClass<VoiceEvent>
+0x0065d5a4  PingPLEvent
+0x0065ccf4  Planet
+0x0065ccc8  Planet::LensFlare
+0x0065ccac  Planet::PlanetRenderImage
+0x0065cea4  Player
+0x0065d3b0  Player::ItemImageData
+0x0065d224  Player::PlayerData
+0x0065d6d8  PlayerAddEvent
+0x0065d24c  PlayerCollisionImage
+0x0065d6ac  PlayerCommandEvent
+0x0065d3fc  PlayerManager
+0x00656fec  PlayerPSC
+0x0065d788  PlayerRemoveEvent
+0x0065d628  PlayerSayEvent
+0x0065d654  PlayerSelectCmdrEvent
+0x0065d5fc  PlayerSkinEvent
+0x0065d7b4  PlayerTeamChangeEvent
+0x00664fc4  Point2F_MemberWin
+0x00664fe4  Point2I_MemberWin
+0x00664fb4  Point3F_MemberWin
+0x00664fd4  Point3I_MemberWin
+0x00662a68  PolyBSPClip
+0x006648a4  Processor
+0x006646dc  Processor_MMX
+0x0066472c  Processor_SSE
+0x0065de04  Projectile
+0x0065dfe0  Projectile::ProjectileData
+0x006857c0  Publishing::Private::NatTunnelImpl
+0x00685798  Publishing::nat_discovery_client_harness
+0x006857a8  Publishing::turn_connection_client_harness
+0x00632cc0  QuestionNode
+0x00665014  RealF_MemberWin
+0x0065e73c  RepairEffect
+0x0065e920  RepairEffect::RepairEffectData
+0x0065e718  RepairEffect::RepairRenderImage
+0x0062e4c0  ResourceTypeConsoleScript
+0x00641e9c  ResourceTypeGFXBitmap
+0x00641ea8  ResourceTypeGFXBitmapArray
+0x00641eb4  ResourceTypeGFXFont
+0x00670a80  ResourceTypeGridBlock
+0x00670b94  ResourceTypeGridFile
+0x00662854  ResourceTypeITRGeometry
+0x00662860  ResourceTypeITRLighting
+0x0066286c  ResourceTypeITRShape
+0x0064c534  ResourceTypeMissionScript
+0x00641da0  ResourceTypeRawData
+0x00665910  ResourceTypeSimActionMap
+0x00641dac  ResourceTypeStaticRawData
+0x00632d60  ReturnStmtNode
+0x0065e93c  RocketDumb
+0x0065eb44  RocketDumb::RocketDumbData
+0x00665024  S32_MemberWin
+0x0065ef8c  ScriptPlugin
+0x0065eb64  SeekingMissile
+0x0065ed80  SeekingMissile::SeekingMissileData
+0x0065f07c  Sensor
+0x0065f250  Sensor::SensorData
+0x0065f29c  SensorManager
+0x0066d860  Sfx::Manager
+0x0066d834  Sfx::SoundEvent
+0x0065f45c  ShapeBase
+0x0065f634  ShapeBase::DamageSkinData
+0x00649adc  ShapeBase::RenderImage
+0x0065f3d4  ShapeBase::ShapeBaseData
+0x0065f670  ShapeCollisionImage
+0x00660bc4  ShellOpenPlugin
+0x00664ff4  Show_TagRange_Define_MemberWin
+0x00665004  Show_TagRange_IString_MemberWin
+0x00664a50  Show_Tag_Define_MemberWin
+0x00664a60  Show_Tag_IString_MemberWin
+0x0066baa4  Sim3DMouseEvent
+0x0066591c  SimActionEvent
+0x00665984  SimActionHandler
+0x00665968  SimActionMap
+0x00665cdc  SimCamera
+0x00665c58  SimCameraMountEvent
+0x00668bf4  SimCameraMountSet
+0x00665cb0  SimCameraNetEvent
+0x0066bad0  SimCameraRemountEvent
+0x00668b8c  SimCameraSet
+0x00665c84  SimCameraUnmountEvent
+0x00665d54  SimCanvas
+0x00668b1c  SimCanvasSet
+0x00666078  SimCollisionBoxImage
+0x00666060  SimCollisionImage
+0x0066609c  SimCollisionItrImage
+0x00666084  SimCollisionLineImage
+0x0066606c  SimCollisionSphereImage
+0x00666090  SimCollisionTerrImage
+0x00666174  SimConsoleEvent
+0x006661a0  SimConsolePlugin
+0x006660f4  SimConsoleScheduler
+0x006661c4  SimContainer
+0x0064a458  SimContainerDatabase
+0x0066635c  SimCoordinateDB
+0x00666278  SimDefaultContainerDatabase
+0x006662a4  SimDefaultOpenContainer
+0x00656e7c  SimEditEvent
+0x0064a310  SimEvent
+0x00660c90  SimFrameEndNotifyEvent
+0x006664a8  SimGainFocusEvent
+0x00666bdc  SimGame
+0x00665b4c  SimGroup
+0x0064c08c  SimGroupObjectIdEvent
+0x00668f4c  SimGui::ActiveCtrl
+0x006690ac  SimGui::AnimateBMA
+0x00669214  SimGui::ArrayCtrl
+0x006693bc  SimGui::BitmapBox
+0x006694f4  SimGui::BitmapCtrl
+0x00669784  SimGui::Canvas
+0x0064e76c  SimGui::ComboBox
+0x00669b54  SimGui::ComboPopUp
+0x0064a964  SimGui::ConnectDelegate
+0x00669cec  SimGui::Control
+0x0064aaac  SimGui::CreateServerDelegate
+0x0064a88c  SimGui::Delegate
+0x0066965c  SimGui::EditControl
+0x0066962c  SimGui::Event
+0x00669f2c  SimGui::HelpCtrl
+0x0064ae14  SimGui::JoinGameDelegate
+0x0064af44  SimGui::MainMenuDelegate
+0x0066a064  SimGui::MatrixCtrl
+0x0064b0ec  SimGui::MissionSelectDelegate
+0x0064b1e4  SimGui::MultiSetupDelegate
+0x0064b39c  SimGui::OptionsDelegate
+0x0066a1b4  SimGui::PaletteCtrl
+0x0064b7f4  SimGui::PlayerSetupDelegate
+0x00660ba8  SimGui::Plugin
+0x0066acbc  SimGui::ProgressCtrl
+0x0064b9cc  SimGui::RecordingsDelegate
+0x0066935c  SimGui::Responder
+0x0066a48c  SimGui::ScrollContentCtrl
+0x0066ae4c  SimGui::ScrollCtrl
+0x0066aff4  SimGui::SimpleText
+0x0066b184  SimGui::Slider
+0x0066bb24  SimGui::TSControl
+0x0066b2cc  SimGui::TestButton
+0x0065bc7c  SimGui::TestCheck
+0x0065b73c  SimGui::TestRadial
+0x0066b40c  SimGui::TextEdit
+0x0066b56c  SimGui::TextFormat
+0x0066b6ac  SimGui::TextList
+0x0066b82c  SimGui::TextWrap
+0x0066b974  SimGui::TimerCtrl
+0x0064b66c  SimGui::playDelegate
+0x0064b8e4  SimGui::quitDelegate
+0x00666e74  SimGuiConsolePlugin
+0x006670ec  SimInputConsumerSet
+0x006671fc  SimInputDevice
+0x0064df44  SimInputEvent
+0x00667164  SimInputManager
+0x00660b70  SimInputPlugin
+0x0066d184  SimLight
+0x00668cc4  SimLightSet
+0x006664d4  SimLoseFocusEvent
+0x00665bc4  SimManager
+0x0064a674  SimMessageEvent
+0x0065f68c  SimMoveObject
+0x006674ac  SimMovement
+0x0066747c  SimMovementCollisionEvent
+0x00667594  SimNetObject
+0x00665a3c  SimObject
+0x00656e34  SimObjectTransformEvent
+0x00667614  SimPalette
+0x0066d274  SimPath
+0x0066d314  SimPathEvent
+0x0066d344  SimPathManager
+0x0066769c  SimPingEvent
+0x006656f0  SimPolledUpdateEvent
+0x0065b090  SimRenderDefaultImage
+0x0062e3e0  SimRenderImage
+0x00668c5c  SimRenderSet
+0x006676cc  SimResource
+0x00665a9c  SimSet
+0x0066d3f4  SimSoundSequence
+0x0066d3c8  SimSoundSequenceEvent
+0x006649d8  SimTagValPair_MemberWin
+0x00667740  SimTelnetPlugin
+0x0066797c  SimTerrain
+0x0066793c  SimTerrain::RenderImage
+0x00667dbc  SimTimeEvent
+0x00667de8  SimTimerEvent
+0x00667d54  SimTimerSet
+0x00667e14  SimToolSet
+0x00667ef4  SimToolWindow
+0x00660b8c  SimTreePlugin
+0x006686b4  SimTreeView
+0x00657cbc  SimTriggerEvent
+0x00668aa4  SimVolume
+0x0066d7cc  SimWinConsolePlugin
+0x00668d38  SimWorld
+0x00667948  SimXYDB
+0x0065db8c  SimpleSwooshTrail
+0x0065f79c  Sky
+0x00632c08  SlotAccessNode
+0x00632c68  SlotAssignListNode
+0x00632c28  SlotAssignNode
+0x00632c48  SlotAssignOpNode
+0x0065f8dc  SmokeManager
+0x0065fad4  Snowfall
+0x0065fa6c  Snowfall::Image
+0x0065fbcc  SoundData
+0x0065d75c  SoundEvent
+0x00660b54  SoundFXPlugin
+0x0065fbdc  SoundProfileData
+0x00632ae8  SpecialReturnStmtNode
+0x0065fc04  StarField
+0x0065fce4  StaticBase
+0x006600e0  StaticBase::StaticBaseData
+0x0065ff04  StaticShape
+0x0064a414  StaticShape::StaticShapeData
+0x0062eb40  StmtNode
+0x00632d70  StrcatExprNode
+0x00641e2c  StreamIO
+0x00664aa0  StringDescription_MemberWin
+0x00664ab0  StringIndexDescription_MemberWin
+0x00632c70  StructDeclNode
+0x0062ec48  SwitchNode
+0x00671c74  TS::BoundingBox
+0x00654b48  TS::Camera
+0x00671d14  TS::CelAnimMesh
+0x00671da8  TS::MaterialList
+0x0066bafc  TS::OrthographicCamera
+0x00671e08  TS::PartInstance
+0x00671dc4  TS::PartInstance::BoundsObject
+0x00654b60  TS::PerspectiveCamera
+0x00654b40  TS::PointStack
+0x0062e3d4  TS::RenderItem
+0x00671d7c  TS::ResourceTypeTSMaterialList
+0x00671e34  TS::ResourceTypeTSShape
+0x00671e50  TS::Shape
+0x00671cb4  TS::Shape::Mesh
+0x00671e14  TS::ShapeInstance
+0x00671e6c  TS::ShapeInstance::ShapeObjectInstance
+0x00654b38  TS::TransformStack
+0x00632be8  TTagExprNode
+0x00632bd8  TTagSetStmtNode
+0x0065eda4  TargetLaser
+0x0064a424  TargetLaser::TargetLaserData
+0x0065f270  TargetNameEvent
+0x0065d704  TeamAddEvent
+0x0066011c  TeamGroup
+0x0065d680  TeamObjectiveEvent
+0x00660b38  TerrainPlugin
+0x00641e60  ThreadBase
+0x00670d9c  TiXmlAttribute
+0x00670d1c  TiXmlBase
+0x00670f64  TiXmlComment
+0x00670fbc  TiXmlDeclaration
+0x00670efc  TiXmlDocument
+0x006711c4  TiXmlElement
+0x00670dbc  TiXmlNode
+0x00683eb0  TiXmlPrinter
+0x00671134  TiXmlText
+0x0067117c  TiXmlUnknown
+0x00683e40  TiXmlVisitor
+0x006602e0  TimeDemoPlugin
+0x00660ae0  ToolPlugin
+0x0066e884  ToolPlugin::BaseBox
+0x0066ecd4  ToolPlugin::BrowseBox
+0x0066ef04  ToolPlugin::Edit2Box
+0x0066eaac  ToolPlugin::EditBox
+0x006622e4  Tribes2IA
+0x00660324  TribesShadowRenderImage
+0x00660374  Trigger
+0x00660508  Trigger::TriggerData
+0x0066058c  Turret
+0x00660770  Turret::TurretData
+0x00632b18  UnaryExprNode
+0x0062eb20  VarNode
+0x00660784  Vehicle
+0x0066099c  Vehicle::VehicleData
+0x0065d730  VoiceEvent
+0x00641db8  ZipInfo
+0x00641d60  ZipRStream
+0x00670b48  ZipWStream
+0x00683ee8  _GGConnectBaseP
+0x00685080  _GGConnectEvent
+0x0068501c  _GGConnectLogPacket
+0x00685070  _GGConnectMessage
+0x00684708  _GGConnectPacket
+0x006850d8  _GGConnectPresence
+0x00684c6c  _GGConnectProgress
+0x00684718  _GGConnectQuery
+0x00684b88  _GGConnectRequest
+0x00683e68  _GGConnectResponse
+0x00684c7c  _GGConnectStatus
+0x0068181c  charNode
+0x0064bcc4  fxRenderImage
+0x0064a6a0  gameDebrisRenderImage
+0x0068182c  pDNameNode
+0x0068184c  pcharNode
+0x00681588  s__00681588
+0x0068139c  s_`local_vftable'_0068139c
+0x00681378  s_`local_vftable_constructor_closu_00681378
+0x00676ae4  std::__non_rtti_object
+0x0067663c  std::bad_alloc
+0x00676acc  std::bad_cast
+0x00676af4  std::bad_exception
+0x00676ad8  std::bad_typeid
+0x00676aac  std::exception
+0x00676648  type_info
+0x00664720  vftable[17]
+0x006846f8  vftable[1]
+0x0065b4e8  vftable[23]
+0x00656c62  vftable[29]+2
+0x00670da4  vftable[2]
+0x0065b50c  vftable[32]
+0x0065c194  vftable[38]
+0x00650072  vftable[45]+2
+0x00650073  vftable[45]+3
+0x0062ec14  vftable[4]
+0x0065bf34  vftable[56]
+0x0065c32c  vftable[58]
+0x0066006f  vftable[90]+3
+0x00641b4c  vftable[9]

@@ -1,0 +1,188 @@
+---- data/code pointers to 0x4298c0 (vtable / tables) ----
+
+############ caller FUN_0042f980 @0x42f980 ############
+
+void * __thiscall
+FUN_0042f980(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+            undefined4 *param_5)
+
+{
+  int *piVar1;
+  int iVar2;
+  char cVar3;
+  int *piVar4;
+  undefined4 uVar5;
+  void *pvVar6;
+  code *pcVar7;
+  undefined4 *puVar8;
+  void *local_14;
+  void *pvStack_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 uStack_4;
+  
+  uStack_4 = 0xffffffff;
+  puStack_8 = &LAB_0060093b;
+  local_c = ExceptionList;
+  pcVar7 = (code *)0x0;
+  ExceptionList = &local_c;
+  *(int *)(param_1 + 0xc) = DAT_00701b5c;
+  local_14 = (void *)0x0;
+  if (DAT_00701b5c == 0) {
+    if (DAT_006d5034 == (int *)0x0) {
+      FUN_004039b0(*(undefined4 *)(param_1 + 8),
+                   "No server manager yet, can\'t install AI manager thus, cannot execute command %s."
+                   ,*param_5);
+      ExceptionList = local_c;
+      return (void *)0x0;
+    }
+    piVar4 = (int *)(**(code **)(*DAT_006d5034 + 0x68))("MissionCleanup");
+    if (piVar4 == (int *)0x0) {
+      FUN_004039b0(*(undefined4 *)(param_1 + 8),
+                   "No cleanup group yet, can\'t install AI manager and, therefore, cannot execute command %s"
+                   ,*param_4);
+      ExceptionList = pvStack_10;
+      return (void *)0x0;
+    }
+    local_14 = operator_new(0x74);
+    puStack_8 = (undefined1 *)0x0;
+    if (local_14 == (void *)0x0) {
+      uVar5 = 0;
+    }
+    else {
+      uVar5 = FUN_0042b360();
+    }
+    *(undefined4 *)(param_1 + 0xc) = uVar5;
+    puStack_8 = (undefined1 *)0xffffffff;
+    cVar3 = FUN_0051e120(uVar5);
+    piVar1 = *(int **)(param_1 + 0xc);
+    if (cVar3 == '\0') {
+      if (piVar1 != (int *)0x0) {
+        (**(code **)(*piVar1 + 0x1c))(1);
+      }
+      *(undefined4 *)(param_1 + 0xc) = 0;
+      FUN_004039b0(*(undefined4 *)(param_1 + 8),
+                   "Couldn\'t register AI manager...  Cannot execute command %s",*param_4);
+      ExceptionList = pvStack_10;
+      return (void *)0x0;
+    }
+    FUN_0051dd40(piVar1,0x2d6);
+    (**(code **)(*piVar4 + 0x5c))(*(undefined4 *)(param_1 + 0xc));
+  }
+  switch(param_3) {
+  case 0:
+    pvVar6 = (void *)FUN_0042f680(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 1:
+    pvVar6 = (void *)FUN_0042f350(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 2:
+    pvVar6 = (void *)FUN_0042f010(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 3:
+    pvVar6 = (void *)FUN_0042f140(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 4:
+    pvVar6 = (void *)FUN_0042f1d0(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 5:
+    pvVar6 = (void *)FUN_0042f260(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 6:
+    pvVar6 = (void *)FUN_0042f2e0(param_4,param_5);
+    ExceptionList = local_c;
+    return pvVar6;
+  case 7:
+    pcVar7 = (code *)&LAB_0042e480;
+    break;
+  case 8:
+    pcVar7 = FUN_0042e510;
+    break;
+  case 9:
+    pcVar7 = (code *)&LAB_0042eda0;
+    break;
+  case 10:
+    pcVar7 = (code *)&LAB_0042ee60;
+    break;
+  case 0xb:
+    pcVar7 = FUN_0042eb20;
+    break;
+  case 0xc:
+    pcVar7 = (code *)&LAB_0042eb80;
+    break;
+  case 0xd:
+    pcVar7 = FUN_0042e570;
+    break;
+  case 0xe:
+    pcVar7 = FUN_0042e6a0;
+    break;
+  case 0xf:
+    pcVar7 = FUN_0042e770;
+    break;
+  case 0x10:
+    pcVar7 = FUN_0042e820;
+    break;
+  case 0x11:
+    pcVar7 = FUN_0042e930;
+    break;
+  case 0x12:
+    pcVar7 = (code *)&LAB_0042e9e0;
+    break;
+  case 0x13:
+    pcVar7 = FUN_0042ea50;
+    break;
+  case 0x14:
+    pcVar7 = (code *)&LAB_0042ed20;
+    break;
+  case 0x15:
+    pcVar7 = (code *)&LAB_0042ed40;
+    break;
+  case 0x16:
+    pcVar7 = (code *)&LAB_0042ed60;
+    break;
+  case 0x17:
+    pcVar7 = (code *)&LAB_0042ed80;
+    break;
+  case 0x18:
+    pcVar7 = (code *)&LAB_0042ef60;
+    break;
+  case 0x19:
+    pcVar7 = FUN_0042ef90;
+  }
+  iVar2 = *(int *)(param_1 + 0xc);
+  if ((iVar2 != 0) && (pcVar7 != (code *)0x0)) {
+    if ((int)param_4 < 2) {
+      local_14 = (void *)(*pcVar7)(0,0,0);
+    }
+    else {
+      puVar8 = *(undefined4 **)(iVar2 + 0x6c);
+      if (puVar8 != puVar8 + *(int *)(iVar2 + 0x5c)) {
+        do {
+          cVar3 = FUN_004298c0(param_5[1]);
+          if (cVar3 != '\0') {
+            local_14 = (void *)(*pcVar7)(*puVar8,(int)param_4 + -2,param_5 + 2);
+          }
+          puVar8 = puVar8 + 1;
+        } while (puVar8 != (undefined4 *)
+                           (*(int *)(*(int *)(param_1 + 0xc) + 0x6c) +
+                           *(int *)(*(int *)(param_1 + 0xc) + 0x5c) * 4));
+      }
+    }
+  }
+  ExceptionList = local_c;
+  return local_14;
+}
+
+
+
+---- string refs in FUN_0042f980 + FUN_004298c0 ----
+   0x42f980: "MissionCleanup"
+   0x42f980: "No cleanup group yet, can't install AI manager and, therefore, cannot execute command %s"
+   0x42f980: "Couldn't register AI manager...  Cannot execute command %s"
+   0x42f980: "No server manager yet, can't install AI manager thus, cannot execute command %s."

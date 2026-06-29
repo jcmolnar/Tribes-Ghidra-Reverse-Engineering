@@ -1,0 +1,199 @@
+
+================ TeamObjectiveEvent slot3 @0x4b47f0 ================
+
+undefined * FUN_004b47f0(void)
+
+{
+  return &DAT_007256c0;
+}
+
+
+
+================ TeamObjectiveEvent slot6 @0x4b4800 ================
+
+void __thiscall FUN_004b4800(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  undefined4 local_4;
+  
+  local_4 = *(undefined4 *)(param_1 + 0x20);
+  (**(code **)(*param_4 + 0x18))(4,&local_4);
+  (**(code **)(*param_4 + 0x2c))(param_1 + 0x24,0xff);
+  return;
+}
+
+
+
+================ TeamObjectiveEvent slot7 @0x4b4840 ================
+
+void __thiscall FUN_004b4840(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    (**(code **)(*param_4 + 0x1c))(4,param_1 + 0x20);
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x24);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+================ PlayerSayEvent slot3 @0x4b4660 ================
+
+undefined * FUN_004b4660(void)
+
+{
+  return &DAT_00725758;
+}
+
+
+
+================ PlayerSayEvent slot6 @0x4b4670 ================
+
+void __thiscall FUN_004b4670(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  FUN_0040fd50(*(undefined4 *)(param_1 + 0x20),0xc);
+  FUN_0040fd50(*(undefined4 *)(param_1 + 0x24),5);
+  (**(code **)(*param_4 + 0x2c))(param_1 + 0x28,0xff);
+  return;
+}
+
+
+
+================ PlayerSayEvent slot7 @0x4b46b0 ================
+
+void __thiscall FUN_004b46b0(int param_1,undefined4 param_2,undefined4 param_3,int *param_4)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  
+  cVar1 = FUN_00517200(param_2);
+  if (cVar1 != '\0') {
+    uVar2 = FUN_0040fd10(0xc);
+    *(undefined4 *)(param_1 + 0x20) = uVar2;
+    uVar2 = FUN_0040fd10(5);
+    *(undefined4 *)(param_1 + 0x24) = uVar2;
+    (**(code **)(*param_4 + 0x28))(param_1 + 0x28);
+    *(undefined4 *)(param_1 + 0x14) = 0x2c9;
+  }
+  return;
+}
+
+
+
+================ BulletData slot3 @0x4c0a20 ================
+
+float10 __fastcall FUN_004c0a20(int param_1)
+
+{
+  return (float10)*(float *)(param_1 + 0x68);
+}
+
+
+
+================ BulletData slot4 @0x4ca520 ================
+
+undefined4 __thiscall
+FUN_004ca520(int *param_1,float *param_2,float *param_3,undefined1 *param_4,float *param_5,
+            undefined4 param_6,char param_7)
+
+{
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  undefined4 unaff_ESI;
+  undefined4 unaff_EDI;
+  float10 fVar5;
+  float *pfVar6;
+  undefined8 uVar7;
+  double dVar8;
+  
+  if (param_7 == '\x01') {
+    return 0;
+  }
+  uVar7 = CONCAT44(unaff_EDI,unaff_ESI);
+  fVar1 = param_3[1];
+  fVar2 = param_2[1];
+  fVar3 = param_3[2];
+  fVar4 = param_2[2];
+  *param_5 = *param_3 - *param_2;
+  param_5[1] = fVar1 - fVar2;
+  param_5[2] = fVar3 - fVar4;
+  pfVar6 = param_5;
+  (**(code **)(*(int *)PTR_DAT_006d5bf8 + 0x20))(param_5);
+  (**(code **)(*(int *)PTR_DAT_006d5bf8 + 0x24))(param_5,pfVar6,uVar7);
+  dVar8 = (double)(float)param_5;
+  fVar5 = (float10)(**(code **)(*param_1 + 0xc))();
+  if ((float10)dVar8 < fVar5 * (float10)(float)param_1[0x1d]) {
+    *param_4 = 1;
+    return 1;
+  }
+  *param_4 = 0;
+  return 1;
+}
+
+
+
+================ base 0x413460 @0x413460 ================
+
+undefined4 FUN_00413460(undefined4 param_1,undefined4 *param_2)
+
+{
+  *param_2 = 0;
+  return 0;
+}
+
+
+
+================ base 0x413470 @0x413470 ================
+
+undefined4 FUN_00413470(void)
+
+{
+  return 0;
+}
+
+
+
+================ base 0x413480 @0x413480 ================
+
+undefined4 FUN_00413480(int *param_1,undefined4 *param_2)
+
+{
+  undefined4 *puVar1;
+  char cVar2;
+  undefined4 unaff_retaddr;
+  
+  puVar1 = param_2;
+  *param_2 = 0;
+  cVar2 = (**(code **)(*param_1 + 0x1c))(4,&param_2);
+  if (cVar2 == '\0') {
+    *puVar1 = 3;
+  }
+  return unaff_retaddr;
+}
+
+
+
+================ base 0x4134b0 @0x4134b0 ================
+
+int __thiscall FUN_004134b0(int *param_1,int *param_2)
+
+{
+  char cVar1;
+  int *piStack_4;
+  
+  piStack_4 = param_1;
+  piStack_4 = (int *)(**(code **)(*param_1 + 8))();
+  cVar1 = (**(code **)(*param_2 + 0x18))(4,&piStack_4);
+  return (-(uint)(cVar1 != '\0') & 0xfffffffc) + 4;
+}
+
+

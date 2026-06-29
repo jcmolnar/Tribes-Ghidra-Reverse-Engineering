@@ -1,0 +1,80 @@
+================ patch site 0x1000883a  in dllmain_crt_process_attach @0x1000879f ================
+  orig bytes @site: 00 10 68 d8 a1 00 10 e8 
+    0x1000881e  68 50 a2 00 10               PUSH 0x1000a250                   
+    0x10008823  e8 e6 08 00 00               CALL 0x1000910e                   
+    0x10008828  59                           POP ECX                           
+    0x10008829  59                           POP ECX                           
+    0x1000882a  85 c0                        TEST EAX,EAX                      
+    0x1000882c  75 29                        JNZ 0x10008857                    
+    0x1000882e  e8 29 fa ff ff               CALL 0x1000825c                   
+    0x10008833  84 c0                        TEST AL,AL                        
+    0x10008835  74 20                        JZ 0x10008857                     
+    0x10008837  68 4c a2 00 10               PUSH 0x1000a24c                   
+    0x1000883c  68 d8 a1 00 10               PUSH 0x1000a1d8                   
+    0x10008841  e8 c2 08 00 00               CALL 0x10009108                   
+    0x10008846  59                           POP ECX                           
+    0x10008847  59                           POP ECX                           
+    0x10008848  c7 05 58 e2 00 10 02 00 00 00  MOV dword ptr [0x1000e258],0x2    
+    0x10008852  32 db                        XOR BL,BL                         
+  --- decompile dllmain_crt_process_attach ---
+  
+  /* WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4 */
+  /* WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3 */
+  /* Library Function - Single Match
+      int __cdecl dllmain_crt_process_attach(struct HINSTANCE__ * const,void * const)
+     
+     Library: Visual Studio 2015 Release */
+  
+  int __cdecl dllmain_crt_process_attach(HINSTANCE__ *param_1,void *param_2)
+  
+  {
+    code *pcVar1;
+    bool bVar2;
+    bool bVar3;
+    undefined4 uVar4;
+    int iVar5;
+    int *piVar6;
+    
+    uVar4 = ___scrt_initialize_crt(0);
+    if ((char)uVar4 != '\0') {
+      ___scrt_acquire_startup_lock();
+      bVar2 = true;
+      if (DAT_1000e258 != 0) {
+        ___scrt_fastfail();
+      }
+      DAT_1000e258 = 1;
+      bVar3 = ___scrt_dllmain_before_initialize_c();
+      if (bVar3) {
+        __RTC_Initialize();
+        _atexit((_func_4879 *)&LAB_10008fb0);
+        FUN_10008f4a();
+        _atexit((_func_4879 *)&LAB_10008f56);
+        ___scrt_initialize_default_local_stdio_options();
+        iVar5 = initterm_e(&DAT_1000a250,&DAT_1000a254);
+        if ((iVar5 == 0) && (uVar4 = ___scrt_dllmain_after_initialize_c(), (char)uVar4 != '\0')) {
+          initterm(&DAT_1000a1d8,&DAT_1000a24c);
+          DAT_1000e258 = 2;
+          bVar2 = false;
+        }
+      }
+      FUN_100088a7();
+      if (!bVar2) {
+        piVar6 = (int *)FUN_10008f7f();
+        if ((*piVar6 != 0) &&
+           (uVar4 = ___scrt_is_nonwritable_in_current_image((int)piVar6), (char)uVar4 != '\0')) {
+          uVar4 = 2;
+          pcVar1 = (code *)*piVar6;
+          guard_check_icall();
+          (*pcVar1)(param_1,uVar4,param_2);
+        }
+        DAT_1000e59c = DAT_1000e59c + 1;
+        return 1;
+      }
+    }
+    return 0;
+  }
+  
+
+================ patch site 0x10004866 ================
+  orig bytes @site: 83 f9 00 74 11 8b 91 3c 
+

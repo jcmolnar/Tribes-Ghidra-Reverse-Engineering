@@ -1,0 +1,51 @@
+================ patch site 0x40de38  in FUN_0040de38 @0x40de38 ================
+  orig bytes @site: 81 c2 00 f8 ff ff 85 d2 
+    0x0040de38  81 c2 00 f8 ff ff            ADD EDX,0xfffff800                  <<<< PATCH SITE
+    0x0040de3e  85 d2                        TEST EDX,EDX                      
+    0x0040de40  7c 38                        JL 0x0040de7a                     
+    0x0040de42  83 fa 7f                     CMP EDX,0x7f                      
+    0x0040de45  7f 33                        JG 0x0040de7a                     
+    0x0040de47  8b ca                        MOV ECX,EDX                       
+    0x0040de49  c1 e1 02                     SHL ECX,0x2                       
+    0x0040de4c  8d 0c 49                     LEA ECX,[ECX + ECX*0x2]           
+    0x0040de4f  8d 0c 89                     LEA ECX,[ECX + ECX*0x4]           
+  --- decompile FUN_0040de38 ---
+  
+  char * FUN_0040de38(int param_1,int param_2)
+  
+  {
+    char *pcVar1;
+    
+    param_2 = param_2 + -0x800;
+    if ((((param_2 < 0) || (0x7f < param_2)) || (*(int *)(param_1 + 0x250fc + param_2 * 0x1e0) == 0))
+       || (pcVar1 = (char *)(param_1 + param_2 * 0x1e0 + 0x250ec), *pcVar1 != '\0')) {
+      pcVar1 = (char *)0x0;
+    }
+    return pcVar1;
+  }
+  
+
+================ patch site 0x40de80  in FUN_0040de80 @0x40de80 ================
+  orig bytes @site: 81 ea 00 08 00 00 f7 c2 
+    0x0040de80  81 ea 00 08 00 00            SUB EDX,0x800                       <<<< PATCH SITE
+    0x0040de86  f7 c2 80 ff ff ff            TEST EDX,0xffffff80               
+    0x0040de8c  75 26                        JNZ 0x0040deb4                    
+    0x0040de8e  8b ca                        MOV ECX,EDX                       
+    0x0040de90  c1 e1 02                     SHL ECX,0x2                       
+    0x0040de93  8d 0c 49                     LEA ECX,[ECX + ECX*0x2]           
+    0x0040de96  8d 0c 89                     LEA ECX,[ECX + ECX*0x4]           
+  --- decompile FUN_0040de80 ---
+  
+  int FUN_0040de80(int param_1,int param_2)
+  
+  {
+    uint uVar1;
+    
+    uVar1 = param_2 - 0x800;
+    if (((uVar1 & 0xffffff80) == 0) && (*(int *)(param_1 + 0x250fc + uVar1 * 0x1e0) != 0)) {
+      return param_1 + uVar1 * 0x1e0 + 0x250ec;
+    }
+    return 0;
+  }
+  
+

@@ -1,0 +1,258 @@
+=== vftable symbols: 1981 ; distinct class prefixes: 1646 ===
+  AI::Manager                                        @0x0064803c
+  AI::Manager_meta_ptr                               @0x00648038
+  AI::Object                                         @0x006481dc
+  AI::Object_meta_ptr                                @0x006481d8
+  AI::Plugin                                         @0x00649310
+  AI::Plugin_meta_ptr                                @0x0064930c
+  AI::Task<AI::Object>                               @0x00648174
+  AI::Task<AI::Object>_meta_ptr                      @0x00648170
+  ASTNode                                            @0x0062e498
+  ASTNode_meta_ptr                                   @0x0062e494
+  ActionBtn_MemberWin                                @0x00664a40
+  ActionBtn_MemberWin_meta_ptr                       @0x00664a3c
+  AssignExprNode                                     @0x00632b98
+  AssignExprNode_meta_ptr                            @0x00632b94
+  AssignOpExprNode                                   @0x00632bb8
+  AssignOpExprNode_meta_ptr                          @0x00632bb4
+  BaseShadowRenderImage                              @0x0062e454
+  BaseShadowRenderImage_meta_ptr                     @0x0062e450
+  BinaryExprNode                                     @0x0062eb5c
+  BinaryExprNode_meta_ptr                            @0x0062eb58
+  BitStream                                          @0x00641a24
+  BitStream_meta_ptr                                 @0x00641a20
+  BlockRStream                                       @0x00641ac0
+  BlockRStream_meta_ptr                              @0x00641abc
+  BlockRWStream                                      @0x00641a8c
+  BlockRWStream_meta_ptr                             @0x00641a88
+  BlockStream                                        @0x00641a58
+  BlockStream_meta_ptr                               @0x00641a54
+  Bool_MemberWin                                     @0x00664a70
+  Bool_MemberWin_meta_ptr                            @0x00664a6c
+  BoxRenderImage                                     @0x00660368
+  BoxRenderImage_meta_ptr                            @0x00660364
+  BreakStmtNode                                      @0x00632d40
+  BreakStmtNode_meta_ptr                             @0x00632d3c
+  Bullet                                             @0x0065dbdc
+  Bullet::BulletData                                 @0x0065ddbc
+  Bullet::BulletData_meta_ptr                        @0x0065ddb8
+  Bullet::TracerRenderImage                          @0x0065dbcc
+  Bullet::TracerRenderImage_meta_ptr                 @0x0065dbc8
+  Bullet_meta_ptr                                    @0x0065dbd8
+  CMDConsole                                         @0x0062e538
+  CMDConsole_meta_ptr                                @0x0062e534
+  CMDConsumer                                        @0x00666dfc
+  CMDConsumer_meta_ptr                               @0x00666df8
+  CMDDataManager                                     @0x0062e4cc
+  CMDDataManager_meta_ptr                            @0x0062e4c8
+  Car                                                @0x00649af4
+  Car_meta_ptr                                       @0x00649af0
+  CenterPrint                                        @0x0064ed4c
+  CenterPrint_meta_ptr                               @0x0064ed48
+  ChatMenu                                           @0x00649cec
+  ChatMenu_meta_ptr                                  @0x00649ce8
+  CommaCatExprNode                                   @0x00632d90
+  CommaCatExprNode_meta_ptr                          @0x00632d8c
+  ConstantNode                                       @0x00632b78
+  ConstantNode_meta_ptr                              @0x00632b74
+  ContinueStmtNode                                   @0x00632d50
+  ContinueStmtNode_meta_ptr                          @0x00632d4c
+  DNameStatusNode                                    @0x0068183c
+  DNameStatusNode_meta_ptr                           @0x00681838
+
+-- vtable PlayerSayEvent @0x65d628 --
+   [ 0] +0x00 -> 0x00419090  FUN_00419090
+   [ 1] +0x04 -> 0x00419090  FUN_00419090
+   [ 2] +0x08 -> 0x004ebc70  FUN_004ebc70
+   [ 3] +0x0c -> 0x004b4660  FUN_004b4660
+   [ 4] +0x10 -> 0x00413460  FUN_00413460
+   [ 5] +0x14 -> 0x00413470  FUN_00413470
+   [ 6] +0x18 -> 0x004b4670  FUN_004b4670
+   [ 7] +0x1c -> 0x004b46b0  FUN_004b46b0
+   [ 8] +0x20 -> 0x0051c360  FUN_0051c360
+   [ 9] +0x24 -> 0x00531510  FUN_00531510
+
+-- vtable TeamObjectiveEvent @0x65d680 --
+   [ 0] +0x00 -> 0x00419090  FUN_00419090
+   [ 1] +0x04 -> 0x00419090  FUN_00419090
+   [ 2] +0x08 -> 0x004ebc70  FUN_004ebc70
+   [ 3] +0x0c -> 0x004b47f0  FUN_004b47f0
+   [ 4] +0x10 -> 0x00413460  FUN_00413460
+   [ 5] +0x14 -> 0x00413470  FUN_00413470
+   [ 6] +0x18 -> 0x004b4800  FUN_004b4800
+   [ 7] +0x1c -> 0x004b4840  FUN_004b4840
+   [ 8] +0x20 -> 0x0051c360  FUN_0051c360
+   [ 9] +0x24 -> 0x00531510  FUN_00531510
+
+-- vtable BulletData @0x65ddbc --
+   [ 0] +0x00 -> 0x004bdd90  FUN_004bdd90
+   [ 1] +0x04 -> 0x004bde00  FUN_004bde00
+   [ 2] +0x08 -> 0x004be6d0  FUN_004be6d0
+   [ 3] +0x0c -> 0x004c0a20  FUN_004c0a20
+   [ 4] +0x10 -> 0x004ca520  FUN_004ca520
+
+-- vtable Bullet @0x65dbdc --
+   [ 0] +0x00 -> 0x00493630  FUN_00493630
+   [ 1] +0x04 -> 0x004936d0  FUN_004936d0
+   [ 2] +0x08 -> 0x004ebc70  FUN_004ebc70
+   [ 3] +0x0c -> 0x004bde50  FUN_004bde50
+   [ 4] +0x10 -> 0x00413480  FUN_00413480
+   [ 5] +0x14 -> 0x004134b0  FUN_004134b0
+   [ 6] +0x18 -> 0x0051c3b0  FUN_0051c3b0
+   [ 7] +0x1c -> 0x004bfee0  FUN_004bfee0
+   [ 8] +0x20 -> 0x00493040  FUN_00493040
+   [ 9] +0x24 -> 0x004c0290  FUN_004c0290
+   [10] +0x28 -> 0x00492d50  FUN_00492d50
+   [11] +0x2c -> 0x00493560  FUN_00493560
+   [12] +0x30 -> 0x004935b0  FUN_004935b0
+   [13] +0x34 -> 0x004bff00  FUN_004bff00
+   [14] +0x38 -> 0x004c2470  FUN_004c2470
+   [15] +0x3c -> 0x00494ef0  FUN_00494ef0
+   [16] +0x40 -> 0x00494f30  FUN_00494f30
+   [17] +0x44 -> 0x00450510  FUN_00450510
+   [18] +0x48 -> 0x004c1020  FUN_004c1020
+   [19] +0x4c -> 0x00450510  FUN_00450510
+   [20] +0x50 -> 0x0042b300  FUN_0042b300
+   [21] +0x54 -> 0x0042b330  FUN_0042b330
+   [22] +0x58 -> 0x005898c0  FUN_005898c0
+   [23] +0x5c -> 0x00493ac0  FUN_00493ac0
+   [24] +0x60 -> 0x00530df0  FUN_00530df0
+   [25] +0x64 -> 0x004be170  FUN_004be170
+   [26] +0x68 -> 0x004c4740  FUN_004c4740
+   [27] +0x6c -> 0x00494b20  FUN_00494b20
+   [28] +0x70 -> 0x00521760  FUN_00521760
+   [29] +0x74 -> 0x00521780  FUN_00521780
+   [30] +0x78 -> 0x005221c0  FUN_005221c0
+   [31] +0x7c -> 0x00521720  FUN_00521720
+   [32] +0x80 -> 0x00521cc0  FUN_00521cc0
+   [33] +0x84 -> 0x005217a0  FUN_005217a0
+   [34] +0x88 -> 0x00521d10  FUN_00521d10
+   [35] +0x8c -> 0x00521840  FUN_00521840
+   [36] +0x90 -> 0x00522d00  FUN_00522d00
+   [37] +0x94 -> 0x00522660  FUN_00522660
+   [38] +0x98 -> 0x00523b30  FUN_00523b30
+   [39] +0x9c -> 0x005230f0  FUN_005230f0
+
+-- vtable PlayerManager @0x65d3fc --
+   [ 0] +0x00 -> 0x004d1190  FUN_004d1190
+   [ 1] +0x04 -> 0x0051c6b0  FUN_0051c6b0
+   [ 2] +0x08 -> 0x004ebc70  FUN_004ebc70
+   [ 3] +0x0c -> 0x004ebc70  FUN_004ebc70
+   [ 4] +0x10 -> 0x00413480  FUN_00413480
+   [ 5] +0x14 -> 0x004134b0  FUN_004134b0
+   [ 6] +0x18 -> 0x0051c3b0  FUN_0051c3b0
+   [ 7] +0x1c -> 0x004b5d60  FUN_004b5d60
+   [ 8] +0x20 -> 0x004b8390  FUN_004b8390
+   [ 9] +0x24 -> 0x00443350  FUN_00443350
+   [10] +0x28 -> 0x0051c660  FUN_0051c660
+   [11] +0x2c -> 0x0051cbd0  FUN_0051cbd0
+   [12] +0x30 -> 0x0051c590  FUN_0051c590
+   [13] +0x34 -> 0x0051c570  FUN_0051c570
+   [14] +0x38 -> 0x0051c580  FUN_0051c580
+   [15] +0x3c -> 0x005898c0  FUN_005898c0
+   [16] +0x40 -> 0x005898c0  FUN_005898c0
+   [17] +0x44 -> 0x00450510  FUN_00450510
+   [18] +0x48 -> 0x00450510  FUN_00450510
+   [19] +0x4c -> 0x00450510  FUN_00450510
+   [20] +0x50 -> 0x0042b300  FUN_0042b300
+   [21] +0x54 -> 0x0042b330  FUN_0042b330
+   [22] +0x58 -> 0x005898c0  FUN_005898c0
+
+-- vtable SimObject @0x665a3c --
+   [ 0] +0x00 -> 0x004d1190  FUN_004d1190
+   [ 1] +0x04 -> 0x0051c6b0  FUN_0051c6b0
+   [ 2] +0x08 -> 0x004ebc70  FUN_004ebc70
+   [ 3] +0x0c -> 0x004ebc70  FUN_004ebc70
+   [ 4] +0x10 -> 0x00413480  FUN_00413480
+   [ 5] +0x14 -> 0x004134b0  FUN_004134b0
+   [ 6] +0x18 -> 0x0051c3b0  FUN_0051c3b0
+   [ 7] +0x1c -> 0x00521380  FUN_00521380
+   [ 8] +0x20 -> 0x0051c5e0  FUN_0051c5e0
+   [ 9] +0x24 -> 0x00443350  FUN_00443350
+   [10] +0x28 -> 0x0051c660  FUN_0051c660
+   [11] +0x2c -> 0x0051cbd0  FUN_0051cbd0
+   [12] +0x30 -> 0x0051c590  FUN_0051c590
+   [13] +0x34 -> 0x0051c570  FUN_0051c570
+   [14] +0x38 -> 0x0051c580  FUN_0051c580
+   [15] +0x3c -> 0x005898c0  FUN_005898c0
+   [16] +0x40 -> 0x005898c0  FUN_005898c0
+   [17] +0x44 -> 0x00450510  FUN_00450510
+   [18] +0x48 -> 0x00450510  FUN_00450510
+   [19] +0x4c -> 0x00450510  FUN_00450510
+   [20] +0x50 -> 0x0042b300  FUN_0042b300
+   [21] +0x54 -> 0x0042b330  FUN_0042b330
+   [22] +0x58 -> 0x005898c0  FUN_005898c0
+
+-- vtable Player @0x65cea4 --
+   [ 0] +0x00 -> 0x004d1190  FUN_004d1190
+   [ 1] +0x04 -> 0x0051c6b0  FUN_0051c6b0
+   [ 2] +0x08 -> 0x004ebc70  FUN_004ebc70
+   [ 3] +0x0c -> 0x004ab6f0  FUN_004ab6f0
+   [ 4] +0x10 -> 0x00413480  FUN_00413480
+   [ 5] +0x14 -> 0x004134b0  FUN_004134b0
+   [ 6] +0x18 -> 0x0051c3b0  FUN_0051c3b0
+   [ 7] +0x1c -> 0x004ac3e0  FUN_004ac3e0
+   [ 8] +0x20 -> 0x004abe90  FUN_004abe90
+   [ 9] +0x24 -> 0x004adf90  FUN_004adf90
+   [10] +0x28 -> 0x00492d50  FUN_00492d50
+   [11] +0x2c -> 0x004d10d0  FUN_004d10d0
+   [12] +0x30 -> 0x004d1020  FUN_004d1020
+   [13] +0x34 -> 0x004ab830  FUN_004ab830
+   [14] +0x38 -> 0x004ac400  FUN_004ac400
+   [15] +0x3c -> 0x00494ef0  FUN_00494ef0
+   [16] +0x40 -> 0x00494f30  FUN_00494f30
+   [17] +0x44 -> 0x00450510  FUN_00450510
+   [18] +0x48 -> 0x004ac2a0  FUN_004ac2a0
+   [19] +0x4c -> 0x00450510  FUN_00450510
+   [20] +0x50 -> 0x0042b300  FUN_0042b300
+   [21] +0x54 -> 0x0042b330  FUN_0042b330
+   [22] +0x58 -> 0x005898c0  FUN_005898c0
+   [23] +0x5c -> 0x00493ac0  FUN_00493ac0
+   [24] +0x60 -> 0x00530df0  FUN_00530df0
+   [25] +0x64 -> 0x004bb760  FUN_004bb760
+   [26] +0x68 -> 0x004bc8c0  FUN_004bc8c0
+   [27] +0x6c -> 0x00494b20  FUN_00494b20
+   [28] +0x70 -> 0x00521760  FUN_00521760
+   [29] +0x74 -> 0x00521780  FUN_00521780
+   [30] +0x78 -> 0x005221c0  FUN_005221c0
+   [31] +0x7c -> 0x00521720  FUN_00521720
+   [32] +0x80 -> 0x00521cc0  FUN_00521cc0
+   [33] +0x84 -> 0x005217a0  FUN_005217a0
+   [34] +0x88 -> 0x00521d10  FUN_00521d10
+   [35] +0x8c -> 0x00521840  FUN_00521840
+   [36] +0x90 -> 0x00522d00  FUN_00522d00
+   [37] +0x94 -> 0x00522660  FUN_00522660
+   [38] +0x98 -> 0x00523b30  FUN_00523b30
+   [39] +0x9c -> 0x005230f0  FUN_005230f0
+
+=== Persistent::create @0x4131E0 ===
+
+undefined4 FUN_004131e0(int param_1)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  
+  puVar1 = DAT_006ff418;
+  if (param_1 - 1U < 0x7ff) {
+    if ((undefined4 *)(&DAT_006fd418)[param_1] != (undefined4 *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0x004131fe. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      uVar2 = (*(code *)**(undefined4 **)(&DAT_006fd418)[param_1])();
+      return uVar2;
+    }
+  }
+  else {
+    for (; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)puVar1[0x23]) {
+      if (param_1 == puVar1[0x24]) {
+                    /* WARNING: Could not recover jumptable at 0x00413229. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar2 = (**(code **)*puVar1)();
+        return uVar2;
+      }
+    }
+  }
+  return 0;
+}
+
+

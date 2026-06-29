@@ -1,0 +1,202 @@
+ServerSidePlugin.dll (Bov) — AI crash-fix patch installer
+
+##### refs to "Patching an AI crash bug" #####
+  @0x1000a3c0
+   xref 0x100049a6 in FUN_100048ce
+
+======== FUN_100048ce @0x100048ce  [refs string] ========
+
+void FUN_100048ce(void)
+
+{
+  uint uVar1;
+  int iVar2;
+  __time64_t _Var3;
+  undefined2 local_1c;
+  undefined1 local_18;
+  undefined1 local_17;
+  undefined1 local_16;
+  undefined1 local_15;
+  undefined1 local_14;
+  undefined4 local_13;
+  undefined4 local_f;
+  undefined2 local_b;
+  uint local_8;
+  
+  local_8 = DAT_1000e008 ^ (uint)&stack0xfffffffc;
+  uVar1 = 0;
+  if (DAT_101935fc != 0) {
+    do {
+      FUN_10007fbe(*(undefined4 *)(DAT_101935f8 + uVar1 * 8),
+                   *(undefined4 *)(DAT_101935f8 + 4 + uVar1 * 8));
+      uVar1 = uVar1 + 1;
+    } while (uVar1 < DAT_101935fc);
+  }
+  FUN_10004136();
+  uVar1 = 0;
+  if (DAT_101935f0 != 0) {
+    iVar2 = 0;
+    do {
+      FUN_10007fd9(*(undefined4 *)(iVar2 + DAT_101935ec),*(undefined4 *)(iVar2 + 4 + DAT_101935ec),
+                   *(undefined4 *)(iVar2 + 8 + DAT_101935ec));
+      iVar2 = iVar2 + 0xc;
+      uVar1 = uVar1 + 1;
+    } while (uVar1 < DAT_101935f0);
+  }
+  FUN_1000410f();
+  _Var3 = _time64((__time64_t *)0x0);
+  srand((uint)_Var3);
+  GetTickCount();
+  FUN_10004248();
+  local_1c = CONCAT11(0xf8,(undefined1)local_1c);
+  FUN_10004202((LPVOID)0x40be84,(void *)((int)&local_1c + 1),1);
+  local_1c = 0x112e;
+  FUN_10004202((LPVOID)0x40cd4e,&local_1c,2);
+  local_1c = CONCAT11(0x7f,(undefined1)local_1c);
+  FUN_10004202((LPVOID)0x550cc8,(void *)((int)&local_1c + 1),1);
+  FUN_10004202((LPVOID)0x550ccd,(void *)((int)&local_1c + 1),1);
+  FUN_10007f98();
+  local_18 = 0xe8;
+  local_13 = 0x90909090;
+  local_17 = 0x73;
+  local_15 = 0xbc;
+  local_14 = 0xf;
+  local_f = 0x90909090;
+  local_b = 0x9090;
+  local_16 = 0x48;
+  FUN_10004202((LPVOID)0x43ffee,&local_18,0xf);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+##### refs to "Patching a hook into the AI" #####
+  @0x1000a394
+   xref 0x10004258 in FUN_10004248
+
+======== FUN_10004248 @0x10004248  [refs string] ========
+
+void FUN_10004248(void)
+
+{
+  code *pcVar1;
+  uint uVar2;
+  bool bVar3;
+  char *local_30;
+  undefined4 local_2c;
+  undefined4 *local_28;
+  undefined1 *local_24;
+  undefined4 local_20;
+  undefined1 local_1c;
+  undefined1 local_18;
+  undefined1 local_17;
+  undefined1 local_16;
+  undefined1 local_15;
+  undefined1 local_14;
+  undefined1 local_13;
+  undefined4 local_10;
+  undefined2 local_c;
+  uint local_8;
+  
+  local_8 = DAT_1000e008 ^ (uint)&stack0xfffffffc;
+  FUN_10007f98();
+  uVar2 = 0;
+  bVar3 = true;
+  do {
+    if (!bVar3) {
+      ___report_rangecheckfailure();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    (&DAT_1000e5d8)[uVar2] = 0;
+    uVar2 = uVar2 + 1;
+    bVar3 = uVar2 < 0x5000;
+  } while ((int)uVar2 < 0x5000);
+  local_10 = 0x15093ff;
+  local_c = 0;
+  local_17 = 0x41;
+  local_16 = 0x88;
+  local_15 = 0xbc;
+  local_28 = &local_10;
+  local_24 = &local_18;
+  local_14 = 0xf;
+  local_18 = 0xe8;
+  local_13 = 0x90;
+  local_2c = 0x43bff4;
+  local_20 = 6;
+  local_30 = "AIJetPatch";
+  local_1c = 0;
+  FUN_100041b5((DWORD)&local_30);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+##### refs to "nearly crashed you" #####
+  @0x1000a640
+   xref 0x10004858 in FUN_10004848
+
+======== FUN_10004848 @0x10004848  [refs string] ========
+
+void FUN_10004848(void)
+
+{
+  if (DAT_1000e5d0 != '\0') {
+    FUN_10007f98();
+  }
+  return;
+}
+
+
+
+##### VirtualProtect callers (patch routines) #####
+
+======== FUN_10004202 @0x10004202  [calls VirtualProtect] ========
+
+void __fastcall FUN_10004202(LPVOID param_1,void *param_2,SIZE_T param_3)
+
+{
+  BOOL BVar1;
+  LPVOID local_8;
+  
+  local_8 = param_1;
+  BVar1 = VirtualProtect(param_1,param_3,0x40,(PDWORD)&local_8);
+  if (BVar1 == 0) {
+    GetLastError();
+    FUN_10007f98();
+  }
+  else {
+    memcpy(param_1,param_2,param_3);
+  }
+  return;
+}
+
+
+
+======== FUN_100041b5 @0x100041b5  [calls VirtualProtect] ========
+
+void __fastcall FUN_100041b5(DWORD param_1)
+
+{
+  void *_Src;
+  BOOL BVar1;
+  DWORD local_4;
+  
+  _Src = *(void **)(param_1 + 0xc);
+  local_4 = param_1;
+  BVar1 = VirtualProtect(*(LPVOID *)(param_1 + 4),*(SIZE_T *)(param_1 + 0x10),0x40,&local_4);
+  if (BVar1 == 0) {
+    GetLastError();
+    FUN_10007f98();
+  }
+  else {
+    memcpy(*(void **)(param_1 + 4),_Src,*(size_t *)(param_1 + 0x10));
+    *(undefined1 *)(param_1 + 0x14) = 1;
+  }
+  return;
+}
+
+
