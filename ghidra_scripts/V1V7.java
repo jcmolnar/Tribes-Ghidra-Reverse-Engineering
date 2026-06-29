@@ -36,7 +36,7 @@ public class V1V7 extends GhidraScript {
     sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v1v7.txt")));
+        System.getProperty("user.home")+"/v1v7.txt")));
 
     // ---- find BS_readInt ----
     Symbol ri = null;

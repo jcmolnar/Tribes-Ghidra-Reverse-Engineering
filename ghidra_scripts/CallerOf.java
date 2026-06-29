@@ -11,7 +11,7 @@ public class CallerOf extends GhidraScript {
     DecompInterface di = new DecompInterface();
     di.openProgram(currentProgram);
     PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\callerof.txt")));
+      System.getProperty("user.home")+"/callerof.txt")));
     ReferenceIterator it = currentProgram.getReferenceManager().getReferencesTo(sp.getAddress(0x423158L));
     while (it.hasNext()) {
       Reference r = it.next();

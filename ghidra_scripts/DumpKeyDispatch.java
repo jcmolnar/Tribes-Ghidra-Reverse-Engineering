@@ -28,7 +28,7 @@ public class DumpKeyDispatch extends GhidraScript {
     Address ta=toAddr(target);
     Function f=fm.getFunctionAt(ta);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\keydispatch_abi_"+prog+".txt")));
+      System.getProperty("user.home")+"/keydispatch_abi_"+prog+".txt")));
 
     pw.println("##### "+prog+"  dispatch @0x"+Long.toHexString(target)+" #####");
     if(f==null){ pw.println("  <no function at target>"); pw.close(); println("no fn"); return; }

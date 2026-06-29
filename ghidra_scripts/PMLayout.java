@@ -33,7 +33,7 @@ public class PMLayout extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
     pw=new PrintWriter(new BufferedWriter(new FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\pm_layout.txt")));
+       System.getProperty("user.home")+"/pm_layout.txt")));
 
     // full vtable
     out("=== PlayerManager FULL vtable @0x65d3fc ===");

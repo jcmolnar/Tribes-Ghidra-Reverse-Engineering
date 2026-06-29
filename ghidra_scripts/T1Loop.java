@@ -17,7 +17,7 @@ public class T1Loop extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1loop.txt")));
+      System.getProperty("user.home")+"/t1loop.txt")));
     long[] globals={0x6a841cL,0x6a8420L,0x6a842cL};
     Set<Function> fns=new LinkedHashSet<>();
     for(long g:globals){

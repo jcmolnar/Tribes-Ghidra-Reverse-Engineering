@@ -21,7 +21,7 @@ public class OverrideApply extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\overrideapply.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/overrideapply.txt")));
 
     // 1) functions that READ byte [reg+0x9e] (the override-select). Exclude the writes in updateAnimation
     //    (those are MOV byte [reg+0x9e], imm = mnemonic MOV with a dest mem operand + imm src).

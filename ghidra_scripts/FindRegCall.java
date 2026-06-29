@@ -12,7 +12,7 @@ public class FindRegCall extends GhidraScript {
     AddressSpace sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     Listing lst=currentProgram.getListing();
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\findreg.txt")));
+      System.getProperty("user.home")+"/findreg.txt")));
     Function f=currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(0x423158L));
     if(f==null){ pw.println("no fn @0x423158"); pw.close(); return; }
     ArrayList<String> lines=new ArrayList<>();

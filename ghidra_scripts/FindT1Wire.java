@@ -16,7 +16,7 @@ public class FindT1Wire extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1wire.txt")));
+      System.getProperty("user.home")+"/t1wire.txt")));
 
     // (A) net-error strings -> xref functions (the guarded wire unpacks / connection path)
     String[] want={"Invalid packet","packet version","upgrade your executable","Connection","ghost","DataBlock","datablock"};

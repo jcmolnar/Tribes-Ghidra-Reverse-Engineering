@@ -25,7 +25,7 @@ public class HudbotSeam extends GhidraScript {
   public void run() throws Exception {
     di = new DecompInterface();
     di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\hudbot_seam.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/hudbot_seam.txt"));
 
     dump(0x403600L, "addCommand(Callback) [TribesXT]");
     dump(0x403640L, "evaluate?? / addCommand(CMDCallback*) [TribesXT dup]");

@@ -36,7 +36,7 @@ public class FindConsoleAbi extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager(); rm=currentProgram.getReferenceManager();
     pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\console_abi_T1Vista.exe.txt")));
+      System.getProperty("user.home")+"/console_abi_T1Vista.exe.txt")));
 
     long consoleGlobal=0x006583c4L;
     pw.println("##### CMDConsole ABI — T1Vista.exe #####");

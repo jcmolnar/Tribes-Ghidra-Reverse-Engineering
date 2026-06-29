@@ -11,7 +11,7 @@ public class DumpAsm extends GhidraScript {
   public void run() throws Exception {
     if(!currentProgram.getName().equalsIgnoreCase("T1Vista.exe")){ println("run on T1Vista.exe"); return; }
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\asm_keydispatch_T1Vista.txt")));
+      System.getProperty("user.home")+"/asm_keydispatch_T1Vista.txt")));
     Listing lst=currentProgram.getListing();
     Address a=toAddr(0x0050d62cL), end=toAddr(0x0050d710L);
     pw.println("##### FUN_0050d62c disasm (keyboard->bind dispatch) #####");

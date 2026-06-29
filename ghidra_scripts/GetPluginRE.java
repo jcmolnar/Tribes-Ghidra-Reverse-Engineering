@@ -14,7 +14,7 @@ public class GetPluginRE extends GhidraScript {
     SymbolTable st=currentProgram.getSymbolTable();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\getplugin.txt")));
+      System.getProperty("user.home")+"/getplugin.txt")));
     Set<Function> seen=new LinkedHashSet<>();
     // find getPlugin + DllMain by symbol name
     for(Symbol s: st.getAllSymbols(false)){

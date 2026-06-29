@@ -31,7 +31,7 @@ public class EventMap extends GhidraScript {
     mem=currentProgram.getMemory(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     fm=currentProgram.getFunctionManager(); di=new DecompInterface(); di.openProgram(currentProgram);
     java.io.PrintWriter pw=new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\event_cluster.txt")));
+       System.getProperty("user.home")+"/event_cluster.txt")));
     // SimEvent-family vtables share +0x00=0x58b794. Walk the contiguous 0x34-stride block.
     for(long vt=0x0060f820L; vt<=0x0060fb60L; vt+=0x34){
       long slot0; try{ slot0=u32(vt); }catch(Exception e){ continue; }

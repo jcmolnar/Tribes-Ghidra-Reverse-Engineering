@@ -11,7 +11,7 @@ public class RegWrappers extends GhidraScript {
     AddressSpace sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\regwrap.txt")));
+      System.getProperty("user.home")+"/regwrap.txt")));
     long[] fns={0x10007fd9L,0x10007fbeL,0x10004136L,0x1000410fL,0x100048ceL,0x10007f98L};
     for(long va:fns){
       Function f=currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(va));

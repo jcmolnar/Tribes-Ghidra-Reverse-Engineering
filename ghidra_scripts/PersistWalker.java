@@ -128,7 +128,7 @@ public class PersistWalker extends GhidraScript {
         c.name, c.tag>=0?Integer.toString(c.tag):"-", c.vt, c.descr, c.pack, c.unpack));
 
     // Full unpack() decompiles to file (the wire-format ground truth).
-    File out=new File("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\persist_dump.txt");
+    File out=new File(System.getProperty("user.home")+"/persist_dump.txt");
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(out)));
     pw.println("Persistent classes in T1Vista.exe (Borland C++) — unpack() wire formats");
     pw.println("vtable: +0x0c=pack +0x10=unpack +0x1c=descr ; descr+0x30=name\n");

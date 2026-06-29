@@ -60,7 +60,7 @@ public class DelVerify extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace(); mem=currentProgram.getMemory();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\delverify.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/delverify.txt")));
 
     // 1. SimManager::deleteObject — THE contested point (deferred deleteList vs immediate delete)
     dumpFor("SimManager::deleteObject", "already been deleted");

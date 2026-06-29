@@ -28,7 +28,7 @@ public class AIFix140 extends GhidraScript {
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     lst=currentProgram.getListing(); mem=currentProgram.getMemory(); st=currentProgram.getSymbolTable();
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\aifix140.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/aifix140.txt")));
 
     long fnVA=0x4298c0L;
     Function f=fm.getFunctionAt(sp.getAddress(fnVA));

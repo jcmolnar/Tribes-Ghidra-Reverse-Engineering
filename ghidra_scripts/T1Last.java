@@ -13,7 +13,7 @@ public class T1Last extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1last.txt")));
+      System.getProperty("user.home")+"/t1last.txt")));
 
     pw.println("===== V1: preloadServerDataBlocks FUN_004227c4 (find createDataBlock) =====");
     Function pf=currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(0x4227c4L));

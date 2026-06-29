@@ -15,7 +15,7 @@ public class DecompList extends GhidraScript {
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     Listing lst=currentProgram.getListing();
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\decomplist.txt", true)));
+      System.getProperty("user.home")+"/decomplist.txt", true)));
     pw.println("\n\n@@@@@@@@@@ program="+currentProgram.getName()+" @@@@@@@@@@");
     for(String tok: list.split(",")){
       tok=tok.trim(); if(tok.isEmpty()) continue;

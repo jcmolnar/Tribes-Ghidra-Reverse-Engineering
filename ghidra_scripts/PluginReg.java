@@ -16,7 +16,7 @@ public class PluginReg extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\pluginreg.txt")));
+      System.getProperty("user.home")+"/pluginreg.txt")));
     String[] want={"setJet","getPitch","setGravity","setPitch","ShowAICrash","getGravity","find_path","setSkin"};
     Set<Function> regfns=new LinkedHashSet<>();
     DataIterator dit=lst.getDefinedData(true);

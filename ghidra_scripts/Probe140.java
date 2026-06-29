@@ -34,7 +34,7 @@ public class Probe140 extends GhidraScript {
     fm=currentProgram.getFunctionManager(); st=currentProgram.getSymbolTable();
     di=new DecompInterface(); di.openProgram(currentProgram);
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\probe140.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/probe140.txt")));
 
     // 1) vftable inventory
     List<Symbol> vfs=new ArrayList<Symbol>();

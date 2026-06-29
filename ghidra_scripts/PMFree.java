@@ -32,7 +32,7 @@ public class PMFree extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
     pw=new PrintWriter(new BufferedWriter(new FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\pm_free.txt")));
+       System.getProperty("user.home")+"/pm_free.txt")));
 
     // named helpers from processEvent
     long[] helpers = { 0x4b65d0L, 0x4b6610L, 0x4b7b30L, 0x4b6e40L, 0x4b5190L, 0x4b65d0L, 0x4b8ec0L };

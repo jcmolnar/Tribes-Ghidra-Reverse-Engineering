@@ -10,7 +10,7 @@ public class Decomp extends GhidraScript {
     long[] addrs = { 0x540670L, 0x540d30L, 0x5476d0L };
     AddressSpace sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     DecompInterface di = new DecompInterface(); di.openProgram(currentProgram);
-    PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\decomp_out.txt"));
+    PrintWriter pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/decomp_out.txt"));
     for (long a : addrs) {
       Function f = currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(a));
       pw.println("\n\n======== 0x" + Long.toHexString(a) + (f!=null?("  fn="+f.getEntryPoint()):" (none)") + " ========");

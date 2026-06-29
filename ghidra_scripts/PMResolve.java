@@ -82,7 +82,7 @@ public class PMResolve extends GhidraScript {
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
     MemoryBlock db=mem.getBlock(".data"); dataMin=db.getStart().getOffset(); dataMax=db.getEnd().getOffset();
     pw=new PrintWriter(new BufferedWriter(new FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\pm_resolve.txt")));
+       System.getProperty("user.home")+"/pm_resolve.txt")));
     out("PlayerManager resolve — vtable=0x"+Long.toHexString(PM_VTBL)+"  .data=["+Long.toHexString(dataMin)+".."+Long.toHexString(dataMax)+")");
 
     // --- (0) what's at the OLD global 0x6A842C ---

@@ -16,7 +16,7 @@ public class T1Ghost extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1ghost.txt")));
+      System.getProperty("user.home")+"/t1ghost.txt")));
 
     // resolveGhost callers, full context
     pw.println("===== resolveGhost = FUN_005535d8 callers (16 instrs each) =====");

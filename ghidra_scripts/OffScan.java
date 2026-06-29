@@ -27,7 +27,7 @@ public class OffScan extends GhidraScript {
       n++;
     }
     DecompInterface di = new DecompInterface(); di.openProgram(currentProgram);
-    PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\offscan.txt"));
+    PrintWriter pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/offscan.txt"));
     pw.println("scanned " + n + " instructions");
     // candidates = functions touching >=2 of the offsets
     List<Function> cand = new ArrayList<>();

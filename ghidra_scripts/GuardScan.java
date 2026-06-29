@@ -18,7 +18,7 @@ public class GuardScan extends GhidraScript {
     // targets: resolveGhost?(0x517eb0). (add more later: Persistent::create 0x4131e0 etc.)
     long[] targets={0x4131e0L,0x434890L};   // Persistent::create, createDataBlock
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\guardscan.txt")));
+      System.getProperty("user.home")+"/guardscan.txt")));
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     for(long t:targets){
       Address ta=sp.getAddress(t);

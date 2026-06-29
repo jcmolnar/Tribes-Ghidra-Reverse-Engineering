@@ -26,7 +26,7 @@ public class V7f extends GhidraScript {
     sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7f.txt")));
+        System.getProperty("user.home")+"/v7f.txt")));
     long lo=0x4c1c00L, hi=0x4c3600L;
     FunctionIterator fit = currentProgram.getFunctionManager().getFunctions(sp.getAddress(lo), true);
     List<Function> fns=new ArrayList<Function>();

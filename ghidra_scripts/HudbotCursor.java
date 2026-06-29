@@ -22,7 +22,7 @@ public class HudbotCursor extends GhidraScript {
 
   public void run() throws Exception {
     di = new DecompInterface(); di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\hudbot_cursor.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/hudbot_cursor.txt"));
 
     String[] needles = {"isCursorOn", "cursorOn", "setCursor", "lockMouse", "unlockMouse"};
     DataIterator it = currentProgram.getListing().getDefinedData(true);

@@ -14,7 +14,7 @@ public class FindFreeList extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\freelist.txt")));
+      System.getProperty("user.home")+"/freelist.txt")));
     long lo=0x340e0, hi=0x34100;   // client lists: +0x340ec active, +0x340f0 free pool, +0x340f4 secondary
     Map<Function,List<String>> hits=new LinkedHashMap<>();
     InstructionIterator it=lst.getInstructions(true);

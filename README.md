@@ -16,6 +16,9 @@ Built and run against **Ghidra 12.1.2 PUBLIC**. Ghidra is **not** included here 
 
 > ⚠️ Many scripts reference **specific function addresses** (`FUN_00xxxxxx`) and offsets for **specific binaries** — T1Vista.exe (Borland C++ 5.x, v1.3), the 1.40.655 client (MSVC), and the Kronos `mem.dll` plugin loader. Those hardcoded addresses will **not** match other builds; treat such scripts as templates / documentation of where things live, and re-anchor to your binary.
 
+
+> **Output location:** scripts write their `.txt` dumps to your home directory (`System.getProperty("user.home")`). Edit the path in a script if you want them elsewhere.
+
 ## What's in here (by theme)
 
 - **Wire / packet / persistence:** `PersistWalker`, `Registrars`, `NameBitStream`, `FullCatalog`, `GhostCatalog`, `PlayerPSCRead`, `FindClassTag`, `EventMap`, `RealTags`, `CompareTag`, `DumpPack`, `DumpTagTable` — enumerate persistent classes and recover their exact bitstream formats.

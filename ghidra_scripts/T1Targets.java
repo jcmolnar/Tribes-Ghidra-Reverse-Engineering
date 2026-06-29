@@ -20,7 +20,7 @@ public class T1Targets extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\mem_t1targets.txt")));
+      System.getProperty("user.home")+"/mem_t1targets.txt")));
     for(long t:TARGETS){
       Address a=sp.getAddress(t);
       Function f=fm.getFunctionContaining(a);

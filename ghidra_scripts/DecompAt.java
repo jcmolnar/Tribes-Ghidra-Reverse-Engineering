@@ -14,7 +14,7 @@ public class DecompAt extends GhidraScript {
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     Function f=fm.getFunctionContaining(sp.getAddress(crash));
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\crash_fn.txt")));
+      System.getProperty("user.home")+"/crash_fn.txt")));
     if(f==null){ pw.println("no function at 0x"+Long.toHexString(crash)); pw.close(); println("no func"); return; }
     pw.println("crash EIP 0x"+Long.toHexString(crash)+" in "+f.getName()+" @0x"+Long.toHexString(f.getEntryPoint().getOffset()));
     // disassembly around the crash

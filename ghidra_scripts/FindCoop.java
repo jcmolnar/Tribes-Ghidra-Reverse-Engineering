@@ -12,7 +12,7 @@ public class FindCoop extends GhidraScript {
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     FunctionManager fm=currentProgram.getFunctionManager();
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\coop_re.txt")));
+      System.getProperty("user.home")+"/coop_re.txt")));
     AddressSpace sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     // input region (DirectInput init FUN_0052bc00 lives here)
     long lo=0x529000L, hi=0x52f000L;

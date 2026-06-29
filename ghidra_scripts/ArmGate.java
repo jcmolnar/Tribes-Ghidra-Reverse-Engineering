@@ -17,7 +17,7 @@ public class ArmGate extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\armgate.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/armgate.txt")));
 
     pw.println("===== callers of arm-aim apply FUN_00412f94 =====");
     Set<Long> callers=new LinkedHashSet<Long>();

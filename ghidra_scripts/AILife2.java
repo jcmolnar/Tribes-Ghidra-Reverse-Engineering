@@ -28,7 +28,7 @@ public class AILife2 extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace(); mem=currentProgram.getMemory();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\ailife2.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/ailife2.txt")));
 
     // 1. find the vtable slot holding AIObj::onAdd 0x43db28, dump the vtable, decompile 0x43xxxx slots
     long onAdd=0x43db28L;

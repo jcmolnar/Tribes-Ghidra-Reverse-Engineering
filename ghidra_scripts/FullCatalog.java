@@ -71,7 +71,7 @@ public class FullCatalog extends GhidraScript {
     println("=== "+all.size()+" persistent classes (corrected names) ===");
 
     java.io.PrintWriter pw=new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\full_catalog.txt")));
+       System.getProperty("user.home")+"/full_catalog.txt")));
     pw.println("FULL CATALOG — "+all.size()+" persistent classes in T1Vista.exe, corrected names + unpack formats.");
     pw.println("Naming: SimEvent-family (vtbl slot0=0x58b794) uses V-0x34 shift; others naive. pack/unpack always exact.\n");
     int ev=0,db=0;

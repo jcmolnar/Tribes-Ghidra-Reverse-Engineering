@@ -11,7 +11,7 @@ public class WrapDisasm extends GhidraScript {
     AddressSpace sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     Listing lst=currentProgram.getListing();
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\wrapdisasm.txt")));
+      System.getProperty("user.home")+"/wrapdisasm.txt")));
     long[] fns={0x10007fd9L,0x10007fbeL,0x10007f98L};
     for(long va:fns){
       Function f=currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(va));

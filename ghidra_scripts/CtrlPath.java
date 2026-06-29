@@ -25,7 +25,7 @@ public class CtrlPath extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\ctrlpath.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/ctrlpath.txt")));
 
     // findClient candidates (near findBaseRep 0x40de80)
     pw.println("================= findClient candidates (near findBaseRep FUN_0040de80) =================");

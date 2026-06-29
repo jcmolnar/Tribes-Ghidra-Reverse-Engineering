@@ -58,7 +58,7 @@ public class Cat140 extends GhidraScript {
     }
 
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\full_catalog_140.txt")));
+       System.getProperty("user.home")+"/full_catalog_140.txt")));
     pw.println("TRIBES 1.40.655 (Tribes.exe, MSVC2005) — RTTI class catalog + SimEvent wire formats");
     pw.println("Legend: readInt=FUN_0040fd10(bits)  writeInt=FUN_0040fd50(val,bits)");
     pw.println("  BitStream/StreamIO vtbl: +0x18 write(nbytes,&src)  +0x1c read(nbytes,&dst)  +0x28 readString(&dst)  +0x2c writeString(&src,max)");

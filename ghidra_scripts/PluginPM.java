@@ -16,7 +16,7 @@ public class PluginPM extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\pluginpm.txt")));
+      System.getProperty("user.home")+"/pluginpm.txt")));
     // anchor on the command-name strings the plugin registers
     Set<Function> fns=new LinkedHashSet<>();
     DataIterator dit=lst.getDefinedData(true);

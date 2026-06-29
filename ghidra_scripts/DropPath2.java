@@ -27,7 +27,7 @@ public class DropPath2 extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\droppath2.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/droppath2.txt")));
 
     long[] listOffs={0x340f0L,0x340ecL,0x340f4L};
     pw.println("===== PlayerManager-cluster functions [0x40b788,0x40c800] that touch the client lists =====");

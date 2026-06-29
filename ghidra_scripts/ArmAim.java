@@ -26,7 +26,7 @@ public class ArmAim extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\armaim.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/armaim.txt")));
 
     long sel=0x413074L;  // aim-direction selector
     pw.println("===== callers of aim-direction selector FUN_00413074 =====");

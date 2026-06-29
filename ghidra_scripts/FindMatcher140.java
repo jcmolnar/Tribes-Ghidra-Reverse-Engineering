@@ -24,7 +24,7 @@ public class FindMatcher140 extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     lst=currentProgram.getListing(); rm=currentProgram.getReferenceManager();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\find_matcher140.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/find_matcher140.txt")));
 
     // Pass 1: find candidate matchers — functions with CMP against 0x2a and 0x3f that self-recurse.
     List<Function> candidates=new ArrayList<Function>();

@@ -31,7 +31,7 @@ public class PMVerify extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
     pw=new PrintWriter(new BufferedWriter(new FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\pm_verify.txt")));
+       System.getProperty("user.home")+"/pm_verify.txt")));
 
     // MaxTeams arithmetic
     long teamBase=0x41fc, teamStride=0x419c, clientArrayStart=0x25104;

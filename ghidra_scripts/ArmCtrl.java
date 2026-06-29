@@ -35,7 +35,7 @@ public class ArmCtrl extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace(); mem=currentProgram.getMemory();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\armctrl.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/armctrl.txt")));
 
     pw.println("===== node-name strings + referencing functions =====");
     Set<Long> setupFns=new LinkedHashSet<Long>();

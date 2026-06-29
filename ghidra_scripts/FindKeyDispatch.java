@@ -59,7 +59,7 @@ public class FindKeyDispatch extends GhidraScript {
     fm=currentProgram.getFunctionManager();
 
     String prog=currentProgram.getName();
-    String out="C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\keydispatch_"+prog+".txt";
+    String out=System.getProperty("user.home")+"/keydispatch_"+prog+".txt";
     pw=new PrintWriter(new BufferedWriter(new FileWriter(out)));
     pw.println("##### keyboard->bind dispatch candidates in "+prog+" #####");
     pw.println("# anchor: CMP/SUB against 0x60 ('`') - the console-toggle key above the action-map dispatch");

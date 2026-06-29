@@ -18,7 +18,7 @@ public class T1Server extends GhidraScript {
     Memory mem=currentProgram.getMemory();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1server.txt")));
+      System.getProperty("user.home")+"/t1server.txt")));
 
     // find all addresses holding the float 0.001f = 0x3a83126f
     pw.println("===== references to 0.001f (0x3a83126f) =====");

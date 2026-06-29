@@ -13,7 +13,7 @@ public class HandlerABI extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\handlerabi.txt")));
+      System.getProperty("user.home")+"/handlerabi.txt")));
     long[] fns={0x41e094L,0x41e0ccL,0x41e140L};
     for(long va:fns){
       Function f=currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(va));

@@ -26,7 +26,7 @@ public class AIDel extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\aidel.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/aidel.txt")));
 
     long delObj=0x4fe858L;        // SimObject::deleteObject
     long onRemove=0x43dbd8L;      // AIObj::onRemove

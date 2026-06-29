@@ -46,7 +46,7 @@ public class GhostCatalog extends GhidraScript {
     }
     println("=== "+ghosts.size()+" ghost classes (have unpackUpdate@+0x68) ===");
     java.io.PrintWriter pw=new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.FileWriter(
-       "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\ghost_catalog.txt")));
+       System.getProperty("user.home")+"/ghost_catalog.txt")));
     pw.println("GHOST CATALOG — unpackUpdate (live world-state decoder, vtable+0x68) per ghost class, T1Vista.exe.");
     pw.println("GhostManager::readPacket framing (FUN_00552cc8, matches source): ghostAlwaysFlag; idSize=readInt(3);");
     pw.println("per-ghost: readFlag hasGhost; index=readInt(idSize+3); readFlag delete; if-new {oNumber=readInt(32)");

@@ -52,7 +52,7 @@ public class ResLoadDump extends GhidraScript {
   public void run() throws Exception {
     sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     di = new DecompInterface(); di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\resloaddump.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/resloaddump.txt"));
     dump(0x415fd0L, "load-by-name (FUN_00415fd0)");
     dump(0x415850L, "unlock/free (FUN_00415850)");
     pw.close();

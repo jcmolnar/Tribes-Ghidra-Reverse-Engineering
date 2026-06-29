@@ -12,7 +12,7 @@ public class T1More extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1more.txt")));
+      System.getProperty("user.home")+"/t1more.txt")));
 
     // (1) functions with a big switch (an instruction with many flow targets) — createDataBlock candidate
     pw.println("===== (1) big-switch functions (>=12 jump targets) — createDataBlock candidate =====");

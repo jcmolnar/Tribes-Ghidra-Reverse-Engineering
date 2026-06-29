@@ -12,7 +12,7 @@ public class TexCacheLimit extends GhidraScript {
   DecompInterface di; PrintWriter pw;
   public void run() throws Exception {
     di = new DecompInterface(); di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\texcachelimit.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/texcachelimit.txt"));
     FunctionManager fm = currentProgram.getFunctionManager();
     String[] anchors = { "Maximum width of bitmap", "Maximum width", "bitmap is 256", "g_bitmap", "gOGLTx" };
     java.util.HashSet<String> done = new java.util.HashSet<String>();

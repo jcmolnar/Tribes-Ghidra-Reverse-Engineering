@@ -36,7 +36,7 @@ public class V7d extends GhidraScript {
     mem = currentProgram.getMemory();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7d.txt")));
+        System.getProperty("user.home")+"/v7d.txt")));
 
     long[] targets = {0x6289f9L, 0x628a05L, 0x628a24L, 0x628a35L};
     MemoryBlock tb = mem.getBlock(".text");

@@ -57,7 +57,7 @@ public class V7e extends GhidraScript {
     di = new DecompInterface(); di.openProgram(currentProgram);
     MemoryBlock tb=mem.getBlock(".text"); textMin=tb.getStart().getOffset(); textMax=tb.getEnd().getOffset();
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7e.txt")));
+        System.getProperty("user.home")+"/v7e.txt")));
 
     // 1. find class-name string "ScoreListCtrl"
     List<Long> nameHits = findBytes("ScoreListCtrl".getBytes());

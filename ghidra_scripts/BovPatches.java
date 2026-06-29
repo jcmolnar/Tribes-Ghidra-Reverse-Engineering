@@ -18,7 +18,7 @@ public class BovPatches extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\bov_"+(name.contains("t1vista")?"t1vista":"plugin")+".txt")));
+      System.getProperty("user.home")+"/bov_"+(name.contains("t1vista")?"t1vista":"plugin")+".txt")));
     for(long va:addrs){
       Address a=sp.getAddress(va);
       Function f=currentProgram.getFunctionManager().getFunctionContaining(a);

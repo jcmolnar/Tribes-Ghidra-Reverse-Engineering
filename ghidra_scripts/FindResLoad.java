@@ -44,7 +44,7 @@ public class FindResLoad extends GhidraScript {
   public void run() throws Exception {
     di = new DecompInterface();
     di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\resload.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/resload.txt"));
 
     String[] anchors = { "Material::load", "Compass.bmp", "ammoSh.bmp", "resManager.cpp" };
     FunctionManager fm = currentProgram.getFunctionManager();

@@ -13,7 +13,7 @@ public class VtScan extends GhidraScript {
     AddressSpace sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     Memory mem = currentProgram.getMemory();
     DecompInterface di = new DecompInterface(); di.openProgram(currentProgram);
-    PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\vtscan.txt"));
+    PrintWriter pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/vtscan.txt"));
 
     long vt = 0x6720fcL;
     Set<Long> seen = new HashSet<>();

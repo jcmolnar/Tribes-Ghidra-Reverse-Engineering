@@ -18,7 +18,7 @@ public class T1Hunt extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\t1hunt.txt")));
+      System.getProperty("user.home")+"/t1hunt.txt")));
 
     // (A) Persistent::create callers + guard status
     pw.println("===== (A) Persistent::create = FUN_0058afe4 callers =====");

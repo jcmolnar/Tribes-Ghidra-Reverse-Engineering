@@ -35,7 +35,7 @@ public class V7b extends GhidraScript {
     mem = currentProgram.getMemory();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7b.txt")));
+        System.getProperty("user.home")+"/v7b.txt")));
 
     long onWake = 0x489d00L;
     // ---- find data refs (vtable slots) pointing at onWake ----

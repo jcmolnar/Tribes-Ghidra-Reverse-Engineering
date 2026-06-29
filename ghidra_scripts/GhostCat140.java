@@ -46,7 +46,7 @@ public class GhostCat140 extends GhidraScript {
   public void run() throws Exception {
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     mem=currentProgram.getMemory(); di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\ghostcat_140.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/ghostcat_140.txt")));
     pw.println("TRIBES 1.40.655 — datablock unpack (slot1) + ghost unpackUpdate (slot26) wire formats");
     pw.println("Legend: readInt=FUN_0040fd10(bits) writeInt=FUN_0040fd50(v,bits); netcode gate = DAT_006d0ff8 (serverNetcodeVersion) byteswap<0x101");
     pw.println("\n#################### DATABLOCK ::unpack (vtable slot 1) ####################");

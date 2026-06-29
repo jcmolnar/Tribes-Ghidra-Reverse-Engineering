@@ -16,7 +16,7 @@ public class FindLoader extends GhidraScript {
     ReferenceManager rm=currentProgram.getReferenceManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\loader.txt")));
+      System.getProperty("user.home")+"/loader.txt")));
     Set<Function> fns=new LinkedHashSet<>();
     DataIterator dit=lst.getDefinedData(true);
     while(dit.hasNext()){ Data d=dit.next(); Object v=d.getValue(); if(!(v instanceof String)) continue; String s=(String)v;

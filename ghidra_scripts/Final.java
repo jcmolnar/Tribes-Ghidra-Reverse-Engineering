@@ -24,7 +24,7 @@ public class Final extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\final.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/final.txt")));
     dump(0x40b754L,"clean()");
     dump(0x40b168L,"setGenericDefaults()");
     dump(0x4fe858L,"SimObject::deleteObject (wrapper)");

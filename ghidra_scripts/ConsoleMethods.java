@@ -13,7 +13,7 @@ public class ConsoleMethods extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\consolemethods.txt")));
+      System.getProperty("user.home")+"/consolemethods.txt")));
     // vtable[1..7] targets + the 0x5f4280 used by FUN_10001191
     long[] fns={0x5f40d8L,0x5f450cL,0x5f3ff8L,0x5f3f10L,0x5f4138L,0x5f41a8L,0x5f3ddcL,0x5f4280L};
     for(long va:fns){

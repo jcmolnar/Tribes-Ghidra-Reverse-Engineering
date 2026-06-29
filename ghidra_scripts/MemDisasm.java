@@ -25,7 +25,7 @@ public class MemDisasm extends GhidraScript {
     }
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\mem_patcher.txt")));
+      System.getProperty("user.home")+"/mem_patcher.txt")));
     Listing lst=currentProgram.getListing();
     for(long rva:rvas){
       Address a=sp.getAddress(0x10000000L+rva);

@@ -21,7 +21,7 @@ public class MemInstall extends GhidraScript {
     Listing lst=currentProgram.getListing();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\mem_install.txt")));
+      System.getProperty("user.home")+"/mem_install.txt")));
     // We want raw disasm of the call-site clusters. Disasm windows around each cluster.
     long[][] windows = {{0x2400,0x2440},{0x5790,0x5870},{0x8380,0x83c0},{0x8b90,0x8c00}};
     for(long[] w:windows){

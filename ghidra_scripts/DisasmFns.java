@@ -12,7 +12,7 @@ public class DisasmFns extends GhidraScript {
     Listing lst=currentProgram.getListing();
     long[] addrs = {0x423158L, 0x40b788L};   // console-registration (hook for addCommand) + addClient pool-pop (hook for reserved-skip)
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\disasm_freeze.txt")));
+      System.getProperty("user.home")+"/disasm_freeze.txt")));
     for(long va:addrs){
       Address a=sp.getAddress(va);
       Function f=currentProgram.getFunctionManager().getFunctionContaining(a);

@@ -19,7 +19,7 @@ public class Probe140b extends GhidraScript {
   public void run() throws Exception {
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\probe140b.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/probe140b.txt")));
     // TeamObjectiveEvent per-class slots 3,6,7
     deco("TeamObjectiveEvent slot3", 0x4b47f0L);
     deco("TeamObjectiveEvent slot6", 0x4b4800L);

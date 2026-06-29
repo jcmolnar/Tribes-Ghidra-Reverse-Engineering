@@ -10,7 +10,7 @@ public class DecompAll extends GhidraScript {
   public void run() throws Exception {
     DecompInterface di = new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\memdll.txt")));
+      System.getProperty("user.home")+"/memdll.txt")));
     FunctionManager fm = currentProgram.getFunctionManager();
     pw.println("imageBase=0x" + Long.toHexString(currentProgram.getImageBase().getOffset()));
     int n = 0;

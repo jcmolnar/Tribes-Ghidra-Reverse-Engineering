@@ -23,7 +23,7 @@ public class MemPatch extends GhidraScript {
     FunctionManager fm=currentProgram.getFunctionManager();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\mem_dllmain.txt")));
+      System.getProperty("user.home")+"/mem_dllmain.txt")));
 
     // locate key strings
     long base=0x10000000L;
@@ -66,7 +66,7 @@ public class MemPatch extends GhidraScript {
 
     // Scan .text for instructions that write a dword/byte to an absolute T1Vista-range address.
     PrintWriter pw2=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\mem_writesites.txt")));
+      System.getProperty("user.home")+"/mem_writesites.txt")));
     MemoryBlock textb=mem.getBlock(".text");
     InstructionIterator ii=lst.getInstructions(textb.getStart(), true);
     int writes=0;

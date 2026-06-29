@@ -22,7 +22,7 @@ public class AIInner extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     lst=currentProgram.getListing(); rm=currentProgram.getReferenceManager();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\ai_inner.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/ai_inner.txt")));
 
     long innerVA = 0x58a87cL;
     long crashFnVA = 0x43ffbcL;

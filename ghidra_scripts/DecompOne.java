@@ -13,7 +13,7 @@ public class DecompOne extends GhidraScript {
     long[] addrs={0x423158L};   // find its CALLER below; decompile to see where gameObj (the namespace src) comes from
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\decompone.txt")));
+      System.getProperty("user.home")+"/decompone.txt")));
     for(long va:addrs){
       Address a=sp.getAddress(va);
       Function f=currentProgram.getFunctionManager().getFunctionContaining(a);

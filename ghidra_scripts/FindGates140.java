@@ -28,7 +28,7 @@ public class FindGates140 extends GhidraScript {
         if(!funcs.containsKey(key)) funcs.put(key, nm+"  (gate 0x"+Long.toHexString(g)+" ref @0x"+Long.toHexString(from.getOffset())+")");
       }
     }
-    PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\version_gates_140.txt")));
+    PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/version_gates_140.txt")));
     pw.println("Functions referencing serverNetcodeVersion(0x6D0FF8)/ourNetcodeVersion(0x6D0FFC) — every netcode gate.");
     pw.println("Count: "+funcs.size()+"\n");
     for(Map.Entry<Long,String> e: funcs.entrySet()) pw.println(String.format("0x%08x  %s", e.getKey(), e.getValue()));

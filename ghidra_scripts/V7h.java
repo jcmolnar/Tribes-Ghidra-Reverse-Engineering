@@ -23,7 +23,7 @@ public class V7h extends GhidraScript {
     sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7h.txt")));
+        System.getProperty("user.home")+"/v7h.txt")));
 
     long lo=0x4c1d5eL, hi=0x4c2198L;
     // clear and disassemble linearly across the gap

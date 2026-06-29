@@ -14,7 +14,7 @@ public class FindAnalogs extends GhidraScript {
     FunctionManager fm=currentProgram.getFunctionManager();
     ReferenceManager rm=currentProgram.getReferenceManager();
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\analogs.txt")));
+      System.getProperty("user.home")+"/analogs.txt")));
 
     // (1) strings containing "Packet*" + xref functions
     pw.println("===== (1) PacketRate/PacketSize/PacketFrame string sites =====");

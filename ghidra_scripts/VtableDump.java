@@ -12,7 +12,7 @@ public class VtableDump extends GhidraScript {
     AddressSpace sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\vtable.txt")));
+      System.getProperty("user.home")+"/vtable.txt")));
     // dump the vtable: 8 function pointers at 0x1000e028
     pw.println("===== vtable @0x1000e028 (function pointers) =====");
     for(int i=0;i<8;i++){

@@ -43,7 +43,7 @@ public class AILife extends GhidraScript {
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     di=new DecompInterface(); di.openProgram(currentProgram);
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\ailife.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/ailife.txt")));
 
     pw.println("================= callers of clientAdded FUN_0040b788 =================");
     for(long c: new LinkedHashSet<Long>(callers(0x40b788L))) dump(ensureFn(c), "clientAdded-caller");

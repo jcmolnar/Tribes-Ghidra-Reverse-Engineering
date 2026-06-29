@@ -66,7 +66,7 @@ public class V7c extends GhidraScript {
     mem = currentProgram.getMemory();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7c.txt")));
+        System.getProperty("user.home")+"/v7c.txt")));
 
     String[] anchors = {"sf_white_10b.pft","sf_yellow_10b.pft","LowResScore","sf_white_6.pft"};
     Set<Long> onAddCand = new LinkedHashSet<Long>();

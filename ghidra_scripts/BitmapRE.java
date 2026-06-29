@@ -51,7 +51,7 @@ public class BitmapRE extends GhidraScript {
     di = new DecompInterface(); di.openProgram(currentProgram);
     fm = currentProgram.getFunctionManager();
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\bitmap_re.txt")));
+        System.getProperty("user.home")+"/bitmap_re.txt")));
     pw.println("GFXBitmap format-loader RE — Tribes 1.40.655");
     refsToString("Microsoft bitmaps are not supported");
     refsToString("Phoenix bitmaps are not supported");

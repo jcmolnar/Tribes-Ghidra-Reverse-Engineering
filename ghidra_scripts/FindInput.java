@@ -25,7 +25,7 @@ public class FindInput extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager(); st=currentProgram.getSymbolTable();
     mem=currentProgram.getMemory(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\input_re.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/input_re.txt")));
 
     // 1) DirectInput imports + callers
     pw.println("##### DirectInput import callers #####");

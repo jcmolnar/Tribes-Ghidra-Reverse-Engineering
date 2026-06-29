@@ -41,7 +41,7 @@ public class TexCallers extends GhidraScript {
 
   public void run() throws Exception {
     di = new DecompInterface(); di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\texcallers.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/texcallers.txt"));
     callersOf(0x418570L, "GFXBitmap::load(stream)", true);
     callersOf(0x4180c0L, "GFXBitmap::read(stream)", true);
     callersOf(0x415fd0L, "ResourceManager::load(name)", false);

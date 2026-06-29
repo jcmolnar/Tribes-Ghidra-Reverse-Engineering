@@ -12,7 +12,7 @@ public class MemDecomp extends GhidraScript {
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     long[] rvas = {0x1fc0,0x1f60,0x1d60,0x2da0,0x2100,0x2700,0x2900,0x2c00,0x2e30,0x5c50};
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\mem_funcs.txt")));
+      System.getProperty("user.home")+"/mem_funcs.txt")));
     for(long rva:rvas){
       Address a=sp.getAddress(0x10000000L+rva);
       Function f=fm.getFunctionContaining(a);

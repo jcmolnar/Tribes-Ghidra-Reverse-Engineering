@@ -12,7 +12,7 @@ public class Registrars extends GhidraScript {
     AddressSpace sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     DecompInterface di=new DecompInterface(); di.openProgram(currentProgram);
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\registrars.txt")));
+      System.getProperty("user.home")+"/registrars.txt")));
     for(long va: new long[]{0x5f5590L,0x5f56bcL}){
       Function f=currentProgram.getFunctionManager().getFunctionContaining(sp.getAddress(va));
       pw.println("===== 0x"+Long.toHexString(va)+(f!=null?" "+f.getName():"")+" =====");

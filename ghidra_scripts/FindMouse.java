@@ -15,7 +15,7 @@ public class FindMouse extends GhidraScript {
     AddressSpace sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     Memory mem = currentProgram.getMemory();
     DecompInterface di = new DecompInterface(); di.openProgram(currentProgram);
-    PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\findmouse.txt"));
+    PrintWriter pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/findmouse.txt"));
 
     long cursorOn = 0x00540670L;
     // 1) find data refs to cursorOn (vtable slots)

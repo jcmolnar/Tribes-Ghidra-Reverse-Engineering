@@ -36,7 +36,7 @@ public class CrashVec extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     mem=currentProgram.getMemory(); lst=currentProgram.getListing();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\crashvec.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/crashvec.txt")));
     // known
     dump("DataBlockEvent::unpack (createDataBlock NULL)", 0x434fa0L);
     dump("Player::unpackUpdate (resolveGhost NULL on MountMask)", 0x4bc8c0L);

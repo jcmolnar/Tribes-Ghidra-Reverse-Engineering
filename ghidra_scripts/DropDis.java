@@ -18,7 +18,7 @@ public class DropDis extends GhidraScript {
   }
   public void run() throws Exception {
     sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\dropdis.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/dropdis.txt")));
     disasm(0x40c3d8L);   // clientDropped
     disasm(0x4fe858L);   // SimObject::deleteObject (EAX=obj)
     pw.close(); println("wrote re/dropdis.txt");

@@ -10,7 +10,7 @@ public class AIJetScan extends GhidraScript {
   public void run() throws Exception {
     Listing lst=currentProgram.getListing();
     PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(
-      "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\aijet.txt")));
+      System.getProperty("user.home")+"/aijet.txt")));
     InstructionIterator ii=lst.getInstructions(true); int found=0;
     while(ii.hasNext()){
       Instruction ins=ii.next(); String s=ins.toString();

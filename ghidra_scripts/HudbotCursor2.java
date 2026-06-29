@@ -25,7 +25,7 @@ public class HudbotCursor2 extends GhidraScript {
   public void run() throws Exception {
     sp = currentProgram.getAddressFactory().getDefaultAddressSpace();
     di = new DecompInterface(); di.openProgram(currentProgram);
-    pw = new PrintWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\hudbot_cursor2.txt"));
+    pw = new PrintWriter(new FileWriter(System.getProperty("user.home")+"/hudbot_cursor2.txt"));
     Memory mem = currentProgram.getMemory();
 
     // 1) find the vtable: a .rdata pointer whose value == 0x0054aac0 (init)

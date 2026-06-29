@@ -21,7 +21,7 @@ public class AICaller140 extends GhidraScript {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager(); sp=currentProgram.getAddressFactory().getDefaultAddressSpace();
     lst=currentProgram.getListing(); mem=currentProgram.getMemory(); st=currentProgram.getSymbolTable();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\aicaller140.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/aicaller140.txt")));
 
     long fnVA=0x4298c0L;
 

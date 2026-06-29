@@ -31,7 +31,7 @@ public class AIPatch extends GhidraScript {
   public void run() throws Exception {
     di=new DecompInterface(); di.openProgram(currentProgram);
     fm=currentProgram.getFunctionManager();
-    pw=new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\aipatch.txt")));
+    pw=new PrintWriter(new BufferedWriter(new FileWriter(System.getProperty("user.home")+"/aipatch.txt")));
     pw.println("ServerSidePlugin.dll (Bov) — AI crash-fix patch installer");
     refsTo("Patching an AI crash bug");
     refsTo("Patching a hook into the AI");

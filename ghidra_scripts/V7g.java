@@ -32,7 +32,7 @@ public class V7g extends GhidraScript {
     mem = currentProgram.getMemory();
     di = new DecompInterface(); di.openProgram(currentProgram);
     pw = new PrintWriter(new BufferedWriter(new FileWriter(
-        "C:\\Users\\Joe\\Desktop\\Tribes Browser Based\\re\\v7g.txt")));
+        System.getProperty("user.home")+"/v7g.txt")));
 
     // force-disassemble the gap (and the onWake region just before onRenderCell)
     long gapLo=0x4c1d60L, gapHi=0x4c2198L;
