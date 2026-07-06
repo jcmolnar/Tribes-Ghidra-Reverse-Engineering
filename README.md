@@ -28,6 +28,7 @@ Built and run against **Ghidra 12.1.2 PUBLIC**. Ghidra is **not** included here 
 - **1.40 client:** `AICaller140`, `AIFix140`, `FindGates140`, `FindMatcher140`, `Probe140`, `Cat140`, `GhostCat140`.
 - **AI / gameplay subsystems:** `AI*`, `FindGhostMgr`, `FindObjective`, `FindCoop`, `FindFreeList`, `FindInput`, `FindMouse`, `FindResLoad`/`ResLoadDump`, `BitmapRE`, `TexCacheLimit`/`TexCallers`.
 - **Hudbot / ScriptGL input:** `HudbotCursor*`, `HudbotSeam`, `DumpKeyDispatch`, `FindKeyDispatch`.
+- **GUI control persist (`.gui`) format:** `SliderRawFind`, `SliderVt2`, `CtrlRead`, `SliderNear` (1.3) + `FGSlider140` (1.40) — recover the `SimGui::Control` / `ActiveCtrl` / `FGSlider` on-disk field layout. **Verified** format documented in [`docs/gui_control_persist_format.md`](docs/gui_control_persist_format.md).
 - **Version diff / catalog:** `V1V7`, `V7b`–`V7h`, `VtableDump`/`VtScan`, `FindVtable`, `VerifyMap`.
 
 ## License / notes
