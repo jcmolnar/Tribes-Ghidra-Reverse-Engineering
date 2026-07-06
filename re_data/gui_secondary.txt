@@ -1,0 +1,923 @@
+
+######## Control  secondary(Responder) vtable = 0x63c25c ########
+
+==== [0] onMouseDown  0x538b7c ====
+
+void FUN_00538b7c(int param_1)
+
+{
+  if (*(undefined4 **)(param_1 + 4) != (undefined4 *)0x0) {
+    (**(code **)**(undefined4 **)(param_1 + 4))();
+  }
+  return;
+}
+
+
+
+==== [1] onMouseRepeat  0x538b8c ====
+
+void FUN_00538b8c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 4))();
+  }
+  return;
+}
+
+
+
+==== [2] onMouseUp  0x538b9c ====
+
+void FUN_00538b9c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 8))();
+  }
+  return;
+}
+
+
+
+==== [3] onMouseMove  0x538bac ====
+
+void FUN_00538bac(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0xc))();
+  }
+  return;
+}
+
+
+
+==== [4] onMouseEnter  0x538bbc ====
+
+void FUN_00538bbc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x10))();
+  }
+  return;
+}
+
+
+
+==== [5] onMouseLeave  0x538bcc ====
+
+void FUN_00538bcc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x14))();
+  }
+  return;
+}
+
+
+
+==== [6] onMouseDragged  0x538bdc ====
+
+void FUN_00538bdc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x18))();
+  }
+  return;
+}
+
+
+
+==== [7] onRightMouseDown  0x538bec ====
+
+void FUN_00538bec(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x1c))();
+  }
+  return;
+}
+
+
+
+==== [8] onRightMouseRepeat  0x538bfc ====
+
+void FUN_00538bfc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x20))();
+  }
+  return;
+}
+
+
+
+==== [9] onRightMouseUp  0x538c0c ====
+
+void FUN_00538c0c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x24))();
+  }
+  return;
+}
+
+
+
+==== [10] onRightMouseDragged  0x538c1c ====
+
+void FUN_00538c1c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x28))();
+  }
+  return;
+}
+
+
+
+==== [11] onKeyUp  0x538c2c ====
+
+void FUN_00538c2c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x2c))();
+  }
+  return;
+}
+
+
+
+==== [12] onKeyRepeat  0x538c3c ====
+
+void FUN_00538c3c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x30))();
+  }
+  return;
+}
+
+
+
+==== [13] onKeyDown  0x538c4c ====
+
+void FUN_00538c4c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x34))();
+  }
+  return;
+}
+
+
+
+==== [14] onMessage  0x538c5c ====
+
+undefined4 FUN_00538c5c(int param_1)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    uVar1 = (**(code **)(**(int **)(param_1 + 4) + 0x38))();
+    return uVar1;
+  }
+  return 0;
+}
+
+
+
+==== [15] loseFirstResponder  0x538b74 ====
+
+undefined1 __stdcall FUN_00538b74(void)
+
+{
+  return 1;
+}
+
+
+
+==== [16] becomeFirstResponder  0x538b78 ====
+
+undefined4 __stdcall FUN_00538b78(void)
+
+{
+  return 0;
+}
+
+
+
+######## ActiveCtrl(TestButton)  secondary(Responder) vtable = 0x63c834 ########
+
+==== [0] onMouseDown  0x53db90 ====
+
+void FUN_0053db90(int param_1)
+
+{
+  FUN_0053c5e0(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [1] onMouseRepeat  0x538b8c ====
+
+void FUN_00538b8c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 4))();
+  }
+  return;
+}
+
+
+
+==== [2] onMouseUp  0x53db88 ====
+
+void FUN_0053db88(int param_1)
+
+{
+  FUN_0053c62c(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [3] onMouseMove  0x53db80 ====
+
+void FUN_0053db80(int param_1)
+
+{
+  FUN_0053c4c4(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [4] onMouseEnter  0x538bbc ====
+
+void FUN_00538bbc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x10))();
+  }
+  return;
+}
+
+
+
+==== [5] onMouseLeave  0x53db78 ====
+
+void FUN_0053db78(int param_1)
+
+{
+  FUN_0053c5c0(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [6] onMouseDragged  0x53db70 ====
+
+void FUN_0053db70(int param_1)
+
+{
+  FUN_0053c708(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [7] onRightMouseDown  0x538bec ====
+
+void FUN_00538bec(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x1c))();
+  }
+  return;
+}
+
+
+
+==== [8] onRightMouseRepeat  0x538bfc ====
+
+void FUN_00538bfc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x20))();
+  }
+  return;
+}
+
+
+
+==== [9] onRightMouseUp  0x538c0c ====
+
+void FUN_00538c0c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x24))();
+  }
+  return;
+}
+
+
+
+==== [10] onRightMouseDragged  0x538c1c ====
+
+void FUN_00538c1c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x28))();
+  }
+  return;
+}
+
+
+
+==== [11] onKeyUp  0x53db68 ====
+
+void FUN_0053db68(int param_1)
+
+{
+  FUN_0053c6b4(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [12] onKeyRepeat  0x538c3c ====
+
+void FUN_00538c3c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x30))();
+  }
+  return;
+}
+
+
+
+==== [13] onKeyDown  0x53db60 ====
+
+void FUN_0053db60(int param_1)
+
+{
+  FUN_0053c67c(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [14] onMessage  0x538c5c ====
+
+undefined4 FUN_00538c5c(int param_1)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    uVar1 = (**(code **)(**(int **)(param_1 + 4) + 0x38))();
+    return uVar1;
+  }
+  return 0;
+}
+
+
+
+==== [15] loseFirstResponder  0x53db58 ====
+
+void FUN_0053db58(int param_1)
+
+{
+  FUN_0053c850(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [16] becomeFirstResponder  0x53db50 ====
+
+void FUN_0053db50(int param_1)
+
+{
+  FUN_0053c86c(param_1 + -0x6c);
+  return;
+}
+
+
+
+######## FGSlider  secondary(Responder) vtable = 0x629940 ########
+
+==== [0] onMouseDown  0x4cb384 ====
+
+void FUN_004cb384(int param_1)
+
+{
+  FUN_004ca3a0(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [1] onMouseRepeat  0x4cb37c ====
+
+void FUN_004cb37c(int param_1)
+
+{
+  if (*(char *)(param_1 + 0x168) == '\0') {
+    (**(code **)(*(int *)(param_1 + -0x6c) + 0xe0))();
+  }
+  return;
+}
+
+
+
+==== [2] onMouseUp  0x4cb374 ====
+
+void FUN_004cb374(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int *piVar5;
+  int *piVar6;
+  int aiStack_28 [3];
+  int iStack_1c;
+  int iStack_18;
+  int iStack_14;
+  
+  FUN_0053423c(*(undefined4 *)(param_1 + 0x14));
+  *(undefined1 *)(param_1 + 0x140) = 0;
+  *(undefined1 *)(param_1 + 0x168) = 0;
+  if (1 < *(int *)(param_1 + 0x17c)) {
+    iStack_14 = *(int *)(param_1 + 0x17c) + -1;
+    iStack_18 = *(int *)(param_1 + 0x178) - *(int *)(param_1 + 0x170);
+    aiStack_28[0] = FUN_0048813c();
+    iVar3 = FUN_0048813c();
+    iVar1 = *(int *)(param_1 + 0x178);
+    iVar2 = *(int *)(param_1 + 0x170);
+    iVar4 = FUN_0048813c();
+    if (iVar4 <= (iVar1 - iVar2) - iVar3) {
+      aiStack_28[0] = aiStack_28[0] + 1;
+    }
+    aiStack_28[1] = 0;
+    aiStack_28[2] = *(int *)(param_1 + 0x17c) + -1;
+    if (aiStack_28[2] < aiStack_28[0]) {
+      piVar5 = aiStack_28 + 2;
+    }
+    else {
+      piVar5 = aiStack_28;
+    }
+    if (*piVar5 < 0) {
+      piVar5 = aiStack_28 + 1;
+    }
+    aiStack_28[0] = *piVar5;
+    piVar5 = (int *)(param_1 + 0x174);
+    iStack_1c = FUN_0048813c();
+    iStack_1c = iStack_1c + *(int *)(param_1 + 0x170);
+    if (iStack_1c <= *piVar5) {
+      piVar5 = &iStack_1c;
+    }
+    piVar6 = (int *)(param_1 + 0x170);
+    if (*(int *)(param_1 + 0x170) <= *piVar5) {
+      piVar6 = piVar5;
+    }
+    *(int *)(param_1 + 0x178) = *piVar6;
+  }
+  if (*(char *)(param_1 + 0x75) != '\0') {
+    FUN_005f41a8(DAT_006583c4,param_1 + 0x75,0,0,0);
+  }
+  FUN_0053a890(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [3] onMouseMove  0x4cb36c ====
+
+void FUN_004cb36c(int param_1)
+
+{
+  FUN_0053c4c4(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [4] onMouseEnter  0x538bbc ====
+
+void FUN_00538bbc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x10))();
+  }
+  return;
+}
+
+
+
+==== [5] onMouseLeave  0x4cb364 ====
+
+void FUN_004cb364(int param_1)
+
+{
+  FUN_0053c5c0(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [6] onMouseDragged  0x4cb35c ====
+
+void FUN_004cb35c(int param_1,int param_2)
+
+{
+  int *piVar1;
+  int *piVar2;
+  int aiStack_14 [2];
+  int iStack_c;
+  
+  FUN_0053a1f4(param_1 + -0x6c,param_2 + 0x24,aiStack_14);
+  if (*(char *)(param_1 + 0x168) != '\0') {
+    piVar2 = (int *)(param_1 + 0x170);
+    iStack_c = aiStack_14[0] - *(int *)(param_1 + 0x180);
+    if (*piVar2 <= iStack_c) {
+      piVar2 = &iStack_c;
+    }
+    piVar1 = (int *)(param_1 + 0x174);
+    if (*piVar2 <= *(int *)(param_1 + 0x174)) {
+      piVar1 = piVar2;
+    }
+    *(int *)(param_1 + 0x178) = *piVar1;
+    if (*(char *)(param_1 + 0xc6) != '\0') {
+      FUN_005f41a8(DAT_006583c4,param_1 + 0xc6,0,0,0);
+    }
+    FUN_0053a890(param_1 + -0x6c);
+  }
+  return;
+}
+
+
+
+==== [7] onRightMouseDown  0x538bec ====
+
+void FUN_00538bec(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x1c))();
+  }
+  return;
+}
+
+
+
+==== [8] onRightMouseRepeat  0x538bfc ====
+
+void FUN_00538bfc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x20))();
+  }
+  return;
+}
+
+
+
+==== [9] onRightMouseUp  0x538c0c ====
+
+void FUN_00538c0c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x24))();
+  }
+  return;
+}
+
+
+
+==== [10] onRightMouseDragged  0x538c1c ====
+
+void FUN_00538c1c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x28))();
+  }
+  return;
+}
+
+
+
+==== [11] onKeyUp  0x4cb354 ====
+
+void FUN_004cb354(int param_1)
+
+{
+  FUN_0053c6b4(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [12] onKeyRepeat  0x4cb34c ====
+
+void FUN_004cb34c(int param_1)
+
+{
+  FUN_0054ce18(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [13] onKeyDown  0x4cb344 ====
+
+void FUN_004cb344(int param_1)
+
+{
+  FUN_0054cdf0(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [14] onMessage  0x538c5c ====
+
+undefined4 FUN_00538c5c(int param_1)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    uVar1 = (**(code **)(**(int **)(param_1 + 4) + 0x38))();
+    return uVar1;
+  }
+  return 0;
+}
+
+
+
+==== [15] loseFirstResponder  0x4cb33c ====
+
+void FUN_004cb33c(int param_1)
+
+{
+  FUN_0053c850(param_1 + -0x6c);
+  return;
+}
+
+
+
+==== [16] becomeFirstResponder  0x4cb334 ====
+
+void FUN_004cb334(int param_1)
+
+{
+  FUN_0053c86c(param_1 + -0x6c);
+  return;
+}
+
+
+
+######## TestCheck  secondary(Responder) vtable = 0x63da50 ########
+
+==== [0] onMouseDown  0x538b7c ====
+
+void FUN_00538b7c(int param_1)
+
+{
+  if (*(undefined4 **)(param_1 + 4) != (undefined4 *)0x0) {
+    (**(code **)**(undefined4 **)(param_1 + 4))();
+  }
+  return;
+}
+
+
+
+==== [1] onMouseRepeat  0x538b8c ====
+
+void FUN_00538b8c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 4))();
+  }
+  return;
+}
+
+
+
+==== [2] onMouseUp  0x538b9c ====
+
+void FUN_00538b9c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 8))();
+  }
+  return;
+}
+
+
+
+==== [3] onMouseMove  0x538bac ====
+
+void FUN_00538bac(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0xc))();
+  }
+  return;
+}
+
+
+
+==== [4] onMouseEnter  0x5447d8 ====
+
+void FUN_005447d8(int param_1)
+
+{
+  *(undefined4 *)(param_1 + 0x140) = 1;
+  return;
+}
+
+
+
+==== [5] onMouseLeave  0x5447d0 ====
+
+void FUN_005447d0(int param_1)
+
+{
+  *(undefined4 *)(param_1 + 0x140) = 0;
+  return;
+}
+
+
+
+==== [6] onMouseDragged  0x538bdc ====
+
+void FUN_00538bdc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x18))();
+  }
+  return;
+}
+
+
+
+==== [7] onRightMouseDown  0x538bec ====
+
+void FUN_00538bec(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x1c))();
+  }
+  return;
+}
+
+
+
+==== [8] onRightMouseRepeat  0x538bfc ====
+
+void FUN_00538bfc(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x20))();
+  }
+  return;
+}
+
+
+
+==== [9] onRightMouseUp  0x538c0c ====
+
+void FUN_00538c0c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x24))();
+  }
+  return;
+}
+
+
+
+==== [10] onRightMouseDragged  0x538c1c ====
+
+void FUN_00538c1c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x28))();
+  }
+  return;
+}
+
+
+
+==== [11] onKeyUp  0x538c2c ====
+
+void FUN_00538c2c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x2c))();
+  }
+  return;
+}
+
+
+
+==== [12] onKeyRepeat  0x538c3c ====
+
+void FUN_00538c3c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x30))();
+  }
+  return;
+}
+
+
+
+==== [13] onKeyDown  0x538c4c ====
+
+void FUN_00538c4c(int param_1)
+
+{
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    (**(code **)(**(int **)(param_1 + 4) + 0x34))();
+  }
+  return;
+}
+
+
+
+==== [14] onMessage  0x538c5c ====
+
+undefined4 FUN_00538c5c(int param_1)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int **)(param_1 + 4) != (int *)0x0) {
+    uVar1 = (**(code **)(**(int **)(param_1 + 4) + 0x38))();
+    return uVar1;
+  }
+  return 0;
+}
+
+
+
+==== [15] loseFirstResponder  0x538b74 ====
+
+undefined1 __stdcall FUN_00538b74(void)
+
+{
+  return 1;
+}
+
+
+
+==== [16] becomeFirstResponder  0x538b78 ====
+
+undefined4 __stdcall FUN_00538b78(void)
+
+{
+  return 0;
+}
+
+

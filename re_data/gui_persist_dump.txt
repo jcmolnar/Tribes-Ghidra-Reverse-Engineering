@@ -1,0 +1,1347 @@
+== canonical readSlot=10 writeSlot=11 ==
+
+======== PER-CLASS read/write slot fns ========
+FearGui::CFGButton                 vt=0062232c  read=0049ec7c  write=0049ebb4
+FearGui::ControlsListCtrl          vt=00625e48  read=0053c900  write=0053c8a4
+FearGui::FGArrayCtrl               vt=0061f2b4  read=0053c900  write=0053c8a4
+FearGui::FGBuddyComboBox           vt=006254cc  read=004bbc3c  write=004bbc18
+FearGui::FGComboBox                vt=00625184  read=004b76d0  write=004b7654
+FearGui::FGComboList               vt=00625cac  read=0053c900  write=0053c8a4
+FearGui::FGCommandPanel            vt=00622b30  read=00539098  write=00538dfc
+FearGui::FGControlsComboBox        vt=00626148  read=004b76d0  write=004b7654
+FearGui::FGControlsPopUp           vt=00625b60  read=00539098  write=00538dfc
+FearGui::FGFilterComboBox          vt=00627e84  read=004b76d0  write=004b7654
+FearGui::FGHBuySell                vt=0062e1c0  read=0053c900  write=0053c8a4
+FearGui::FGHInventory              vt=0062e024  read=0053c900  write=0053c8a4
+FearGui::FGIRCActiveTextFormat     vt=0061fcf0  read=004ce4bc  write=004ce47c
+FearGui::FGIRCTopicCtrl            vt=00620b48  read=005406bc  write=005405ac
+FearGui::FGMenuCtrl                vt=006214d8  read=0053c900  write=0053c8a4
+FearGui::FGMissionComboBox         vt=006267b0  read=004b76d0  write=004b7654
+FearGui::FGPlayerComboBox          vt=00626cbc  read=004b76d0  write=004b7654
+FearGui::FGServerFilterComboBox    vt=00628514  read=004b76d0  write=004b7654
+FearGui::FGStandardComboBox        vt=00625328  read=004bbc3c  write=004bbc18
+FearGui::FGTabMenu                 vt=00629df4  read=004ccd1c  write=004cccd8
+FearGui::FGTextFormat              vt=0061fe4c  read=004ce4bc  write=004ce47c
+FearGui::FearGuiDialog             vt=00622888  read=004aef68  write=004aeef4
+FearGui::FearGuiScrollCtrl         vt=00625fe4  read=004c3a90  write=004c3a38
+FearGui::FilterCtrl                vt=006279ac  read=0053c900  write=0053c8a4
+FearGui::FilterVarCtrl             vt=00627ce8  read=0053c900  write=0053c8a4
+FearGui::MMShellBorder             vt=00621e18  read=0049c8d4  write=0049c940
+FearGui::MissionListCtrl           vt=00626614  read=0053c900  write=0053c8a4
+FearGui::PlayerListCtrl            vt=00626b20  read=0053c900  write=0053c8a4
+FearGui::ShapeView                 vt=006217f8  read=004993a8  write=004993d8
+FearGui::StandardListCtrl          vt=006270d8  read=0053c900  write=0053c8a4
+FearGui::TestEdit                  vt=0061fb80  read=0053f6ac  write=0053f620
+GWDialog                           vt=0063a6a0  read=00528b98  write=0057ce34
+GWTreeList                         vt=00631b28  read=004f6930  write=0057ce34
+MEButton                           vt=00630aa4  read=005406bc  write=005405ac
+MECheck                            vt=00630520  read=0054de00  write=0054ddbc
+MEInspectTagList                   vt=00631054  read=00539098  write=00538dfc
+MEPopup                            vt=00630250  read=005406bc  write=005405ac
+MEPopupBkgnd                       vt=006307f8  read=00539098  write=00538dfc
+MEPopupButton                      vt=00630c0c  read=005406bc  write=005405ac
+MERadio                            vt=00630ee8  read=0053df7c  write=0053df38
+METextEdit                         vt=00630688  read=0053f6ac  write=0053f620
+METextList                         vt=0063092c  read=0054baa8  write=0054ba04
+SimGui::Canvas                     vt=0063bc7c  read=00532f28  write=0057ff6c
+SimGui::ComboPopUp                 vt=0063e8c4  read=00539098  write=00538dfc
+SimGui::HelpCtrl                   vt=0063c284  read=00539098  write=00538dfc
+SimGui::MatrixCtrl                 vt=0063e324  read=0054b4a0  write=0054b42c
+SimGui::ProgressCtrl               vt=0063dba4  read=00544b60  write=00544aec
+SimGui::ScrollContentCtrl          vt=0063da78  read=00539098  write=00538dfc
+SimGui::Slider                     vt=0063e760  read=0054d38c  write=0054d318
+SimGui::TSControl                  vt=0063ddf8  read=00547864  write=00547820
+SimGui::TestButton                 vt=0063c6f4  read=005406bc  write=005405ac
+SimGui::TestCheck                  vt=006303b8  read=0054de00  write=0054ddbc
+SimGui::TestRadial                 vt=00630d7c  read=0053df7c  write=0053df38
+SimGui::TextFormat                 vt=0063bf9c  read=00538a14  write=005389f0
+SimGui::TextList                   vt=0063e490  read=0054baa8  write=0054ba04
+SimGui::TextWrap                   vt=0063e608  read=0054cb7c  write=0054cac0
+SimGui::TimerCtrl                  vt=0063df44  read=00547fac  write=00547f38
+FearGui::FGSlider(final)           vt=00629538  read=00539d50  write=0053c7f8
+FearGui::FGSlider(base)            vt=0061f2dc  read=00539d50  write=0053c7f8
+
+
+######## DISTINCT READ FUNCTIONS ########
+
+================ read 0x4993a8  [FearGui::ShapeView] ================
+
+void FUN_004993a8(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  (**(code **)(*param_2 + 0x28))(param_2,param_1 + 500);
+  FUN_0053c900(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x49c8d4  [FearGui::MMShellBorder] ================
+
+void FUN_0049c8d4(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  char local_9;
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_9);
+  if (local_9 == -1) {
+    uVar1 = BS_readSTString(param_2,0);
+    *(undefined4 *)(param_1 + 0x1b4) = uVar1;
+  }
+  else {
+    *(undefined4 *)(param_1 + 0x1b4) = 0;
+    iVar2 = (**(code **)(*param_2 + 8))();
+    (**(code **)(*param_2 + 0xc))(param_2,iVar2 + -1);
+  }
+  FUN_00539098(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x49ec7c  [FearGui::CFGButton] ================
+
+void FUN_0049ec7c(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_c [4];
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_c);
+  (**(code **)(*param_2 + 0x28))(param_2,param_1 + 0x2fd);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x350);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x354);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x358);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x35c);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x360);
+  FUN_005406bc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x4aef68  [FearGui::FearGuiDialog] ================
+
+void FUN_004aef68(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char cVar1;
+  
+  cVar1 = (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1ac);
+  if (cVar1 != '\0') {
+    (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1b0);
+  }
+  FUN_00539098(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x4b76d0  [FearGui::FGComboBox, FearGui::FGControlsComboBox, FearGui::FGFilterComboBox, FearGui::FGMissionComboBox, FearGui::FGPlayerComboBox, FearGui::FGServerFilterComboBox] ================
+
+void FUN_004b76d0(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  byte local_d;
+  undefined1 local_c [4];
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_c);
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_d);
+  if (local_d != 0) {
+    (**(code **)(*param_2 + 0x1c))(param_2,local_d,param_1 + 0x2f8);
+  }
+  *(undefined1 *)(param_1 + 0x2f8 + (uint)local_d) = 0;
+  FUN_005406bc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x4bbc3c  [FearGui::FGBuddyComboBox, FearGui::FGStandardComboBox] ================
+
+void FUN_004bbc3c(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  FUN_004b76d0(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x4c3a90  [FearGui::FearGuiScrollCtrl] ================
+
+void FUN_004c3a90(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_c [4];
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_c);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1b4);
+  FUN_0054b4a0(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x4ccd1c  [FearGui::FGTabMenu] ================
+
+void FUN_004ccd1c(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c4);
+  FUN_0053c900(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x4ce4bc  [FearGui::FGIRCActiveTextFormat, FearGui::FGTextFormat] ================
+
+void FUN_004ce4bc(undefined4 param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_c [4];
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_c);
+  FUN_00538a14(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x4f6930  [GWTreeList] ================
+
+void FUN_004f6930(undefined4 *param_1,uint param_2)
+
+{
+  if (param_1 != (undefined4 *)0x0) {
+    *param_1 = &PTR_FUN_00631b50;
+    FUN_0057cdf8(param_1,0);
+    if ((param_2 & 1) != 0) {
+      FUN_00488854();
+    }
+  }
+  return;
+}
+
+
+
+================ read 0x528b98  [GWDialog] ================
+
+void FUN_00528b98(int param_1,uint param_2)
+
+{
+  if (param_1 != 0) {
+    FUN_0057cdf8(param_1,0);
+    if ((param_2 & 1) != 0) {
+      FUN_00488854();
+    }
+  }
+  return;
+}
+
+
+
+================ read 0x532f28  [SimGui::Canvas] ================
+
+void FUN_00532f28(undefined4 *param_1,uint param_2)
+
+{
+  int *piVar1;
+  int iVar2;
+  
+  if (param_1 != (undefined4 *)0x0) {
+    *param_1 = &PTR_FUN_0063bca4;
+    param_1[0x54] = &PTR_FUN_0063bf10;
+    param_1[0x68] = &PTR_FUN_0063bf74;
+    piVar1 = (int *)param_1[0x9c];
+    if ((piVar1 != (int *)0x0) && (piVar1 != (int *)0x0)) {
+      (**(code **)(*piVar1 + 0x1c))(piVar1,3);
+    }
+    FUN_00536b34(param_1 + 0xa4,2);
+    FUN_00536b34(param_1 + 0xa0,2);
+    iVar2 = param_1[0x8d];
+    if (iVar2 != 0) {
+      FUN_00587d64(*(undefined4 *)(iVar2 + 0x40),iVar2,0);
+      param_1[0x8d] = 0;
+    }
+    iVar2 = param_1[0x8c];
+    if (iVar2 != 0) {
+      FUN_00587d64(*(undefined4 *)(iVar2 + 0x40),iVar2,0);
+      param_1[0x8c] = 0;
+    }
+    iVar2 = param_1[0x86];
+    if (iVar2 != 0) {
+      FUN_00587d64(*(undefined4 *)(iVar2 + 0x40),iVar2,0);
+      param_1[0x86] = 0;
+    }
+    iVar2 = param_1[0x85];
+    if (iVar2 != 0) {
+      FUN_00587d64(*(undefined4 *)(iVar2 + 0x40),iVar2,0);
+      param_1[0x85] = 0;
+    }
+    FUN_00507b38(param_1,0);
+    if ((param_2 & 1) != 0) {
+      FUN_00488854();
+    }
+  }
+  return;
+}
+
+
+
+================ read 0x538a14  [SimGui::TextFormat] ================
+
+void FUN_00538a14(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  FUN_0053c900(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x539098  [FearGui::FGCommandPanel, FearGui::FGControlsPopUp, MEInspectTagList, MEPopupBkgnd, SimGui::ComboPopUp, SimGui::HelpCtrl, SimGui::ScrollContentCtrl] ================
+
+void FUN_00539098(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char cVar1;
+  undefined4 local_44;
+  int local_40;
+  int local_3c;
+  int *local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
+  int *local_28;
+  int local_24;
+  byte local_1d;
+  undefined1 local_1c [4];
+  undefined1 local_18 [7];
+  undefined1 local_11;
+  undefined1 local_10 [7];
+  byte local_9;
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_9);
+  if (local_9 == 0) {
+    (**(code **)(*param_2 + 0x1c))(param_2,4,local_10);
+    (**(code **)(*param_2 + 0x1c))(param_2,4,local_10);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,&local_11);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,&local_11);
+    *(undefined1 *)(param_1 + 0x75) = 0;
+    *(undefined1 *)(param_1 + 0x74) = 0;
+  }
+  else if (local_9 == 1) {
+    (**(code **)(*param_2 + 0x1c))(param_2,4,local_18);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x74);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x76);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x75);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x79);
+  }
+  else if (1 < local_9) {
+    (**(code **)(*param_2 + 0x1c))(param_2,4,local_1c);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x74);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x76);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x77);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x78);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x75);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x79);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x7a);
+    (**(code **)(*param_2 + 0x1c))(param_2,1,param_1 + 0x7b);
+  }
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_1d);
+  if (local_1d != 0) {
+    (**(code **)(*param_2 + 0x1c))(param_2,local_1d,param_1 + 0xe1);
+    *(undefined1 *)(param_1 + 0xe1 + (uint)local_1d) = 0;
+  }
+  if ((2 < local_9) && ((**(code **)(*param_2 + 0x1c))(param_2,1,&local_1d), local_1d != 0)) {
+    (**(code **)(*param_2 + 0x1c))(param_2,local_1d,param_1 + 0x132);
+    *(undefined1 *)(param_1 + 0x132 + (uint)local_1d) = 0;
+  }
+  local_2c = param_1 + 0x19c;
+  local_28 = param_2;
+  local_24 = local_2c;
+  cVar1 = (**(code **)(*param_2 + 0x1c))(param_2,4,local_2c);
+  if (cVar1 != '\0') {
+    local_30 = local_24 + 4;
+    (**(code **)(*local_28 + 0x1c))(local_28,4,local_30);
+  }
+  local_3c = param_1 + 0x1a4;
+  local_38 = param_2;
+  local_34 = local_3c;
+  cVar1 = (**(code **)(*param_2 + 0x1c))(param_2,4,local_3c);
+  if (cVar1 != '\0') {
+    local_40 = local_34 + 4;
+    (**(code **)(*local_38 + 0x1c))(local_38,4,local_40);
+  }
+  (**(code **)(*param_2 + 0x1c))(param_2,4,&local_44);
+  *(undefined4 *)(param_1 + 400) = local_44;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x84);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x88);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x8c);
+  if (3 < local_9) {
+    (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x188);
+  }
+  (**(code **)(*param_2 + 0x1c))(param_2,0x51,param_1 + 0x90);
+  FUN_004ff5f0(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x539d50  [FearGui::FGSlider(final), FearGui::FGSlider(base)] ================
+
+undefined4 FUN_00539d50(int param_1,int param_2,int param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  if (param_2 != 0) {
+    iVar2 = param_3;
+    if (3 < param_2) {
+      uVar1 = FUN_006070c8();
+      *(undefined4 *)(param_1 + 0x19c) = uVar1;
+      uVar1 = FUN_006070c8();
+      *(undefined4 *)(param_1 + 0x1a0) = uVar1;
+      uVar1 = FUN_006070c8();
+      *(undefined4 *)(param_1 + 0x1a4) = uVar1;
+      iVar2 = *(int *)(param_3 + 0xc);
+      uVar1 = FUN_006070c8();
+      *(undefined4 *)(param_1 + 0x1a8) = uVar1;
+    }
+    if (4 < param_2) {
+      FUN_00539dd0(param_1,*(undefined4 *)(param_3 + 0x10),iVar2);
+    }
+    if (5 < param_2) {
+      FUN_00539dfc(param_1,*(undefined4 *)(param_3 + 0x14));
+    }
+  }
+  return 1;
+}
+
+
+
+================ read 0x53c900  [FearGui::ControlsListCtrl, FearGui::FGArrayCtrl, FearGui::FGComboList, FearGui::FGHBuySell, FearGui::FGHInventory, FearGui::FGMenuCtrl, FearGui::FilterCtrl, FearGui::FilterVarCtrl, FearGui::MissionListCtrl, FearGui::PlayerListCtrl, FearGui::StandardListCtrl] ================
+
+void FUN_0053c900(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char local_d;
+  int local_c;
+  undefined4 local_8;
+  
+  local_c = param_1 + 0x1b4;
+  local_d = '\0';
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_d);
+  *(bool *)local_c = local_d != '\0';
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1b8);
+  FUN_00539098(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x53df7c  [MERadio, SimGui::TestRadial] ================
+
+void FUN_0053df7c(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char local_d;
+  int local_c;
+  undefined4 local_8;
+  
+  local_c = param_1 + 0x2e0;
+  local_d = '\0';
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_d);
+  *(bool *)local_c = local_d != '\0';
+  FUN_005406bc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x53f6ac  [FearGui::TestEdit, METextEdit] ================
+
+void FUN_0053f6ac(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_10 [4];
+  int local_c;
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,&local_c);
+  *(bool *)(param_1 + 800) = local_c != 0;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_10);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_10);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x2e0);
+  FUN_005406bc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x5406bc  [FearGui::FGIRCTopicCtrl, MEButton, MEPopup, MEPopupButton, SimGui::TestButton] ================
+
+void FUN_005406bc(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_10;
+  undefined1 local_c [4];
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_c);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,local_c);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c4);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c8);
+  (**(code **)(*param_2 + 0x1c))(param_2,0x51,param_1 + 0x1d8);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,&local_10);
+  *(undefined4 *)(param_1 + 0x2dc) = local_10;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x2d8);
+  FUN_0053c900(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x544b60  [SimGui::ProgressCtrl] ================
+
+void FUN_00544b60(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c8);
+  FUN_0053c900(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x547864  [SimGui::TSControl] ================
+
+void FUN_00547864(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char local_d;
+  int local_c;
+  undefined4 local_8;
+  
+  local_c = param_1 + 0x228;
+  local_d = '\0';
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_d);
+  *(bool *)local_c = local_d != '\0';
+  FUN_00539098(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x547fac  [SimGui::TimerCtrl] ================
+
+void FUN_00547fac(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1ac);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1b0);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1b4);
+  FUN_00539098(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x54b4a0  [SimGui::MatrixCtrl] ================
+
+void FUN_0054b4a0(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char cVar1;
+  
+  cVar1 = (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x284);
+  if (cVar1 != '\0') {
+    (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x288);
+  }
+  FUN_0054aeb4(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x54baa8  [METextList, SimGui::TextList] ================
+
+undefined4 FUN_0054baa8(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 uVar1;
+  char local_15;
+  int local_14;
+  char local_d;
+  int local_c;
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1ec);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1f0);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 500);
+  local_c = param_1 + 0x208;
+  local_d = '\0';
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_d);
+  *(bool *)local_c = local_d != '\0';
+  local_14 = param_1 + 0x209;
+  local_15 = '\0';
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_15);
+  *(bool *)local_14 = local_15 != '\0';
+  uVar1 = FUN_0053c900(param_1,param_2,local_8,param_4);
+  FUN_0054b7a0(param_1,*(undefined4 *)(param_1 + 0x1ec));
+  FUN_0054b874(param_1,*(undefined4 *)(param_1 + 0x1f0));
+  return uVar1;
+}
+
+
+
+================ read 0x54cb7c  [SimGui::TextWrap] ================
+
+void FUN_0054cb7c(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  int local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,&local_10);
+  *(bool *)(param_1 + 0x1fd) = local_10 != 0;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,&local_c);
+  *(undefined4 *)(param_1 + 0x208) = local_c;
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c4);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1d8);
+  FUN_0053c900(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ read 0x54d38c  [SimGui::Slider] ================
+
+void FUN_0054d38c(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x1c))(param_2,4,param_1 + 0x1c4);
+  FUN_0053c900(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ read 0x54de00  [MECheck, SimGui::TestCheck] ================
+
+void FUN_0054de00(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char local_d;
+  int local_c;
+  undefined4 local_8;
+  
+  local_c = param_1 + 0x2e0;
+  local_d = '\0';
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x1c))(param_2,1,&local_d);
+  *(bool *)local_c = local_d != '\0';
+  FUN_005406bc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+
+######## DISTINCT WRITE FUNCTIONS ########
+
+================ write 0x4993d8  [FearGui::ShapeView] ================
+
+void FUN_004993d8(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  (**(code **)(*param_2 + 0x2c))(param_2,param_1 + 500,0xff);
+  FUN_0053c8a4(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ write 0x49c940  [FearGui::MMShellBorder] ================
+
+void FUN_0049c940(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_9;
+  undefined4 local_8;
+  
+  local_9 = 0xff;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_9);
+  (**(code **)(*param_2 + 0x2c))(param_2,*(undefined4 *)(param_1 + 0x1b4),0xff);
+  FUN_00538dfc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x49ebb4  [FearGui::CFGButton] ================
+
+void FUN_0049ebb4(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_20;
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = 0;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  (**(code **)(*param_2 + 0x2c))(param_2,param_1 + 0x2fd,0xff);
+  local_10 = *(undefined4 *)(param_1 + 0x350);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_14 = *(undefined4 *)(param_1 + 0x354);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  local_18 = *(undefined4 *)(param_1 + 0x358);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_18);
+  local_1c = *(undefined4 *)(param_1 + 0x35c);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_1c);
+  local_20 = *(undefined4 *)(param_1 + 0x360);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_20);
+  FUN_005405ac(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x4aeef4  [FearGui::FearGuiDialog] ================
+
+void FUN_004aeef4(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char cVar1;
+  undefined4 local_18;
+  undefined4 local_14;
+  int *local_10;
+  undefined4 local_c;
+  int *local_8;
+  
+  local_14 = *(undefined4 *)(param_1 + 0x1ac);
+  local_10 = param_2;
+  local_c = param_3;
+  local_8 = param_2;
+  cVar1 = (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  if (cVar1 != '\0') {
+    local_18 = *(undefined4 *)(param_1 + 0x1b0);
+    (**(code **)(*local_10 + 0x18))(local_10,4,&local_18);
+  }
+  FUN_00538dfc(param_1,local_8,local_c,param_4);
+  return;
+}
+
+
+
+================ write 0x4b7654  [FearGui::FGComboBox, FearGui::FGControlsComboBox, FearGui::FGFilterComboBox, FearGui::FGMissionComboBox, FearGui::FGPlayerComboBox, FearGui::FGServerFilterComboBox] ================
+
+void FUN_004b7654(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char local_e;
+  char local_d;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = 0;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_e = FUN_006011b4();
+  local_d = local_e;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_e);
+  if (local_d != '\0') {
+    (**(code **)(*param_2 + 0x18))(param_2,local_d,param_1 + 0x2f8);
+  }
+  FUN_005405ac(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x4bbc18  [FearGui::FGBuddyComboBox, FearGui::FGStandardComboBox] ================
+
+void FUN_004bbc18(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  FUN_004b7654(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ write 0x4c3a38  [FearGui::FearGuiScrollCtrl] ================
+
+void FUN_004c3a38(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = 0;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_10 = *(undefined4 *)(param_1 + 0x1b4);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  FUN_0054b42c(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x4cccd8  [FearGui::FGTabMenu] ================
+
+void FUN_004cccd8(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = *(undefined4 *)(param_1 + 0x1c4);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  FUN_0053c8a4(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x4ce47c  [FearGui::FGIRCActiveTextFormat, FearGui::FGTextFormat] ================
+
+void FUN_004ce47c(undefined4 param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = 0;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  FUN_005389f0(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x5389f0  [SimGui::TextFormat] ================
+
+void FUN_005389f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  FUN_0053c8a4(param_1,param_2,param_3,param_4);
+  return;
+}
+
+
+
+================ write 0x538dfc  [FearGui::FGCommandPanel, FearGui::FGControlsPopUp, MEInspectTagList, MEPopupBkgnd, SimGui::ComboPopUp, SimGui::HelpCtrl, SimGui::ScrollContentCtrl] ================
+
+void FUN_00538dfc(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char cVar1;
+  undefined4 local_50;
+  undefined4 local_4c;
+  undefined4 local_48;
+  undefined4 local_44;
+  undefined4 local_40;
+  undefined4 local_3c;
+  undefined4 local_38;
+  int *local_34;
+  undefined4 *local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
+  int *local_24;
+  undefined4 *local_20;
+  char local_1b;
+  char local_1a;
+  char local_19;
+  undefined1 local_18;
+  undefined1 local_17;
+  undefined1 local_16;
+  undefined1 local_15;
+  undefined1 local_14;
+  undefined1 local_13;
+  undefined1 local_12;
+  undefined1 local_11;
+  undefined4 local_10;
+  undefined1 local_9;
+  undefined4 local_8;
+  
+  local_9 = 4;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_9);
+  local_10 = 0;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_11 = *(undefined1 *)(param_1 + 0x74);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_11);
+  local_12 = *(undefined1 *)(param_1 + 0x76);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_12);
+  local_13 = *(undefined1 *)(param_1 + 0x77);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_13);
+  local_14 = *(undefined1 *)(param_1 + 0x78);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_14);
+  local_15 = *(undefined1 *)(param_1 + 0x75);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_15);
+  local_16 = *(undefined1 *)(param_1 + 0x79);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_16);
+  local_17 = *(undefined1 *)(param_1 + 0x7a);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_17);
+  local_18 = *(undefined1 *)(param_1 + 0x7b);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_18);
+  local_1a = FUN_006011b4();
+  local_19 = local_1a;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_1a);
+  if (local_19 != '\0') {
+    (**(code **)(*param_2 + 0x18))(param_2,local_19,param_1 + 0xe1);
+  }
+  local_1b = FUN_006011b4();
+  local_19 = local_1b;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_1b);
+  if (local_19 != '\0') {
+    (**(code **)(*param_2 + 0x18))(param_2,local_19,param_1 + 0x132);
+  }
+  local_20 = (undefined4 *)(param_1 + 0x19c);
+  local_28 = *local_20;
+  local_24 = param_2;
+  cVar1 = (**(code **)(*param_2 + 0x18))(param_2,4,&local_28);
+  if (cVar1 != '\0') {
+    local_2c = local_20[1];
+    (**(code **)(*local_24 + 0x18))(local_24,4,&local_2c);
+  }
+  local_30 = (undefined4 *)(param_1 + 0x1a4);
+  local_38 = *local_30;
+  local_34 = param_2;
+  cVar1 = (**(code **)(*param_2 + 0x18))(param_2,4,&local_38);
+  if (cVar1 != '\0') {
+    local_3c = local_30[1];
+    (**(code **)(*local_34 + 0x18))(local_34,4,&local_3c);
+  }
+  local_40 = *(undefined4 *)(param_1 + 400);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_40);
+  local_44 = *(undefined4 *)(param_1 + 0x84);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_44);
+  local_48 = *(undefined4 *)(param_1 + 0x88);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_48);
+  local_4c = *(undefined4 *)(param_1 + 0x8c);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_4c);
+  local_50 = *(undefined4 *)(param_1 + 0x188);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_50);
+  (**(code **)(*param_2 + 0x18))(param_2,0x51,param_1 + 0x90);
+  FUN_004ff598(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x53c7f8  [FearGui::FGSlider(final), FearGui::FGSlider(base)] ================
+
+void FUN_0053c7f8(int param_1,undefined4 param_2)
+
+{
+  undefined1 local_60 [84];
+  undefined4 local_c;
+  
+  FUN_00539884(param_1,param_2);
+  FUN_00510724(param_2,5,0x10c8ec,param_1 + 0x1b4,1);
+  FUN_00510724(param_2,7,0x10c8ed,local_60,0x58);
+  *(undefined4 *)(param_1 + 0x1b8) = local_c;
+  return;
+}
+
+
+
+================ write 0x53c8a4  [FearGui::ControlsListCtrl, FearGui::FGArrayCtrl, FearGui::FGComboList, FearGui::FGHBuySell, FearGui::FGHInventory, FearGui::FGMenuCtrl, FearGui::FilterCtrl, FearGui::FilterVarCtrl, FearGui::MissionListCtrl, FearGui::PlayerListCtrl, FearGui::StandardListCtrl] ================
+
+void FUN_0053c8a4(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_10;
+  undefined1 local_9;
+  undefined4 local_8;
+  
+  local_9 = *(undefined1 *)(param_1 + 0x1b4);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_9);
+  local_10 = *(undefined4 *)(param_1 + 0x1b8);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  FUN_00538dfc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x53df38  [MERadio, SimGui::TestRadial] ================
+
+void FUN_0053df38(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_9;
+  undefined4 local_8;
+  
+  local_9 = *(undefined1 *)(param_1 + 0x2e0);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_9);
+  FUN_005405ac(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x53f620  [FearGui::TestEdit, METextEdit] ================
+
+void FUN_0053f620(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  int local_c;
+  undefined4 local_8;
+  
+  local_c = (int)*(char *)(param_1 + 800);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_10 = 0;
+  local_14 = 0;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  local_18 = local_10;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_18);
+  local_1c = *(undefined4 *)(param_1 + 0x2e0);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_1c);
+  FUN_005405ac(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x5405ac  [FearGui::FGIRCTopicCtrl, MEButton, MEPopup, MEPopupButton, SimGui::TestButton] ================
+
+void FUN_005405ac(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_80 [80];
+  undefined1 local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  undefined4 local_20;
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = 0;
+  local_10 = 0;
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_14 = local_c;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  local_18 = *(undefined4 *)(param_1 + 0x1c4);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_18);
+  local_1c = *(undefined4 *)(param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_1c);
+  local_20 = *(undefined4 *)(param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_20);
+  local_24 = *(undefined4 *)(param_1 + 0x1c8);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_24);
+  FUN_0060136c();
+  local_30 = 0;
+  (**(code **)(*param_2 + 0x18))(param_2,0x51,local_80);
+  local_28 = *(undefined4 *)(param_1 + 0x2dc);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_28);
+  local_2c = *(undefined4 *)(param_1 + 0x2d8);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_2c);
+  FUN_0053c8a4(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x544aec  [SimGui::ProgressCtrl] ================
+
+void FUN_00544aec(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = *(undefined4 *)(param_1 + 0x1c0);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_10 = *(undefined4 *)(param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_14 = *(undefined4 *)(param_1 + 0x1c8);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  FUN_0053c8a4(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x547820  [SimGui::TSControl] ================
+
+void FUN_00547820(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_9;
+  undefined4 local_8;
+  
+  local_9 = *(undefined1 *)(param_1 + 0x228);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_9);
+  FUN_00538dfc(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x547f38  [SimGui::TimerCtrl] ================
+
+void FUN_00547f38(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 uStack_14;
+  undefined4 uStack_10;
+  undefined4 uStack_c;
+  undefined4 uStack_8;
+  
+  uStack_c = *(undefined4 *)(param_1 + 0x1ac);
+  uStack_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&uStack_c);
+  uStack_10 = *(undefined4 *)(param_1 + 0x1b0);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&uStack_10);
+  uStack_14 = *(undefined4 *)(param_1 + 0x1b4);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&uStack_14);
+  FUN_00538dfc(param_1,param_2,uStack_8,param_4);
+  return;
+}
+
+
+
+================ write 0x54b42c  [SimGui::MatrixCtrl] ================
+
+void FUN_0054b42c(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  char cVar1;
+  undefined4 local_18;
+  undefined4 local_14;
+  int *local_10;
+  undefined4 local_c;
+  int *local_8;
+  
+  local_14 = *(undefined4 *)(param_1 + 0x284);
+  local_10 = param_2;
+  local_c = param_3;
+  local_8 = param_2;
+  cVar1 = (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  if (cVar1 != '\0') {
+    local_18 = *(undefined4 *)(param_1 + 0x288);
+    (**(code **)(*local_10 + 0x18))(local_10,4,&local_18);
+  }
+  FUN_0054ae10(param_1,local_8,local_c,param_4);
+  return;
+}
+
+
+
+================ write 0x54ba04  [METextList, SimGui::TextList] ================
+
+void FUN_0054ba04(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_16;
+  undefined1 local_15;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = *(undefined4 *)(param_1 + 0x1ec);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_10 = *(undefined4 *)(param_1 + 0x1f0);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_14 = *(undefined4 *)(param_1 + 500);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  local_15 = *(undefined1 *)(param_1 + 0x208);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_15);
+  local_16 = *(undefined1 *)(param_1 + 0x209);
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_16);
+  FUN_0053c8a4(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x54cac0  [SimGui::TextWrap] ================
+
+void FUN_0054cac0(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_20;
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  int local_c;
+  undefined4 local_8;
+  
+  local_c = (int)*(char *)(param_1 + 0x1fd);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_10 = *(undefined4 *)(param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_14 = *(undefined4 *)(param_1 + 0x208);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  local_18 = *(undefined4 *)(param_1 + 0x1bc);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_18);
+  local_1c = *(undefined4 *)(param_1 + 0x1c4);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_1c);
+  local_20 = *(undefined4 *)(param_1 + 0x1d8);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_20);
+  FUN_0053c8a4(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x54d318  [SimGui::Slider] ================
+
+void FUN_0054d318(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  local_c = *(undefined4 *)(param_1 + 0x1bc);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_c);
+  local_10 = *(undefined4 *)(param_1 + 0x1c0);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_10);
+  local_14 = *(undefined4 *)(param_1 + 0x1c4);
+  (**(code **)(*param_2 + 0x18))(param_2,4,&local_14);
+  FUN_0053c8a4(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x54ddbc  [MECheck, SimGui::TestCheck] ================
+
+void FUN_0054ddbc(int param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined1 local_9;
+  undefined4 local_8;
+  
+  local_9 = *(undefined1 *)(param_1 + 0x2e0);
+  local_8 = param_3;
+  (**(code **)(*param_2 + 0x18))(param_2,1,&local_9);
+  FUN_005405ac(param_1,param_2,local_8,param_4);
+  return;
+}
+
+
+
+================ write 0x57ce34  [GWDialog, GWTreeList] ================
+
+undefined4 FUN_0057ce34(int *param_1,HWND param_2)
+
+{
+  code *pcVar1;
+  
+  if (param_1[0x42] != 0) {
+    (**(code **)(*param_1 + 8))();
+  }
+  param_1[0x42] = (int)param_2;
+  FUN_0057cba4(param_1);
+  pcVar1 = (code *)GetWindowLongA(param_2,-4);
+  if (pcVar1 == FUN_0057cd34) {
+    param_1[1] = (int)DefWindowProcA;
+  }
+  else {
+    SetWindowLongA(param_2,-4,0x57cd34);
+    param_1[1] = (int)pcVar1;
+  }
+  return 1;
+}
+
+
+
+================ write 0x57ff6c  [SimGui::Canvas] ================
+
+undefined4 FUN_0057ff6c(undefined4 param_1,undefined4 param_2)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  undefined4 uStack_1c;
+  undefined4 uStack_18;
+  undefined4 uStack_14;
+  undefined4 uStack_10;
+  undefined4 uStack_c;
+  
+  FUN_0057fe24(param_1);
+  cVar1 = FUN_0057ce34(param_1,param_2);
+  if (cVar1 == '\0') {
+    uVar2 = 0;
+  }
+  else {
+    FUN_00580c88(param_1,&uStack_1c);
+    uStack_14 = uStack_1c;
+    uStack_10 = uStack_18;
+    uStack_c = 0;
+    uVar2 = FUN_00580364(param_1,&uStack_14);
+  }
+  return uVar2;
+}
+
+
