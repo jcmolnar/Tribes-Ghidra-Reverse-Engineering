@@ -213,12 +213,37 @@ capture (drag) is held by `root->lockedControl` (Canvas +0x260).
 
 ---
 
-## 6. Still open / not RE'd
+## 6. FGSlider `.pba` frame order — RE'd (ShellSliderCtrl.pba, 15 frames)
 
-- **`.pba` frame INDEX → field mapping** (which sub-image is arrow/thumb/track for each skinned
-  control) — the render *logic* is decompiled (which field draws when), but not the onAdd frame-
-  extraction indices (Ghidra-obfuscated). Ports render plain rects as a stable workaround.
-- **Delegate system** (game-side `.cs` `*CSDelegate` classes bound to `.gui` roots) — these are in
-  the game/shell module, not the engine, and drive tab-switching / apply-buttons via script.
+FGsk (`FearGui::FGSlider`) real onAdd = `FUN_004ca0f0`, real onRender = `FUN_004ca7b8`, thumbWidth =
+30 (constant). `getBitmap(N) = bmaList[N]` (or remapped via `FUN_005c8580`). onRender draws with
+explicit frame constants; **the state order per element is DISABLED, PRESSED, NORMAL** (the earlier
+port guess was normal-first — wrong, which scrambled the art). Fields: `0x1d8` bma, `0x1a4` extent.x,
+`0x1e4` curThumbX, `0x1d4` thumb-pressed bool, `0x6d`/`0x1b4` active (ghost when inactive).
+
+| frame | element | state |
+|--|--|--|
+| 0 / 1 / 2 | left arrow | disabled / pressed / normal |
+| 3 / 4 / 5 | right arrow | disabled / pressed / normal |
+| 6 / 7 / 8 | thumb middle(stretch) / left-cap / right-cap | normal |
+| 9 | track (stretch) | disabled |
+| 10 | (unused in horizontal path) | — |
+| 11 | track (stretch) | normal |
+| 12 / 13 / 14 | thumb middle / left-cap / right-cap | pressed |
+
+Draw sequence (x-cursor advances by each bitmap's width `+0x10`):
+1. **left arrow** (0/1/2) at origin → advance.
+2. **track** stretched (11 normal / 9 disabled), width = `extent.x − leftArrow.w − rightArrow.w`
+   (surface drawBitmapStretch `vtbl+0x1c`) → advance.
+3. **right arrow** (5 normal / 4 pressed / 3 disabled).
+4. if enabled, the **thumb overlay** at `curThumbX`: left-cap (7/13) + middle stretched (6/12) +
+   right-cap (8/14), pressed-variant chosen by the `0x1d4` bool.
+
+## 7. Still open / not RE'd
+
+- **Delegate system** (game-side `.cs` `*CSDelegate` classes bound to `.gui` roots) — in the
+  game/shell module, not the engine; drive tab-switching / apply-buttons via script (present as `.cs`).
 - Font (`.pft`) glyph rendering and palette expansion are engine-internal (GFXFont/GFXPalette) and
-  render correctly on the port already; not re-detailed here.
+  render correctly on the port already.
+- Other skinned controls' `.pba` frame orders (combos/scrollbars) follow the same `getBitmap(N)`
+  pattern in their onRender — decode per control from `re/gui_all_fns.txt` as needed.

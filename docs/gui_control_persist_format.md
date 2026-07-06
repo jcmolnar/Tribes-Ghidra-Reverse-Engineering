@@ -268,10 +268,12 @@ and **0x2e4/0x2e8/0x2ec/0x2f0/0x2f4** (thumb + expanded-size variants). These ar
 resource load in the FGSlider onAdd path (`FUN_004ca08c`, descriptor slot 3) from the slider's `.pba`
 bitmap array; a plain-rect fallback render (as used in the WASM/native port) is a valid substitute.
 
-## 8. Still open / not RE'd
+## 8. `.pba` frame order — RE'd
 
-- **`.pba` frame INDEX → field mapping**: §7 nails *which field* is drawn *when* (the render logic is
-  fully decompiled) and *where* the fields are filled (onAdd `FUN_004ca08c` from the slider `.pba`).
-  The one residual is the exact `.pba` sub-image *index* assigned to each of 0x1cc/0x1d0/0x1d4/
-  0x2e4/0x2e8/0x2ec/0x2f0/0x2f4 — that requires tracing the frame-extraction in `FUN_004ca08c`
-  (heavily obfuscated by Ghidra's Borland analysis). Everything else in this document is RE'd.
+The FGSlider `.pba` frame→state→field mapping is now fully reverse-engineered from the REAL FGsk
+onRender `FUN_004ca7b8` (the earlier `FUN_004c9c70`/`FUN_004ca08c` belonged to a different slider
+variant). Full 15-frame table and draw order in
+[`gui_internals_complete.md`](gui_internals_complete.md) §6. Key correction: the per-element state
+order is **disabled, pressed, normal** (0/1/2 = left arrow disabled/pressed/normal, etc.), not the
+normal-first order ports had guessed. Everything in the T1Vista GUI is now RE'd; the only items
+outside the engine binary are the game-side `.cs` shell delegates.
